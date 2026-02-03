@@ -1,0 +1,11 @@
+Model Information:
+* title:	Viking Line S/S Apollo III (1959) (1976)
+* source:	https://sketchfab.com/3d-models/viking-line-ss-apollo-iii-1959-1976-2fbcb69364c3483f8c1bfff1c1609a1e
+* author:	FHA_studios (https://sketchfab.com/FHA_ships)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Viking Line S/S Apollo III (1959) (1976)" (https://sketchfab.com/3d-models/viking-line-ss-apollo-iii-1959-1976-2fbcb69364c3483f8c1bfff1c1609a1e) by FHA_studios (https://sketchfab.com/FHA_ships) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
