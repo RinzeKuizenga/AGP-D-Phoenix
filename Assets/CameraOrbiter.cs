@@ -66,6 +66,8 @@ public class CameraOrbiter : MonoBehaviour
             savedOrbitRadius = orbitRadius;
             isInSideView = true;
             Camera.main.orthographic = true;
+            Camera.main.orthographicSize = 2.5f;
+            //Camera.main.nearClipPlane = 3.44f;
         }
         else
         {
@@ -77,6 +79,7 @@ public class CameraOrbiter : MonoBehaviour
     private IEnumerator ReturnToOrbitView()
     {
         Camera.main.orthographic = false;
+        Camera.main.nearClipPlane = 0.57f;
         float elapsedTime = 0f;
         float duration = 1f / transitionSpeed;
 
