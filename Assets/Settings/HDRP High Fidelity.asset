@@ -34,11 +34,11 @@ MonoBehaviour:
     renderingLayerMaskBuffer: 0
     supportWater: 1
     waterSimulationResolution: 128
-    supportWaterExclusion: 0
+    supportWaterExclusion: 1
     supportWaterHorizontalDeformation: 0
     supportWaterDecals: 1
-    waterDecalAtlasSize: 1024
-    maximumWaterDecalCount: 48
+    waterDecalAtlasSize: 256
+    maximumWaterDecalCount: 256
     waterScriptInteractionsMode: 0
     waterFullCPUSimulation: 0
     supportComputeThickness: 0
