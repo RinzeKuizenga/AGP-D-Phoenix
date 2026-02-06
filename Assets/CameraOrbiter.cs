@@ -23,6 +23,9 @@ public class CameraOrbiter : MonoBehaviour
     private Quaternion savedOrbitRotation;
     private float savedOrbitRadius;
 
+    [Header("Spatial Audios")]
+    [SerializeField] AudioLowPassFilter oceanAmbience;
+
     void Update()
     {
         if (!isInSideView)
@@ -45,10 +48,18 @@ public class CameraOrbiter : MonoBehaviour
         }
         else
         {
-            // Side view - follow ship but maintain offset
-            Vector3 targetPosition = cubeTransform.position + cubeTransform.TransformDirection(sideViewOffset);
-            Vector3 targetLookDirection = cubeTransform.position - targetPosition;
-            Quaternion targetRotation = Quaternion.LookRotation(targetLookDirection);
+            // Side view - follow ship position but stabilize rotation
+            Vector3 targetPosition = cubeTransform.position + sideViewOffset;
+
+            // Keep camera level (don't follow boat's pitch/roll)
+            Quaternion stabilizedRotation = Quaternion.Euler(0f, cubeTransform.eulerAngles.y, 0f);
+            Vector3 offsetDirection = stabilizedRotation * Vector3.right;
+            targetPosition = cubeTransform.position + offsetDirection * sideViewOffset.x + Vector3.up * sideViewOffset.y;
+
+            // Look at boat but keep camera level
+            Vector3 lookDirection = cubeTransform.position - targetPosition;
+            lookDirection.y = 0; // Flatten to prevent camera tilting
+            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
@@ -67,11 +78,13 @@ public class CameraOrbiter : MonoBehaviour
             isInSideView = true;
             Camera.main.orthographic = true;
             Camera.main.orthographicSize = 2.5f;
+            oceanAmbience.cutoffFrequency = 1908f;
             //Camera.main.nearClipPlane = 3.44f;
         }
         else
         {
             // Return to orbit view
+            oceanAmbience.cutoffFrequency = 22000f;
             StartCoroutine(ReturnToOrbitView());
         }
     }

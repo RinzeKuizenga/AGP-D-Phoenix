@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BoatController : MonoBehaviour
@@ -9,24 +9,31 @@ public class BoatController : MonoBehaviour
     public float maxSpeed = 20f;
 
     [Header("Water Resistance")]
-    public float waterResistance = 0.95f; // Slows down the boat naturally
+    public float waterResistance = 0.95f; 
 
     private Rigidbody rb;
     private float currentMotorInput;
     private float currentTurnInput;
 
+    [Header("Boost Functions")]
+    public Camera cam;
+    public float normalFOV = 60f;
+    public float boostFOV = 75f;
+    public float fovTransitionSpeed = 60f;
+
+    private float targetFOV;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        targetFOV = normalFOV;
     }
 
     void Update()
     {
-        // Get input using KeyCode for instant response
         currentMotorInput = 0f;
         currentTurnInput = 0f;
 
-        // Forward/Backward
         if (Input.GetKey(KeyCode.W))
         {
             print("Worky?");
@@ -35,7 +42,6 @@ public class BoatController : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
             currentMotorInput = -1f;
 
-        // Left/Right
         if (Input.GetKey(KeyCode.A))
             currentTurnInput = -1f;
         else if (Input.GetKey(KeyCode.D))
@@ -44,32 +50,35 @@ public class BoatController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply forward/backward force
-        if (Mathf.Abs(currentMotorInput) > 0.01f)
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.fixedDeltaTime * fovTransitionSpeed);
+
+        if (Mathf.Abs(currentMotorInput) > 0.01f && Input.GetKey(KeyCode.LeftShift))
         {
+            targetFOV = boostFOV;
+            Vector3 forwardForce = transform.forward * currentMotorInput * motorForce * 2;
+            rb.AddForce(forwardForce, ForceMode.Force);
+        }
+        else if (Mathf.Abs(currentMotorInput) > 0.01f)
+        {
+            targetFOV = normalFOV;
             Vector3 forwardForce = transform.forward * currentMotorInput * motorForce;
             rb.AddForce(forwardForce, ForceMode.Force);
         }
 
-        // Limit max speed
         if (rb.linearVelocity.magnitude > maxSpeed)
         {
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
         }
 
-        // Apply steering (only when moving)
         if (rb.linearVelocity.magnitude > 0.5f)
         {
-            // Turn based on speed (boats turn better when moving)
             float speedFactor = Mathf.Clamp01(rb.linearVelocity.magnitude / 5f);
             float turn = currentTurnInput * turnSpeed * speedFactor * Time.fixedDeltaTime;
 
-            // Apply rotation
             Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
             rb.MoveRotation(rb.rotation * turnRotation);
         }
 
-        // Apply water resistance to slow down naturally
         rb.linearVelocity *= waterResistance;
     }
 }
