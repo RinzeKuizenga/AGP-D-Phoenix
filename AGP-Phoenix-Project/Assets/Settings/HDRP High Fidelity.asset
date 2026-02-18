@@ -35,7 +35,7 @@ MonoBehaviour:
     supportWater: 1
     waterSimulationResolution: 128
     supportWaterExclusion: 1
-    supportWaterHorizontalDeformation: 0
+    supportWaterHorizontalDeformation: 1
     supportWaterDecals: 1
     waterDecalAtlasSize: 256
     maximumWaterDecalCount: 256

@@ -26,6 +26,9 @@ public class CameraOrbiter : MonoBehaviour
     [Header("Spatial Audios")]
     [SerializeField] AudioLowPassFilter oceanAmbience;
 
+    [Header("Objects")]
+    [SerializeField] GameObject waterCutter;
+
     void Update()
     {
         if (!isInSideView)
@@ -77,8 +80,9 @@ public class CameraOrbiter : MonoBehaviour
             savedOrbitRadius = orbitRadius;
             isInSideView = true;
             Camera.main.orthographic = true;
-            Camera.main.orthographicSize = 2.5f;
+            Camera.main.orthographicSize = 4f;
             oceanAmbience.cutoffFrequency = 1908f;
+            waterCutter.SetActive(true);
             //Camera.main.nearClipPlane = 3.44f;
         }
         else
@@ -86,6 +90,7 @@ public class CameraOrbiter : MonoBehaviour
             // Return to orbit view
             oceanAmbience.cutoffFrequency = 22000f;
             StartCoroutine(ReturnToOrbitView());
+            waterCutter.SetActive(false);
         }
     }
 
