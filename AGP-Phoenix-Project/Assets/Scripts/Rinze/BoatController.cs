@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BoatController : MonoBehaviour
@@ -9,7 +10,7 @@ public class BoatController : MonoBehaviour
     public float maxSpeed = 20f;
 
     [Header("Water Resistance")]
-    public float waterResistance = 0.95f; 
+    public float waterResistance = 0.95f;
 
     private Rigidbody rb;
     private float currentMotorInput;
@@ -20,12 +21,19 @@ public class BoatController : MonoBehaviour
     public float normalFOV = 60f;
     public float boostFOV = 75f;
     public float fovTransitionSpeed = 60f;
-
     private float targetFOV;
+
+    [Header("Wind Settings")]
+    private float windTurn = 0f;
+    public TextMeshProUGUI windText;
+    public ParticleSystem windParticles;
+    public Transform windposLeft;
+    public Transform windposRight;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        windTurn = Random.Range(-3f, 3);
         targetFOV = normalFOV;
     }
 
@@ -36,16 +44,22 @@ public class BoatController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            print("Worky?");
             currentMotorInput = 1f;
         }
         else if (Input.GetKey(KeyCode.S))
+        {
             currentMotorInput = -1f;
+        }
 
         if (Input.GetKey(KeyCode.A))
+        {
             currentTurnInput = -1f;
+        }
         else if (Input.GetKey(KeyCode.D))
+        {
             currentTurnInput = 1f;
+        }
+        windText.text = $"Windspeed: {windTurn}";
     }
 
     void FixedUpdate()
@@ -79,6 +93,25 @@ public class BoatController : MonoBehaviour
             rb.MoveRotation(rb.rotation * turnRotation);
         }
 
+        Quaternion windRotation = Quaternion.Euler(0f, windTurn * Time.fixedDeltaTime, 0f);
+        rb.MoveRotation(rb.rotation * windRotation);
         rb.linearVelocity *= waterResistance;
+
+        if (windTurn > 1)
+        {
+            windParticles.transform.position = windposLeft.position;
+            windParticles.transform.rotation = transform.rotation * Quaternion.Euler(90f, 0f, 0f);
+            if (!windParticles.isPlaying) windParticles.Play();
+        }
+        else if (windTurn < -1)
+        {
+            windParticles.transform.position = windposRight.position;
+            windParticles.transform.rotation = transform.rotation * Quaternion.Euler(90f, 180f, 0f);
+            if (!windParticles.isPlaying) windParticles.Play();
+        }
+        else
+        {
+            windParticles.Stop();
+        }
     }
 }
