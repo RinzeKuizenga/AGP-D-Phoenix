@@ -30,6 +30,9 @@ public class BoatController : MonoBehaviour
     public Transform windposLeft;
     public Transform windposRight;
 
+    public ParticleSystem rainParticles;
+    public Transform rainPos;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -113,5 +116,6 @@ public class BoatController : MonoBehaviour
         {
             windParticles.Stop();
         }
+        rainParticles.transform.position = rainPos.position;
     }
 }

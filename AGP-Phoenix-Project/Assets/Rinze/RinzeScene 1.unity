@@ -266,7 +266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click to start game
+  m_text: Klik om het spel te starten
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16dbc06a2a913da46bca0e1212c1bcb0, type: 2}
   m_sharedMaterial: {fileID: -613781832063648574, guid: 16dbc06a2a913da46bca0e1212c1bcb0, type: 2}
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit Game
+  m_text: Stop Spel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
   m_sharedMaterial: {fileID: -4388441301926508579, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: Instellingen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
   m_sharedMaterial: {fileID: -4388441301926508579, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
@@ -1535,7 +1535,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358199249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00000011921}
   m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1543,8 +1543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 211}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0.0000038147, y: 215}
+  m_SizeDelta: {x: 2121.566, y: 1924.6064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358199251
 MonoBehaviour:
@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b21b42953fcca040aebe999493e968c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef28dd57b2e4dc2499e82bcb20105c60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Game
+  m_text: Nieuw Spel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
   m_sharedMaterial: {fileID: -4388441301926508579, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
@@ -4095,7 +4095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1356085649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4476,7 +4476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"Options"'
+  m_text: '"Instellingen"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
   m_sharedMaterial: {fileID: -4388441301926508579, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
@@ -4542,7 +4542,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -20.87867, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4582,7 +4582,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535569892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000066757}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00010143}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4590,8 +4590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -612, y: 297}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -594, y: 290}
+  m_SizeDelta: {x: 2274.1719, y: 2019.1807}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535569894
 MonoBehaviour:
@@ -4613,7 +4613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5b21b42953fcca040aebe999493e968c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef28dd57b2e4dc2499e82bcb20105c60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5987,7 +5987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Hervatten
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
   m_sharedMaterial: {fileID: -4388441301926508579, guid: cc3d47f6d50e99b49bf4ea13a66ee6e3, type: 2}
