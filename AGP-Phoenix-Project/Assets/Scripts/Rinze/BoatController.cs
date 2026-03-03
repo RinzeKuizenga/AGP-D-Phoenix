@@ -62,7 +62,7 @@ public class BoatController : MonoBehaviour
         {
             currentTurnInput = 1f;
         }
-        windText.text = $"Windspeed: {windTurn}";
+        windText.text = $"Wind: {windTurn:F1}m/s";
     }
 
     void FixedUpdate()

@@ -22,12 +22,18 @@ public class CameraOrbiter : MonoBehaviour
     private Vector3 savedOrbitPosition;
     private Quaternion savedOrbitRotation;
     private float savedOrbitRadius;
+    private float targetOrbitRadius;
 
     [Header("Spatial Audios")]
     [SerializeField] AudioLowPassFilter oceanAmbience;
 
     [Header("Objects")]
     [SerializeField] GameObject waterCutter;
+
+    void Start()
+    {
+        targetOrbitRadius = orbitRadius;
+    }
 
     void Update()
     {
@@ -44,9 +50,15 @@ public class CameraOrbiter : MonoBehaviour
                     transform.eulerAngles += new Vector3(-mouseY * sensitivity, mouseX * sensitivity, 0);
                 }
             }
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-            orbitRadius -= Input.GetAxis("Mouse ScrollWheel") / sensitivity * 30;
-            orbitRadius = Mathf.Clamp(orbitRadius, minimumOrbitDistance, maximumOrbitDistance);
+            if (Mathf.Abs(scroll) > 0.001f)
+            {
+                float zoomSpeed = 0.5f;
+                targetOrbitRadius *= 1f - scroll * zoomSpeed;
+                targetOrbitRadius = Mathf.Clamp(targetOrbitRadius, minimumOrbitDistance, maximumOrbitDistance);
+            }
+            orbitRadius = Mathf.Lerp(orbitRadius, targetOrbitRadius, Time.deltaTime * 10f);
             transform.position = cubeTransform.position - transform.forward * orbitRadius;
         }
         else
