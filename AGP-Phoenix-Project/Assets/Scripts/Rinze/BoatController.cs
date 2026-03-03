@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BoatController : MonoBehaviour
@@ -33,9 +34,15 @@ public class BoatController : MonoBehaviour
     public ParticleSystem rainParticles;
     public Transform rainPos;
 
+    public Image windArrow;
+
+    [Header("Boat Animations")]
+    public Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         windTurn = Random.Range(-3f, 3);
         targetFOV = normalFOV;
     }
@@ -45,6 +52,7 @@ public class BoatController : MonoBehaviour
         currentMotorInput = 0f;
         currentTurnInput = 0f;
 
+        animator.SetBool("SailDown", Input.GetKey(KeyCode.W));
         if (Input.GetKey(KeyCode.W))
         {
             currentMotorInput = 1f;
@@ -62,22 +70,24 @@ public class BoatController : MonoBehaviour
         {
             currentTurnInput = 1f;
         }
-        windText.text = $"Wind: {windTurn:F1}m/s";
+            windText.text = $"{windTurn:F1}m/s";
     }
 
     void FixedUpdate()
     {
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, Time.fixedDeltaTime * fovTransitionSpeed);
 
-        if (Mathf.Abs(currentMotorInput) > 0.01f && Input.GetKey(KeyCode.LeftShift))
+        if (Mathf.Abs(currentMotorInput) > 0.01f && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
             targetFOV = boostFOV;
+            animator.SetBool("SailBoost", true);
             Vector3 forwardForce = transform.forward * currentMotorInput * motorForce * 2;
             rb.AddForce(forwardForce, ForceMode.Force);
         }
         else if (Mathf.Abs(currentMotorInput) > 0.01f)
         {
             targetFOV = normalFOV;
+            animator.SetBool("SailBoost", false);
             Vector3 forwardForce = transform.forward * currentMotorInput * motorForce;
             rb.AddForce(forwardForce, ForceMode.Force);
         }
@@ -104,12 +114,13 @@ public class BoatController : MonoBehaviour
         {
             windParticles.transform.position = windposLeft.position;
             windParticles.transform.rotation = transform.rotation * Quaternion.Euler(90f, 0f, 0f);
+            windArrow.rectTransform.localEulerAngles = new Vector3(0f, 180f, 90f);
             if (!windParticles.isPlaying) windParticles.Play();
         }
         else if (windTurn < -1)
         {
             windParticles.transform.position = windposRight.position;
-            windParticles.transform.rotation = transform.rotation * Quaternion.Euler(90f, 180f, 0f);
+            windArrow.rectTransform.localEulerAngles = new Vector3(0f, 0f, 90f);
             if (!windParticles.isPlaying) windParticles.Play();
         }
         else
