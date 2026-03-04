@@ -5826,19 +5826,13 @@ MonoBehaviour:
   editor_preview_heading: 0
   player_transform: {fileID: 1201440804}
   editor_markers:
-  - objective_name: Doel 1
-    completion_radius: 20
-    target: {fileID: 194697249}
+  - target: {fileID: 194697249}
     icon: {fileID: 0}
     color: {r: 0.8616352, g: 0.1923776, b: 0.1923776, a: 0}
-  - objective_name: Doel 2
-    completion_radius: 20
-    target: {fileID: 1195630}
+  - target: {fileID: 1195630}
     icon: {fileID: 2800000, guid: 5d4b367f0702b4b46a16ba3b67281419, type: 3}
     color: {r: 0.21568629, g: 0.8745098, b: 0.21568629, a: 0}
-  - objective_name: Doel 3
-    completion_radius: 20
-    target: {fileID: 605087697}
+  - target: {fileID: 605087697}
     icon: {fileID: 2800000, guid: d9b984f8c9931dc499f788eba40f7674, type: 3}
     color: {r: 0, g: 0, b: 0.7882353, a: 0}
 --- !u!1 &432432459
