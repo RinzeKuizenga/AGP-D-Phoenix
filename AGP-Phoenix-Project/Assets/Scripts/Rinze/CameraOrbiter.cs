@@ -19,6 +19,7 @@ public class CameraOrbiter : MonoBehaviour
     public float transitionSpeed = 5f; // Speed of camera transition
 
     private bool isInSideView = false;
+    public bool IsInSideView => isInSideView;
     private Vector3 savedOrbitPosition;
     private Quaternion savedOrbitRotation;
     private float savedOrbitRadius;
