@@ -8,7 +8,7 @@ public class SimpleBoatBuoyancy : MonoBehaviour
     public WaterSurface waterSurface;
 
     [Header("Buoyancy Settings")]
-    public Transform[] floaters; // Points on your boat to check water height
+    public Transform[] floaters; 
     public float buoyancyForce = 15f;
     public float waterDrag = 0.99f;
     public float waterAngularDrag = 0.5f;
@@ -21,14 +21,12 @@ public class SimpleBoatBuoyancy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Set appropriate drag values for water
         rb.linearDamping = waterDrag;
         rb.angularDamping = waterAngularDrag;
 
-        // Find water surface if not assigned
         if (waterSurface == null)
         {
-            waterSurface = FindObjectOfType<WaterSurface>();
+            waterSurface = Object.FindFirstObjectByType<WaterSurface>();
         }
     }
 
@@ -38,19 +36,16 @@ public class SimpleBoatBuoyancy : MonoBehaviour
 
         foreach (Transform floater in floaters)
         {
-            // Setup search parameters
             searchParameters.startPositionWS = searchResult.candidateLocationWS;
             searchParameters.targetPositionWS = floater.position;
             searchParameters.error = 0.01f;
             searchParameters.maxIterations = 8;
 
-            // Project point onto water surface
             if (waterSurface.ProjectPointOnWaterSurface(searchParameters, out searchResult))
             {
                 float waterHeight = searchResult.projectedPositionWS.y;
                 float floaterHeight = floater.position.y;
 
-                // If floater is below water surface, apply buoyancy
                 if (floaterHeight < waterHeight)
                 {
                     float submersionDepth = waterHeight - floaterHeight;
