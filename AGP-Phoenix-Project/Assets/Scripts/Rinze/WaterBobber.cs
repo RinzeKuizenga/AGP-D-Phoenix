@@ -26,7 +26,7 @@ public class SimpleBoatBuoyancy : MonoBehaviour
 
         if (waterSurface == null)
         {
-            waterSurface = FindObjectOfType<WaterSurface>();
+            waterSurface = Object.FindFirstObjectByType<WaterSurface>();
         }
     }
 
