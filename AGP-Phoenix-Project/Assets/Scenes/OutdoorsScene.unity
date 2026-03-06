@@ -6777,6 +6777,10 @@ MonoBehaviour:
   normalFOV: 60
   boostFOV: 75
   fovTransitionSpeed: 10
+  windText: {fileID: 0}
+  windParticles: {fileID: 0}
+  windposLeft: {fileID: 0}
+  windposRight: {fileID: 0}
 --- !u!1 &1542267777
 GameObject:
   m_ObjectHideFlags: 0
@@ -7381,14 +7385,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1823688464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6bc6d326bc0f2a4fb2eef2efb356ec1, type: 3}
+  m_Script: {fileID: 11500000, guid: 402b07923559ece4c83ae5ae2bd40a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraOrbiter
   cubeTransform: {fileID: 1046251737}
-  sensitivity: 3.82
-  sideViewOffset: {x: 5, y: 0.44, z: 0}
+  sensitivity: 5
+  sideViewOffset: {x: 30, y: 5, z: 0}
   transitionSpeed: 5
   oceanAmbience: {fileID: 574630877}
+  waterCutter: {fileID: 1872400030}
 --- !u!1 &1852463400
 GameObject:
   m_ObjectHideFlags: 0
@@ -7921,6 +7926,10 @@ MonoBehaviour:
   normalFOV: 60
   boostFOV: 60
   fovTransitionSpeed: 60
+  windText: {fileID: 0}
+  windParticles: {fileID: 0}
+  windposLeft: {fileID: 0}
+  windposRight: {fileID: 0}
 --- !u!1 &1872400030
 GameObject:
   m_ObjectHideFlags: 0
