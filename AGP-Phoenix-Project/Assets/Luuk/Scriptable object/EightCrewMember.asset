@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66962805d03e1c34fb4f90cc8ee0c89b, type: 3}
+  m_Name: EightCrewMember
+  m_EditorClassIdentifier: Assembly-CSharp::Crew
+  sprite: {fileID: 21300000, guid: cdb07eed4e7cd9748aa82b8d8d08ec83, type: 3}
+  SpecialtyIcon: {fileID: 241798540, guid: fb7777e50be19e94493567e52d3aece2, type: 3}
+  crewclass: Vaardigheid:Kok
+  crewname: Samantha Schiller
+  crewSpeed: 2
