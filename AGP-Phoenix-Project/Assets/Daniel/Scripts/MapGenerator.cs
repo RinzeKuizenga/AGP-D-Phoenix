@@ -19,7 +19,7 @@ public class MapGenerator : MonoBehaviour
     public TerrainData terrainData;
     public NoiseData noiseData;
     public TextureData textureData;
-    
+
     public Material material;
 
     [Range(0, 6)] public int editorPreviewLOD;
@@ -37,6 +37,15 @@ public class MapGenerator : MonoBehaviour
         {
             DrawMapInEditor();
         }
+    }
+
+    void Start()
+    {
+        Debug.Log(
+            $"MinHeight={terrainData.minHeight} MaxHeight={terrainData.maxHeight} Layers={textureData.layers.Length}");
+        textureData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
+        textureData.ApplyToMaterial(material);
+        Debug.Log($"Confirmed _MinHeight={terrainData.minHeight} _MaxHeight={terrainData.maxHeight}");
     }
 
     void OnTexturesValuesUpdated()
@@ -145,11 +154,11 @@ public class MapGenerator : MonoBehaviour
 
         if (terrainData.useFalloff)
         {
-
             if (falloffMap == null)
             {
                 falloffMap = FalloffGenerator.GenerateFalloffMap(mapChunkSize + 2);
             }
+
             for (int y = 0; y < mapChunkSize + 2; y++)
             {
                 for (int x = 0; x < mapChunkSize + 2; x++)
@@ -161,7 +170,6 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
-
 
         return new MapData(noiseMap);
     }
@@ -184,6 +192,26 @@ public class MapGenerator : MonoBehaviour
         {
             textureData.OnValuesUpdated -= OnTexturesValuesUpdated;
             textureData.OnValuesUpdated += OnTexturesValuesUpdated;
+        }
+
+        // Push heights and textures immediately in the editor
+        // (Start() doesn't run in edit mode)
+        // Use delayCall so Material API runs safely outside OnValidate's restricted context
+        if (material != null && textureData != null && terrainData != null)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.delayCall += () =>
+            {
+                if (material != null && textureData != null && terrainData != null)
+                {
+                    textureData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
+                    textureData.ApplyToMaterial(material);
+                }
+            };
+#else
+            textureData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
+            textureData.ApplyToMaterial(material);
+#endif
         }
     }
 
