@@ -4,7 +4,7 @@ using UnityEngine;
 public class RoomHealth : MonoBehaviour
 {
     [Header("Kamer Instellingen")]
-    [SerializeField] private string roomName = "Kamer";
+    [SerializeField] private string roomName = "Room";
     [SerializeField] private float maxHealth = 100f;
 
     [SerializeField] private float decayPerSecond = 2f;
