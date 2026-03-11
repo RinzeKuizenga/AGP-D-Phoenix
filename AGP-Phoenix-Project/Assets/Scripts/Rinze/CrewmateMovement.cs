@@ -3,19 +3,30 @@ using UnityEngine.AI;
 
 public class CrewmateMovement : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    Transform target;
+    [SerializeField] float speed = 1f;
 
-    NavMeshAgent agent;
-
-    private void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-    }
+    public bool isSelected = false;
 
     private void Update()
     {
-        agent.SetDestination(target.position);
+        if (target == null) return;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    }
+
+    public void MoveToArea(Transform newTarget)
+    {
+        if (!isSelected) return;
+
+        target = newTarget;
+        isSelected = false;
+
+    }
+
+
+    void OnMouseDown()
+    {
+        Debug.Log("Ribbit");
+        isSelected = true;
     }
 }

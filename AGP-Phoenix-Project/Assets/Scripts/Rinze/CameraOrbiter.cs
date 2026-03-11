@@ -108,6 +108,7 @@ public class CameraOrbiter : MonoBehaviour
 
     private IEnumerator ReturnToOrbitView()
     {
+        isInSideView = false;
         Camera.main.orthographic = false;
         Camera.main.nearClipPlane = 0.57f;
         float elapsedTime = 0f;
@@ -130,6 +131,5 @@ public class CameraOrbiter : MonoBehaviour
         transform.position = savedOrbitPosition;
         transform.rotation = savedOrbitRotation;
         orbitRadius = savedOrbitRadius;
-        isInSideView = false;
     }
 }
