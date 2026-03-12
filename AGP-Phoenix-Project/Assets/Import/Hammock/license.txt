@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hammock
+* source:	https://sketchfab.com/3d-models/hammock-c4d681ef6de14cc698a1bd17da70775d
+* author:	ANCook (https://sketchfab.com/ANCook)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hammock" (https://sketchfab.com/3d-models/hammock-c4d681ef6de14cc698a1bd17da70775d) by ANCook (https://sketchfab.com/ANCook) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

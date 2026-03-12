@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Tables & Chairs
+* source:	https://sketchfab.com/3d-models/medieval-tables-chairs-c9fc201b7c2a494a9797ef5e59209299
+* author:	Jaibu10 (https://sketchfab.com/Jaibu10)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Tables & Chairs" (https://sketchfab.com/3d-models/medieval-tables-chairs-c9fc201b7c2a494a9797ef5e59209299) by Jaibu10 (https://sketchfab.com/Jaibu10) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

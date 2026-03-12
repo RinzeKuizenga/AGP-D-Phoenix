@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old Stove Tools
+* source:	https://sketchfab.com/3d-models/old-stove-tools-0d36f68fdeb448db99ed454113da72bd
+* author:	Enkarra (https://sketchfab.com/Enkarra)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old Stove Tools" (https://sketchfab.com/3d-models/old-stove-tools-0d36f68fdeb448db99ed454113da72bd) by Enkarra (https://sketchfab.com/Enkarra) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

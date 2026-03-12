@@ -30,6 +30,16 @@ public class CameraOrbiter : MonoBehaviour
 
     [Header("Objects")]
     [SerializeField] GameObject waterCutter;
+    [SerializeField] GameObject regularShip;
+    [SerializeField] GameObject sideShip;
+
+
+    [Header("Zoom Settings")]
+    [SerializeField] private float crewmateZoomedSize = 1.8f;  
+    [SerializeField] private float crewmateZoomSpeed = 3f;
+    private float normalSideViewSize = 3.7f; 
+    private Transform trackedCrewmate = null;
+    private bool isTrackingCrewmate = false;
 
     void Start()
     {
@@ -64,13 +74,12 @@ public class CameraOrbiter : MonoBehaviour
         }
         else
         {
-            // Side view - follow ship position but stabilize rotation
             Vector3 targetPosition = cubeTransform.position + sideViewOffset;
 
-            // Keep camera level (don't follow boat's pitch/roll)
             Quaternion stabilizedRotation = Quaternion.Euler(0f, cubeTransform.eulerAngles.y, 0f);
             Vector3 offsetDirection = stabilizedRotation * Vector3.right;
             targetPosition = cubeTransform.position + offsetDirection * sideViewOffset.x + Vector3.up * sideViewOffset.y;
+            targetPosition.y = Mathf.Max(targetPosition.y, -1.7f);
 
             // Look at boat but keep camera level
             Vector3 lookDirection = cubeTransform.position - targetPosition;
@@ -79,6 +88,20 @@ public class CameraOrbiter : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
+
+            if (isTrackingCrewmate && trackedCrewmate != null)
+            {
+                targetPosition = trackedCrewmate.position + offsetDirection * sideViewOffset.x + Vector3.up * sideViewOffset.y;
+                targetPosition.y = Mathf.Max(targetPosition.y, -1.7f);
+                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
+
+                Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, crewmateZoomedSize, Time.deltaTime * crewmateZoomSpeed);
+            }
+            else if (isInSideView)
+            {
+                Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, normalSideViewSize, Time.deltaTime * crewmateZoomSpeed);
+            }
+
         }
     }
 
@@ -91,16 +114,20 @@ public class CameraOrbiter : MonoBehaviour
             savedOrbitRotation = transform.rotation;
             savedOrbitRadius = orbitRadius;
             isInSideView = true;
-            Camera.main.orthographic = true;
-            Camera.main.orthographicSize = 4.5f;
+            regularShip.SetActive(false);
+            sideShip.SetActive(true);
             oceanAmbience.cutoffFrequency = 1908f;
             waterCutter.SetActive(true);
             //Camera.main.nearClipPlane = 3.44f;
+            Camera.main.orthographic = true;
+            Camera.main.orthographicSize = 3.7f;
         }
         else
         {
             // Return to orbit view
             oceanAmbience.cutoffFrequency = 22000f;
+            regularShip.SetActive(true);
+            sideShip.SetActive(false);
             StartCoroutine(ReturnToOrbitView());
             waterCutter.SetActive(false);
         }
@@ -108,8 +135,8 @@ public class CameraOrbiter : MonoBehaviour
 
     private IEnumerator ReturnToOrbitView()
     {
-        isInSideView = false;
         Camera.main.orthographic = false;
+        isInSideView = false;
         Camera.main.nearClipPlane = 0.57f;
         float elapsedTime = 0f;
         float duration = 1f / transitionSpeed;
@@ -122,8 +149,10 @@ public class CameraOrbiter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
 
-            transform.position = Vector3.Lerp(startPosition, savedOrbitPosition, t);
-            transform.rotation = Quaternion.Slerp(startRotation, savedOrbitRotation, t);
+            float smoothT = t * t * (3f - 2f * t);
+
+            transform.position = Vector3.Lerp(startPosition, savedOrbitPosition, smoothT);
+            transform.rotation = Quaternion.Slerp(startRotation, savedOrbitRotation, smoothT);
 
             yield return null;
         }
@@ -131,5 +160,19 @@ public class CameraOrbiter : MonoBehaviour
         transform.position = savedOrbitPosition;
         transform.rotation = savedOrbitRotation;
         orbitRadius = savedOrbitRadius;
+    }
+
+    public void ZoomIn(Transform transform)
+    {
+        Debug.Log("Zoom in");
+        if (!isInSideView) return;
+        trackedCrewmate = transform;
+        isTrackingCrewmate = true;
+    }
+
+    public void ZoomOut()
+    {
+        trackedCrewmate = null;
+        isTrackingCrewmate = false;
     }
 }

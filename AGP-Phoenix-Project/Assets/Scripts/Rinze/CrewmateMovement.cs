@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class CrewmateMovement : MonoBehaviour
 {
@@ -10,8 +11,14 @@ public class CrewmateMovement : MonoBehaviour
 
     private void Update()
     {
+        if (isSelected && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Yep");
+            Camera.main.GetComponent<CameraOrbiter>().ZoomOut();
+        }
         if (target == null) return;
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
     }
 
     public void MoveToArea(Transform newTarget)
@@ -28,5 +35,6 @@ public class CrewmateMovement : MonoBehaviour
     {
         Debug.Log("Ribbit");
         isSelected = true;
+        Camera.main.GetComponent<CameraOrbiter>().ZoomIn(this.transform);
     }
 }
