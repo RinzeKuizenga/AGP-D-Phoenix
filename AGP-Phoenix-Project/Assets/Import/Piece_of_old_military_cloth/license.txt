@@ -1,0 +1,11 @@
+Model Information:
+* title:	Piece of old military cloth
+* source:	https://sketchfab.com/3d-models/piece-of-old-military-cloth-2279a5bb4a4344fbbdedee31a4b4b8d7
+* author:	triMakar (https://sketchfab.com/triMakar)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Piece of old military cloth" (https://sketchfab.com/3d-models/piece-of-old-military-cloth-2279a5bb4a4344fbbdedee31a4b4b8d7) by triMakar (https://sketchfab.com/triMakar) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

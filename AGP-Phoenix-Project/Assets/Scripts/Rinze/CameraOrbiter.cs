@@ -92,7 +92,7 @@ public class CameraOrbiter : MonoBehaviour
             if (isTrackingCrewmate && trackedCrewmate != null)
             {
                 targetPosition = trackedCrewmate.position + offsetDirection * sideViewOffset.x + Vector3.up * sideViewOffset.y;
-                targetPosition.y = Mathf.Max(targetPosition.y, -1.7f);
+                targetPosition.y = Mathf.Max(targetPosition.y, -1.65f);
                 transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
 
                 Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, crewmateZoomedSize, Time.deltaTime * crewmateZoomSpeed);
