@@ -16,7 +16,8 @@ public class BoatController : MonoBehaviour
     private Rigidbody rb;
     private float currentMotorInput;
     private float currentTurnInput;
-
+    private BoatHullManager boatHullManager;
+    
     [Header("Boost Functions")]
     public Camera cam;
     public float normalFOV = 60f;
@@ -38,11 +39,12 @@ public class BoatController : MonoBehaviour
 
     [Header("Boat Animations")]
     public Animator animator;
-
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        boatHullManager = GetComponent<BoatHullManager>();
         windTurn = Random.Range(-3f, 3);
         targetFOV = normalFOV;
     }
@@ -70,7 +72,7 @@ public class BoatController : MonoBehaviour
         {
             currentTurnInput = 1f;
         }
-            windText.text = $"{windTurn:F1}m/s";
+        windText.text = $"{windTurn:F1}m/s";
     }
 
     void FixedUpdate()
@@ -82,14 +84,14 @@ public class BoatController : MonoBehaviour
             targetFOV = boostFOV;
             animator.SetBool("SailBoost", true);
             Vector3 forwardForce = transform.forward * currentMotorInput * motorForce * 2;
-            rb.AddForce(forwardForce, ForceMode.Force);
+            rb.AddForce(forwardForce * boatHullManager.SpeedMultiplier, ForceMode.Force);
         }
         else if (Mathf.Abs(currentMotorInput) > 0.01f)
         {
             targetFOV = normalFOV;
             animator.SetBool("SailBoost", false);
             Vector3 forwardForce = transform.forward * currentMotorInput * motorForce;
-            rb.AddForce(forwardForce, ForceMode.Force);
+            rb.AddForce(forwardForce * boatHullManager.SpeedMultiplier, ForceMode.Force);
         }
 
         if (rb.linearVelocity.magnitude > maxSpeed)
