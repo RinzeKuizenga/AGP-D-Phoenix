@@ -33,14 +33,6 @@ public class CameraOrbiter : MonoBehaviour
     [SerializeField] GameObject regularShip;
     [SerializeField] GameObject sideShip;
 
-
-    [Header("Zoom Settings")]
-    [SerializeField] private float crewmateZoomedSize = 1.8f;  
-    [SerializeField] private float crewmateZoomSpeed = 3f;
-    private float normalSideViewSize = 3.7f; 
-    private Transform trackedCrewmate = null;
-    private bool isTrackingCrewmate = false;
-
     void Start()
     {
         targetOrbitRadius = orbitRadius;
@@ -74,12 +66,13 @@ public class CameraOrbiter : MonoBehaviour
         }
         else
         {
+            // Side view - follow ship position but stabilize rotation
             Vector3 targetPosition = cubeTransform.position + sideViewOffset;
 
+            // Keep camera level (don't follow boat's pitch/roll)
             Quaternion stabilizedRotation = Quaternion.Euler(0f, cubeTransform.eulerAngles.y, 0f);
             Vector3 offsetDirection = stabilizedRotation * Vector3.right;
             targetPosition = cubeTransform.position + offsetDirection * sideViewOffset.x + Vector3.up * sideViewOffset.y;
-            targetPosition.y = Mathf.Max(targetPosition.y, -1.7f);
 
             // Look at boat but keep camera level
             Vector3 lookDirection = cubeTransform.position - targetPosition;
@@ -88,20 +81,6 @@ public class CameraOrbiter : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * transitionSpeed);
-
-            if (isTrackingCrewmate && trackedCrewmate != null)
-            {
-                targetPosition = trackedCrewmate.position + offsetDirection * sideViewOffset.x + Vector3.up * sideViewOffset.y;
-                targetPosition.y = Mathf.Max(targetPosition.y, -1.65f);
-                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
-
-                Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, crewmateZoomedSize, Time.deltaTime * crewmateZoomSpeed);
-            }
-            else if (isInSideView)
-            {
-                Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, normalSideViewSize, Time.deltaTime * crewmateZoomSpeed);
-            }
-
         }
     }
 
@@ -149,6 +128,7 @@ public class CameraOrbiter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
 
+            // Smoothstep easing: slow start, fast middle, slow end
             float smoothT = t * t * (3f - 2f * t);
 
             transform.position = Vector3.Lerp(startPosition, savedOrbitPosition, smoothT);
@@ -164,15 +144,6 @@ public class CameraOrbiter : MonoBehaviour
 
     public void ZoomIn(Transform transform)
     {
-        Debug.Log("Zoom in");
-        if (!isInSideView) return;
-        trackedCrewmate = transform;
-        isTrackingCrewmate = true;
-    }
 
-    public void ZoomOut()
-    {
-        trackedCrewmate = null;
-        isTrackingCrewmate = false;
     }
 }

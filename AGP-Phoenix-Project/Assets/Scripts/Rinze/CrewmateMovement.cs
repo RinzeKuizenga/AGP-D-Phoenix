@@ -7,15 +7,14 @@ public class CrewmateMovement : MonoBehaviour
     Transform target;
     [SerializeField] float speed = 1f;
 
+    [SerializeField] CanvasGroup popupScreen;
+    [SerializeField] float targetAlpha;
+
     public bool isSelected = false;
 
     private void Update()
     {
-        if (isSelected && Input.GetKeyDown(KeyCode.F))
-        {
-            Debug.Log("Yep");
-            Camera.main.GetComponent<CameraOrbiter>().ZoomOut();
-        }
+        popupScreen.alpha = Mathf.Lerp(popupScreen.alpha, targetAlpha, Time.deltaTime * 8f);
         if (target == null) return;
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
@@ -36,5 +35,15 @@ public class CrewmateMovement : MonoBehaviour
         Debug.Log("Ribbit");
         isSelected = true;
         Camera.main.GetComponent<CameraOrbiter>().ZoomIn(this.transform);
+    }
+
+    void OnMouseEnter()
+    {
+        targetAlpha = 1f;
+    }
+
+    void OnMouseExit()
+    {
+        targetAlpha = 0f;
     }
 }
