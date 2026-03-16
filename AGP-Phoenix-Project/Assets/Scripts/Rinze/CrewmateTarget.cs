@@ -19,7 +19,12 @@ public class CrewTarget : MonoBehaviour
     void OnMouseDown()
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)
+        {
+            TextBubble.Instance.BubbleText("Ik kan hier nich hen.");
             return;
+        }
+
+        TextBubble.Instance.BubbleText("Efkes lopen, heur.");
 
         CrewmateMovement[] crew = FindObjectsOfType<CrewmateMovement>();
         foreach (var c in crew)
@@ -37,7 +42,7 @@ public class CrewTarget : MonoBehaviour
         SpriteRenderer sr = hoverImage.GetComponent<SpriteRenderer>();
 
         Color c = sr.color;
-        c.a = 0.36f;
+        c.a = 0.50f;
         sr.color = c;
     }
 
