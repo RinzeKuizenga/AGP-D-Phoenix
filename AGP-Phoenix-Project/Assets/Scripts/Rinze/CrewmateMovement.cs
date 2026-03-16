@@ -11,6 +11,7 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] public static CrewmateMovement selectedCrewmate;
 
     [SerializeField] CanvasGroup popupScreen;
+    [SerializeField] Transform popupTransform;
     [SerializeField] float targetAlpha;
 
     public bool isSelected = false;
@@ -21,6 +22,15 @@ public class CrewmateMovement : MonoBehaviour
         if (target == null) return;
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+    }
+
+    void LateUpdate()
+    {
+        Vector3 rot = popupTransform.eulerAngles;
+
+        rot.z = -106f;
+
+        popupTransform.eulerAngles = rot;
     }
 
     public void MoveToArea(Transform newTarget, CrewTarget room)
