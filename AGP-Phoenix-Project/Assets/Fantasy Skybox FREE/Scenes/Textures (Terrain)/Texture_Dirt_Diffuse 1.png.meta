@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 37d1938c74868484ea08b34225eb73b7
-AssetOrigin:
-  serializedVersion: 1
-  productId: 18353
-  packageName: Fantasy Skybox FREE
-  packageVersion: 1.6.5
-  assetPath: Assets/Fantasy Skybox FREE/Scenes/Textures (Terrain)/Texture_Dirt_Diffuse.png
-  uploadId: 699843
+guid: 9bee19308c4f510439403b2ac09568d6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
