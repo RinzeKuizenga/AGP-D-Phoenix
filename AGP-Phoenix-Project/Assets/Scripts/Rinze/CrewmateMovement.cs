@@ -6,6 +6,9 @@ public class CrewmateMovement : MonoBehaviour
 {
     Transform target;
     [SerializeField] float speed = 1f;
+    public CrewTarget currentRoom;  
+    public CrewTarget previousRoom;  
+    [SerializeField] public static CrewmateMovement selectedCrewmate;
 
     [SerializeField] CanvasGroup popupScreen;
     [SerializeField] float targetAlpha;
@@ -20,21 +23,31 @@ public class CrewmateMovement : MonoBehaviour
 
     }
 
-    public void MoveToArea(Transform newTarget)
+    public void MoveToArea(Transform newTarget, CrewTarget room)
     {
-        if (!isSelected) return;
+        if (!isSelected) return; 
+        
+        if (currentRoom != null)
+        {
+            currentRoom.isFilled = false;
+            currentRoom.hoverImage.color = new Color(0f, 0.7f, 0f, 0f);
+        }
+
+        previousRoom = currentRoom;
+        currentRoom = room;
+        currentRoom.isFilled = true;
+        currentRoom.hoverImage.color = new Color(0.7f, 0f, 0f, 0f);
 
         target = newTarget;
         isSelected = false;
-
+        selectedCrewmate = null;
     }
 
 
     void OnMouseDown()
     {
-        Debug.Log("Ribbit");
         isSelected = true;
-        Camera.main.GetComponent<CameraOrbiter>().ZoomIn(this.transform);
+        selectedCrewmate = this;
     }
 
     void OnMouseEnter()

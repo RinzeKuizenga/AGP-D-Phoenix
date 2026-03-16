@@ -1,35 +1,55 @@
+using System.ComponentModel;
 using UnityEngine;
 
+public enum RoomType
+{
+    Kitchen,
+    HandymanRoom,
+    SailRoom,
+    Medbay,
+    Hull
+}
 public class CrewTarget : MonoBehaviour
 {
     [SerializeField] public Transform target;
-    [SerializeField] private string currentRoom;
+    [SerializeField] RoomType roomType;
+    [SerializeField] public SpriteRenderer hoverImage;
+    [SerializeField] public bool isFilled;
+
     void OnMouseDown()
     {
-        RoomChecker();
+        if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)
+            return;
+
         CrewmateMovement[] crew = FindObjectsOfType<CrewmateMovement>();
         foreach (var c in crew)
         {
-            c.MoveToArea(target.transform);
+            CrewmateMovement.selectedCrewmate.MoveToArea(target.transform, this);
         }
 
     }
 
-    private void RoomChecker()
+    private void OnMouseEnter()
     {
-        switch (gameObject.name)
-        {
-            case "Kitchen":
-                currentRoom = "Kitchen"; break;
-            case "Handy":
-                currentRoom = "HandymanRoom"; break;
-            case "Sail":
-                currentRoom = "SailmakerRoom"; break;
-            case "Medbay":
-                currentRoom = "Medbay"; break;
-            case "Hull":
-                currentRoom = "Hull"; break;
-        }
+        if (CrewmateMovement.selectedCrewmate == null || !CrewmateMovement.selectedCrewmate.isSelected)
+            return;
 
+        SpriteRenderer sr = hoverImage.GetComponent<SpriteRenderer>();
+
+        Color c = sr.color;
+        c.a = 0.36f;
+        sr.color = c;
+    }
+
+    private void OnMouseExit()
+    {
+        if (CrewmateMovement.selectedCrewmate == null || !CrewmateMovement.selectedCrewmate.isSelected)
+            return;
+
+        SpriteRenderer sr = hoverImage.GetComponent<SpriteRenderer>();
+
+        Color c = sr.color;
+        c.a = 0f;
+        sr.color = c;
     }
 }

@@ -43,7 +43,7 @@ public class BoatController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        windTurn = Random.Range(-3f, 3);
+        windTurn = Random.Range(-0f, 0);
         targetFOV = normalFOV;
     }
 
