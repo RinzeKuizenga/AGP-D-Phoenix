@@ -16,6 +16,7 @@ public class CrewTarget : MonoBehaviour
     [SerializeField] public SpriteRenderer hoverImage;
     [SerializeField] public bool isFilled;
 
+
     void OnMouseDown()
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)
