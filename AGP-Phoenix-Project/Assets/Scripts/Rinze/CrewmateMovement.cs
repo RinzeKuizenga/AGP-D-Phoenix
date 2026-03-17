@@ -13,6 +13,7 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] CanvasGroup popupScreen;
     [SerializeField] Transform popupTransform;
     [SerializeField] float targetAlpha;
+    [SerializeField] public TextBubble textBubble;
 
     public bool isSelected = false;
 
@@ -22,6 +23,11 @@ public class CrewmateMovement : MonoBehaviour
         if (target == null) return;
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+    }
+
+    public void ShowBubble(string type)
+    {
+        textBubble.BubbleText(type);
     }
 
     void LateUpdate()

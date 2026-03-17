@@ -21,11 +21,11 @@ public class CrewTarget : MonoBehaviour
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)
         {
-            TextBubble.Instance.BubbleText("Travel");
+            CrewmateMovement.selectedCrewmate.ShowBubble("Travel");
             return;
         }
 
-        TextBubble.Instance.BubbleText("Denied");
+        CrewmateMovement.selectedCrewmate.ShowBubble("Denied");
 
         CrewmateMovement[] crew = FindObjectsOfType<CrewmateMovement>();
         foreach (var c in crew)
