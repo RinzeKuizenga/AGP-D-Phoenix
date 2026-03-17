@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wooden Stool / Chair
+* source:	https://sketchfab.com/3d-models/wooden-stool-chair-6d1d5ca63c2d4322baf3a63e1a8273ec
+* author:	plank_de (https://sketchfab.com/plank199)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wooden Stool / Chair" (https://sketchfab.com/3d-models/wooden-stool-chair-6d1d5ca63c2d4322baf3a63e1a8273ec) by plank_de (https://sketchfab.com/plank199) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

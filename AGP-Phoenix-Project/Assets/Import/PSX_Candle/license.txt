@@ -1,0 +1,11 @@
+Model Information:
+* title:	PSX Candle
+* source:	https://sketchfab.com/3d-models/psx-candle-9debe7915b8740bb83f4493c0d9a5f51
+* author:	DeadFrame Studio (https://sketchfab.com/DeadFrame)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PSX Candle" (https://sketchfab.com/3d-models/psx-candle-9debe7915b8740bb83f4493c0d9a5f51) by DeadFrame Studio (https://sketchfab.com/DeadFrame) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -33,11 +33,11 @@ MonoBehaviour:
     supportLightLayers: 1
     renderingLayerMaskBuffer: 0
     supportWater: 1
-    waterSimulationResolution: 128
+    waterSimulationResolution: 64
     supportWaterExclusion: 1
     supportWaterHorizontalDeformation: 1
     supportWaterDecals: 1
-    waterDecalAtlasSize: 256
+    waterDecalAtlasSize: 128
     maximumWaterDecalCount: 256
     waterScriptInteractionsMode: 0
     waterFullCPUSimulation: 0
@@ -119,9 +119,9 @@ MonoBehaviour:
       maxLocalVolumetricFogSize: 32
       maxLocalVolumetricFogOnScreen: 64
     hdShadowInitParams:
-      maxShadowRequests: 128
+      maxShadowRequests: 64
       directionalShadowsDepthBits: 16
-      punctualShadowFilteringQuality: 2
+      punctualShadowFilteringQuality: 0
       directionalShadowFilteringQuality: 2
       areaShadowFilteringQuality: 0
       punctualLightShadowAtlas:
@@ -154,7 +154,7 @@ MonoBehaviour:
       maxScreenSpaceShadowSlots: 4
       screenSpaceShadowBufferFormat: 48
     decalSettings:
-      drawDistance: 1000
+      drawDistance: 500
       atlasWidth: 2048
       atlasHeight: 2048
       transparentTextureResolution:
@@ -167,7 +167,7 @@ MonoBehaviour:
       lutFormat: 48
       bufferFormat: 74
     dynamicResolutionSettings:
-      enabled: 0
+      enabled: 1
       useMipBias: 0
       advancedUpscalersByPriority: 
       advancedUpscalerNames: []

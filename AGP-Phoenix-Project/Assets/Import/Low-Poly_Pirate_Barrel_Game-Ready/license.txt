@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low-Poly Pirate Barrel Game-Ready
+* source:	https://sketchfab.com/3d-models/low-poly-pirate-barrel-game-ready-b6e15c25246f4c3ba5c62ae2e2b28f8c
+* author:	Lucas Manzoni (https://sketchfab.com/lucasandresmanzoni)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low-Poly Pirate Barrel Game-Ready" (https://sketchfab.com/3d-models/low-poly-pirate-barrel-game-ready-b6e15c25246f4c3ba5c62ae2e2b28f8c) by Lucas Manzoni (https://sketchfab.com/lucasandresmanzoni) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

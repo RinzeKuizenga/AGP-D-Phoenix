@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pig Carcass
+* source:	https://sketchfab.com/3d-models/pig-carcass-5c73c8653a584dee9ebb6d2956416afe
+* author:	oparaskos (https://sketchfab.com/oparaskos)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pig Carcass" (https://sketchfab.com/3d-models/pig-carcass-5c73c8653a584dee9ebb6d2956416afe) by oparaskos (https://sketchfab.com/oparaskos) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
