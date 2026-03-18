@@ -15,6 +15,7 @@ public class CrewTarget : MonoBehaviour
     [SerializeField] RoomType roomType;
     [SerializeField] public SpriteRenderer hoverImage;
     [SerializeField] public bool isFilled;
+    [SerializeField] public RoomHealth roomHealth;
 
 
     void OnMouseDown()
@@ -30,6 +31,7 @@ public class CrewTarget : MonoBehaviour
         CrewmateMovement[] crew = FindObjectsOfType<CrewmateMovement>();
         foreach (var c in crew)
         {
+            if (CrewmateMovement.selectedCrewmate == null) return;
             CrewmateMovement.selectedCrewmate.MoveToArea(target.transform, this);
         }
 

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -14,8 +15,11 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] Transform popupTransform;
     [SerializeField] float targetAlpha;
     [SerializeField] public TextBubble textBubble;
+    [SerializeField] public float distance;
 
     public bool isSelected = false;
+
+
 
     private void Update()
     {
@@ -23,6 +27,16 @@ public class CrewmateMovement : MonoBehaviour
         if (target == null) return;
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
+        distance = Vector3.Distance(transform.position, target.position);
+        if (distance < 0.1f)
+        {
+            currentRoom.roomHealth.isHealing = true;
+        }
+        else 
+        {
+            currentRoom.roomHealth.isHealing = false;
+            previousRoom.roomHealth.isHealing = false;
+        }
     }
 
     public void ShowBubble(string type)

@@ -5,8 +5,8 @@ public class FlickeringLight : MonoBehaviour
 {
     private Light lightToFlicker;
 
-    [SerializeField] private float minIntensity = 3133473f;
-    [SerializeField] private float maxIntensity = 1.018199e+07f;
+    [SerializeField] private float minIntensity = 4f;
+    [SerializeField] private float maxIntensity = 9f;
     [SerializeField, Min(0f)] private float timeBetweenIntensity = 0.1f;
 
     private float currentTimer;
@@ -25,7 +25,7 @@ public class FlickeringLight : MonoBehaviour
     {
         currentTimer += Time.deltaTime;
         if (!(currentTimer >= timeBetweenIntensity)) return;
-        lightToFlicker.intensity = Random.Range(minIntensity, maxIntensity);
+        //lightToFlicker.vol = Random.Range(minIntensity, maxIntensity);
         currentTimer = 0;
     }
 

@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 141001160}
   - component: {fileID: 141001162}
   - component: {fileID: 141001161}
+  - component: {fileID: 141001163}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -1438,6 +1439,21 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &141001163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141001159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2
+  maxIntensity: 8
+  timeBetweenIntensity: 0.1
 --- !u!1001 &142581330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1958,6 +1974,7 @@ GameObject:
   - component: {fileID: 160389697}
   - component: {fileID: 160389699}
   - component: {fileID: 160389698}
+  - component: {fileID: 160389700}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -2187,6 +2204,32 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &160389700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160389696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2.5
+  maxIntensity: 7
+  timeBetweenIntensity: 0.07
+--- !u!114 &161062809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+  m_PrefabInstance: {fileID: 1477446149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483c20bc58de524cb4ab76457de13c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomHealth
 --- !u!1 &165336894
 GameObject:
   m_ObjectHideFlags: 0
@@ -4087,6 +4130,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2065016795}
     m_Modifications:
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1621338741263471323, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5740557
@@ -4166,6 +4225,10 @@ PrefabInstance:
     - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: roomName
       value: Keuken
+      objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: decayPerSecond
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 3935191782502542092, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5535,12 +5598,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewmateMovement
   speed: 0.37
-  currentRoom: {fileID: 0}
+  currentRoom: {fileID: 1592536683}
   previousRoom: {fileID: 0}
   popupScreen: {fileID: 443789414}
   popupTransform: {fileID: 443789413}
   targetAlpha: 0
   textBubble: {fileID: 2064191611}
+  distance: 0
   isSelected: 0
 --- !u!23 &490803290
 MeshRenderer:
@@ -7210,6 +7274,7 @@ GameObject:
   - component: {fileID: 655467083}
   - component: {fileID: 655467085}
   - component: {fileID: 655467084}
+  - component: {fileID: 655467086}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -7439,6 +7504,21 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &655467086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655467082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2.5
+  maxIntensity: 7
+  timeBetweenIntensity: 0.2
 --- !u!1 &658060204
 GameObject:
   m_ObjectHideFlags: 0
@@ -9402,6 +9482,7 @@ MonoBehaviour:
   roomType: 0
   hoverImage: {fileID: 1841828268}
   isFilled: 0
+  roomHealth: {fileID: 161062809}
 --- !u!212 &843046699
 SpriteRenderer:
   serializedVersion: 2
@@ -10146,11 +10227,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrewmateMovement
   speed: 0.37
   currentRoom: {fileID: 0}
-  previousRoom: {fileID: 0}
+  previousRoom: {fileID: 907819356}
   popupScreen: {fileID: 928232600}
   popupTransform: {fileID: 928232596}
   targetAlpha: 0
   textBubble: {fileID: 404572901}
+  distance: 0
   isSelected: 0
 --- !u!23 &894362641
 MeshRenderer:
@@ -10304,6 +10386,7 @@ MonoBehaviour:
   roomType: 0
   hoverImage: {fileID: 1512069246}
   isFilled: 0
+  roomHealth: {fileID: 1418014128}
 --- !u!212 &907819357
 SpriteRenderer:
   serializedVersion: 2
@@ -12478,6 +12561,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1592536680}
     m_Modifications:
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1621338741263471323, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5740557
@@ -12558,6 +12657,10 @@ PrefabInstance:
       propertyPath: roomName
       value: Klusruimte
       objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: decayPerSecond
+      value: 0.87
+      objectReference: {fileID: 0}
     - target: {fileID: 3935191782502542092, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 9744.91
@@ -12620,7 +12723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12748,6 +12851,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
   m_PrefabInstance: {fileID: 1099138308}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1099138311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+  m_PrefabInstance: {fileID: 1099138308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483c20bc58de524cb4ab76457de13c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomHealth
 --- !u!1 &1102463535
 GameObject:
   m_ObjectHideFlags: 0
@@ -14399,12 +14513,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewmateMovement
   speed: 0.37
-  currentRoom: {fileID: 0}
+  currentRoom: {fileID: 2140633636}
   previousRoom: {fileID: 0}
   popupScreen: {fileID: 1028045307}
   popupTransform: {fileID: 1028045306}
   targetAlpha: 0
   textBubble: {fileID: 1445862749}
+  distance: 0
   isSelected: 0
 --- !u!23 &1146037227
 MeshRenderer:
@@ -14474,6 +14589,7 @@ GameObject:
   - component: {fileID: 1152471510}
   - component: {fileID: 1152471512}
   - component: {fileID: 1152471511}
+  - component: {fileID: 1152471513}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -14703,6 +14819,21 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1152471513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152471509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2.5
+  maxIntensity: 7
+  timeBetweenIntensity: 0.2
 --- !u!1 &1159573937
 GameObject:
   m_ObjectHideFlags: 0
@@ -14926,6 +15057,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175146617}
   m_CullTransparentMesh: 1
+--- !u!114 &1175612479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+  m_PrefabInstance: {fileID: 375375562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483c20bc58de524cb4ab76457de13c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomHealth
 --- !u!1001 &1185656024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15590,6 +15732,7 @@ GameObject:
   - component: {fileID: 1300637198}
   - component: {fileID: 1300637200}
   - component: {fileID: 1300637199}
+  - component: {fileID: 1300637201}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -15819,6 +15962,21 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1300637201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300637197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2.5
+  maxIntensity: 7
+  timeBetweenIntensity: 2
 --- !u!1 &1302532632
 GameObject:
   m_ObjectHideFlags: 0
@@ -16098,6 +16256,7 @@ MonoBehaviour:
   popupTransform: {fileID: 0}
   targetAlpha: 0
   textBubble: {fileID: 0}
+  distance: 0
   isSelected: 0
 --- !u!212 &1320305157
 SpriteRenderer:
@@ -16293,6 +16452,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
   m_PrefabInstance: {fileID: 2064867011}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1339308941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+  m_PrefabInstance: {fileID: 2064867011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483c20bc58de524cb4ab76457de13c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomHealth
 --- !u!1001 &1360915262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16454,6 +16624,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 907819353}
     m_Modifications:
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1621338741263471323, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5740557
@@ -16534,6 +16720,10 @@ PrefabInstance:
       propertyPath: roomName
       value: Zeilmakerij
       objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: decayPerSecond
+      value: 0.87
+      objectReference: {fileID: 0}
     - target: {fileID: 3935191782502542092, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 9744.91
@@ -16596,7 +16786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16799,6 +16989,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414889007}
   m_CullTransparentMesh: 1
+--- !u!114 &1418014128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+  m_PrefabInstance: {fileID: 1371510576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483c20bc58de524cb4ab76457de13c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomHealth
 --- !u!4 &1420872107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6042428962646985246, guid: 12bf0017ff645624bb794999fac1f6d4, type: 3}
@@ -17103,6 +17304,7 @@ GameObject:
   - component: {fileID: 1466016563}
   - component: {fileID: 1466016565}
   - component: {fileID: 1466016564}
+  - component: {fileID: 1466016566}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -17332,6 +17534,21 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1466016566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466016562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2.5
+  maxIntensity: 7
+  timeBetweenIntensity: 0.1
 --- !u!1 &1474020547
 GameObject:
   m_ObjectHideFlags: 0
@@ -17482,6 +17699,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 843046695}
     m_Modifications:
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1621338741263471323, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5740557
@@ -17561,6 +17794,14 @@ PrefabInstance:
     - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: roomName
       value: Romp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: isHealing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: decayPerSecond
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 3935191782502542092, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -17758,6 +17999,7 @@ GameObject:
   - component: {fileID: 1484488692}
   - component: {fileID: 1484488694}
   - component: {fileID: 1484488693}
+  - component: {fileID: 1484488695}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -17987,6 +18229,21 @@ Light:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1484488695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484488691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afafeaaf5d9f48d4abe098b350f8397c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlickeringLight
+  minIntensity: 2.5
+  maxIntensity: 7
+  timeBetweenIntensity: 0.15
 --- !u!224 &1511412472 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5242694536218802056, guid: 5fb94cca2dae94b4c9e5a0c93f5cc48a, type: 3}
@@ -18777,6 +19034,7 @@ MonoBehaviour:
   roomType: 0
   hoverImage: {fileID: 1844923265}
   isFilled: 0
+  roomHealth: {fileID: 1099138311}
 --- !u!212 &1592536684
 SpriteRenderer:
   serializedVersion: 2
@@ -20086,12 +20344,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewmateMovement
   speed: 0.37
-  currentRoom: {fileID: 0}
+  currentRoom: {fileID: 2065016797}
   previousRoom: {fileID: 0}
   popupScreen: {fileID: 1010620196}
   popupTransform: {fileID: 1010620195}
   targetAlpha: 0
   textBubble: {fileID: 2026928600}
+  distance: 0
   isSelected: 0
 --- !u!23 &1696687554
 MeshRenderer:
@@ -24092,6 +24351,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2140633633}
     m_Modifications:
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 532000717693735336, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1621338741263471323, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5740557
@@ -24176,6 +24451,10 @@ PrefabInstance:
       propertyPath: roomName
       value: Ziekekamer
       objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: decayPerSecond
+      value: 0.87
+      objectReference: {fileID: 0}
     - target: {fileID: 3935191782502542092, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 9744.91
@@ -24238,7 +24517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.31
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 6734872962084541702, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24473,6 +24752,7 @@ MonoBehaviour:
   roomType: 0
   hoverImage: {fileID: 1084183084}
   isFilled: 0
+  roomHealth: {fileID: 1175612479}
 --- !u!65 &2065016799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25585,6 +25865,7 @@ MonoBehaviour:
   roomType: 0
   hoverImage: {fileID: 616503081}
   isFilled: 0
+  roomHealth: {fileID: 1339308941}
 --- !u!212 &2140633637
 SpriteRenderer:
   serializedVersion: 2
