@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crew
   sprite: {fileID: 21300000, guid: be1f7d2b2f9304b4e96c59343dd4a641, type: 3}
   SpecialtyIcon: {fileID: 241798540, guid: fb7777e50be19e94493567e52d3aece2, type: 3}
-  crewclass: 'Vaardigheid: Kok'
+  specialtyText: 'Vaardigheid: Kok'
+  specialty: Kok
+  crewSkillLevel: 7
   crewname: Koen van keuken
   crewSpeed: 5
+  crewHealth: 100
+  crewHunger: 110

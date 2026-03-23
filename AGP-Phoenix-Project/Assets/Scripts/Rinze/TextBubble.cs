@@ -3,7 +3,6 @@ using UnityEngine;
 using System.Collections;
 public class TextBubble : MonoBehaviour
 {
-    public static TextBubble Instance { get; private set; }
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private float targetAlpha;
     [SerializeField] public CanvasGroup textBubble;
@@ -13,16 +12,6 @@ public class TextBubble : MonoBehaviour
 
 
     private Coroutine currentRoutine;
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
 
     void LateUpdate()
     {

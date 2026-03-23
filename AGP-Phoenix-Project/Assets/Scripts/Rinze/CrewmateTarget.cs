@@ -12,24 +12,26 @@ public enum RoomType
 public class CrewTarget : MonoBehaviour
 {
     [SerializeField] public Transform target;
-    [SerializeField] RoomType roomType;
+    [SerializeField] public RoomType roomType;
     [SerializeField] public SpriteRenderer hoverImage;
     [SerializeField] public bool isFilled;
+    [SerializeField] public RoomHealth roomHealth;
 
 
     void OnMouseDown()
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)
         {
-            TextBubble.Instance.BubbleText("Travel");
+            CrewmateMovement.selectedCrewmate.ShowBubble("Travel");
             return;
         }
 
-        TextBubble.Instance.BubbleText("Denied");
+        CrewmateMovement.selectedCrewmate.ShowBubble("Denied");
 
         CrewmateMovement[] crew = FindObjectsOfType<CrewmateMovement>();
         foreach (var c in crew)
         {
+            if (CrewmateMovement.selectedCrewmate == null) return;
             CrewmateMovement.selectedCrewmate.MoveToArea(target.transform, this);
         }
 
