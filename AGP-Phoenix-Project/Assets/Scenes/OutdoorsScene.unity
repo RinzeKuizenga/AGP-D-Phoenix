@@ -6781,6 +6781,10 @@ MonoBehaviour:
   windParticles: {fileID: 0}
   windposLeft: {fileID: 0}
   windposRight: {fileID: 0}
+  rainParticles: {fileID: 0}
+  rainPos: {fileID: 0}
+  windArrow: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1542267777
 GameObject:
   m_ObjectHideFlags: 0
@@ -7930,6 +7934,10 @@ MonoBehaviour:
   windParticles: {fileID: 0}
   windposLeft: {fileID: 0}
   windposRight: {fileID: 0}
+  rainParticles: {fileID: 0}
+  rainPos: {fileID: 0}
+  windArrow: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1872400030
 GameObject:
   m_ObjectHideFlags: 0

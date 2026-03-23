@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "TerrainSO/NoiseData")]
-public class NoiseData : UpdatableData
+public class NoiseData : ScriptableObject
 {
     public Noise.NormalizeMode normalizeMode;
     
@@ -14,16 +14,5 @@ public class NoiseData : UpdatableData
 
     public int seed;
     public Vector2 offset;
-
-    protected override void OnValidate()
-    {
-        if (lacunarity < 1) {
-            lacunarity = 1;
-        }
-        if (octaves < 0) {
-            octaves = 0;
-        }
-        
-        base.OnValidate();
-    }
+    
 }

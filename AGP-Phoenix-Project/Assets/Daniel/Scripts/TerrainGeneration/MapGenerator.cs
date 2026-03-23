@@ -173,48 +173,7 @@ public class MapGenerator : MonoBehaviour
 
         return new MapData(noiseMap);
     }
-
-    void OnValidate()
-    {
-        if (terrainData != null)
-        {
-            terrainData.OnValuesUpdated -= OnValuesUpdated;
-            terrainData.OnValuesUpdated += OnValuesUpdated;
-        }
-
-        if (noiseData != null)
-        {
-            noiseData.OnValuesUpdated -= OnValuesUpdated;
-            noiseData.OnValuesUpdated += OnValuesUpdated;
-        }
-
-        if (textureData != null)
-        {
-            textureData.OnValuesUpdated -= OnTexturesValuesUpdated;
-            textureData.OnValuesUpdated += OnTexturesValuesUpdated;
-        }
-
-        // Push heights and textures immediately in the editor
-        // (Start() doesn't run in edit mode)
-        // Use delayCall so Material API runs safely outside OnValidate's restricted context
-        if (material != null && textureData != null && terrainData != null)
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.delayCall += () =>
-            {
-                if (material != null && textureData != null && terrainData != null)
-                {
-                    textureData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
-                    textureData.ApplyToMaterial(material);
-                }
-            };
-#else
-            textureData.UpdateMeshHeights(material, terrainData.minHeight, terrainData.maxHeight);
-            textureData.ApplyToMaterial(material);
-#endif
-        }
-    }
-
+    
     struct MapThreadInfo<T>
     {
         public readonly Action<T> callback;
