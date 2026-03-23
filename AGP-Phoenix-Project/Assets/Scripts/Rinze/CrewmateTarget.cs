@@ -12,7 +12,7 @@ public enum RoomType
 public class CrewTarget : MonoBehaviour
 {
     [SerializeField] public Transform target;
-    [SerializeField] RoomType roomType;
+    [SerializeField] public RoomType roomType;
     [SerializeField] public SpriteRenderer hoverImage;
     [SerializeField] public bool isFilled;
     [SerializeField] public RoomHealth roomHealth;
