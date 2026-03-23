@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "TerrainSO/TerrainData")]
-public class TerrainData : UpdatableData
+public class TerrainData : ScriptableObject
 {
     public float uniformScale = 2.5f;
 
