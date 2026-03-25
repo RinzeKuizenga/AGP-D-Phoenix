@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class ScrubGameManager : MonoBehaviour
 {
     private int totalDirt;
     private int cleanedDirt;
+
+    [SerializeField] public Animator animator;
 
     void Start()
     {
@@ -12,6 +15,7 @@ public class ScrubGameManager : MonoBehaviour
 
         foreach (var dirt in allDirt)
         {
+            Debug.Log("Assigned");
             dirt.OnCleaned += HandleCleaned;
         }
     }
@@ -22,13 +26,20 @@ public class ScrubGameManager : MonoBehaviour
 
         if (cleanedDirt >= totalDirt)
         {
+            Debug.Log($"Cleaned: {cleanedDirt}");
             WinGame();
         }
     }
 
     void WinGame()
     {
-        Debug.Log("You win!");
-        // TODO: play sound, animation, next minigame, etc.
+        StartCoroutine(SparkleAndQuit());
+    }
+
+    IEnumerator SparkleAndQuit()
+    {
+        animator.SetTrigger("sparkle");
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);  
     }
 }

@@ -15,6 +15,8 @@ public class RoomHealthUI : MonoBehaviour
     [SerializeField] private Color warningColor = Color.yellow;
     [SerializeField] private Color criticalColor = Color.red;
 
+    [SerializeField] private GameObject fixButton;
+
     private RoomHealth roomHealth;
 
     private void Awake()
@@ -67,6 +69,7 @@ public class RoomHealthUI : MonoBehaviour
     {
         if (healthText != null)
         {
+            fixButton.SetActive(true);
             healthText.text = "KAPOT!";
             healthText.color = criticalColor;
         }

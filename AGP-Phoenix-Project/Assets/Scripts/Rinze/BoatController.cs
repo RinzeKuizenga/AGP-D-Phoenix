@@ -39,6 +39,11 @@ public class BoatController : MonoBehaviour
 
     [Header("Boat Animations")]
     public Animator animator;
+
+    [Header("Sound Effects")]
+    [SerializeField] AudioClip sailUp;
+    [SerializeField] AudioClip sailOut;
+    [SerializeField] AudioClip sailSnap;
     
     void Start()
     {
@@ -130,5 +135,19 @@ public class BoatController : MonoBehaviour
             windParticles.Stop();
         }
         rainParticles.transform.position = rainPos.position;
+    }
+
+    public void PlaySailOutSound()
+    {
+        AudioManager.Instance.PlaySFX(sailOut, 1f);
+    }
+    public void PlaySailInSound()
+    {
+        AudioManager.Instance.PlaySFX(sailUp, 1f);
+    }
+
+    public void PlaySailSnapSound()
+    {
+        AudioManager.Instance.PlaySFX(sailSnap, 1f);
     }
 }

@@ -26,7 +26,7 @@ public class PauseScreen : MonoBehaviour
     void PauseGame()
     {
         UIManager.Instance.SetAnimating(true);
-        AudioManager.Instance.PlaySFX(openSound);
+        AudioManager.Instance.PlaySFX(openSound, 0.50f);
 
         isPaused = true;
 
