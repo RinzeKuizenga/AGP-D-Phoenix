@@ -1,29 +1,44 @@
-using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CrewMateStats : MonoBehaviour
 {
-    [Header("Refs")] 
-    [SerializeField] private CrewmateMovement crewmateMovement;
-    [SerializeField] private Crew crewData;
-    [SerializeField] private TextMeshProUGUI crewname;
-    [SerializeField] private Slider healthSlider;
-    [SerializeField] private Slider hungerSlider;
-    
-    private float maxHealth;
+    [Header("Health")]
+    public float health = 100f;
+    public float maxHealth = 100f;
 
-    private void Start()
+    [Header("Hunger")]
+    public float hunger = 100f;
+    public float maxHunger = 100f;
+    public float hungerDecayRate = 1f; // per second
+
+    private void Update()
     {
-        maxHealth = crewData.crewHealth;
-        healthSlider.maxValue = maxHealth;
+        DecayHunger();
     }
 
-    public void DealDamageToCrew()
+    private void DecayHunger()
     {
-        maxHealth -= crewData.crewDamageReceived;
-        healthSlider.value = maxHealth;
+        hunger = Mathf.Max(hunger - hungerDecayRate * Time.deltaTime, 0f);
+
+        if (hunger <= 0f)
+            health = Mathf.Max(health - Time.deltaTime, 0f); // starving damages health
     }
-    
+
+    public void Heal(float amount)
+    {
+        health = Mathf.Min(health + amount, maxHealth);
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health = Mathf.Max(health - amount, 0f);
+    }
+
+    public void Feed(float amount)
+    {
+        hunger = Mathf.Min(hunger + amount, maxHunger);
+    }
+
+    public bool IsDead() => health <= 0f;
+    public bool IsStarving() => hunger <= 0f;
 }
