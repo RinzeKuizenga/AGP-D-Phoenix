@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum RoomType
 {
@@ -16,8 +17,11 @@ public class CrewTarget : MonoBehaviour
     [SerializeField] public SpriteRenderer hoverImage;
     [SerializeField] public bool isFilled;
     [SerializeField] public RoomHealth roomHealth;
-
-
+    
+    [Header("Events")]
+    public UnityEvent onEnter;
+    
+    
     void OnMouseDown()
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)

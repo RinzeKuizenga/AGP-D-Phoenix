@@ -10,7 +10,8 @@ public class Crew : ScriptableObject
     public int crewSkillLevel;
     public string crewname;
     public int crewSpeed;
-    public int crewHealth;
-    public int crewHunger;
+    public float crewHealth;
+    public float crewHunger;
+    public float crewDamageReceived;
 
 }
