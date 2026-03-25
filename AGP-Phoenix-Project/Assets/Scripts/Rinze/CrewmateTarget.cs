@@ -64,4 +64,9 @@ public class CrewTarget : MonoBehaviour
         c.a = 0f;
         sr.color = c;
     }
+
+    public void StartEffect()
+    {
+        onEnter.Invoke();
+    }
 }

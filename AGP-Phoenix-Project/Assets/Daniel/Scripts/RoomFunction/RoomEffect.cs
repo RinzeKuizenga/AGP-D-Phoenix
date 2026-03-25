@@ -7,12 +7,12 @@ public abstract class RoomEffect : MonoBehaviour
     public abstract void StartEffect();
     public abstract void StopEffect();
 
-    protected CrewmateStats GetCrewmateStats()
+    protected CrewMateStats GetCrewmateStats()
     {
         CrewmateMovement crewmate = CrewmateMovement.selectedCrewmate;
         if (crewmate == null || crewmate.currentRoom != crewTarget) return null;
 
-        return crewmate.GetComponent<CrewmateStats>();
+        return crewmate.GetComponent<CrewMateStats>();
     }
 
     protected bool IsCrewmatePresent()

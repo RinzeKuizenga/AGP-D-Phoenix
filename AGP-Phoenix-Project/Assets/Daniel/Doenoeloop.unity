@@ -500,7 +500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &29523047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -729,7 +729,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71708942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5.715379, y: 5.7153797, z: 5.715381}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3679,8 +3679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &238014619
 PrefabInstance:
@@ -4411,7 +4411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &302856143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4573,7 +4573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &309865887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5753,7 +5753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &390671445
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6949,6 +6949,7 @@ GameObject:
   - component: {fileID: 490803289}
   - component: {fileID: 490803288}
   - component: {fileID: 490803292}
+  - component: {fileID: 490803293}
   m_Layer: 6
   m_Name: Crewmate (1)
   m_TagString: Untagged
@@ -7087,10 +7088,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
-  crewData: {fileID: 0}
-  crewname: {fileID: 0}
-  healthSlider: {fileID: 0}
-  hungerSlider: {fileID: 0}
+  health: 100
+  maxHealth: 100
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+--- !u!114 &490803293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490803286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 490803292}
+  healthSlider: {fileID: 500348000}
+  hungerSlider: {fileID: 1960456581}
 --- !u!1001 &496129698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8273,8 +8290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &572039613
 GameObject:
@@ -9109,8 +9126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10.000004, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &655467082
 GameObject:
@@ -9820,7 +9837,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 701468068}
   m_FillRect: {fileID: 1638707909}
   m_HandleRect: {fileID: 701468067}
@@ -11955,6 +11972,9 @@ MonoBehaviour:
   hoverImage: {fileID: 1841828268}
   isFilled: 0
   roomHealth: {fileID: 161062809}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &843046699
 SpriteRenderer:
   serializedVersion: 2
@@ -12259,8 +12279,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &862379465 stripped
 Transform:
@@ -12667,6 +12687,7 @@ GameObject:
   - component: {fileID: 894362639}
   - component: {fileID: 894362643}
   - component: {fileID: 894362644}
+  - component: {fileID: 894362645}
   m_Layer: 6
   m_Name: Crewmate
   m_TagString: Untagged
@@ -12805,10 +12826,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
-  crewData: {fileID: 0}
-  crewname: {fileID: 0}
-  healthSlider: {fileID: 0}
-  hungerSlider: {fileID: 0}
+  health: 100
+  maxHealth: 0
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+--- !u!114 &894362645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894362637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 894362644}
+  healthSlider: {fileID: 668226058}
+  hungerSlider: {fileID: 2042016618}
 --- !u!1 &907819352
 GameObject:
   m_ObjectHideFlags: 0
@@ -12883,6 +12920,9 @@ MonoBehaviour:
   hoverImage: {fileID: 1512069246}
   isFilled: 0
   roomHealth: {fileID: 1418014128}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &907819357
 SpriteRenderer:
   serializedVersion: 2
@@ -14160,6 +14200,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993522801}
   m_CullTransparentMesh: 1
+--- !u!1 &994113731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994113733}
+  - component: {fileID: 994113732}
+  m_Layer: 6
+  m_Name: MedbayEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &994113732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994113731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f336889befa30d34887bb41f26cb350c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MedbayEffect
+  crewTarget: {fileID: 2140633636}
+  healAmount: 10
+  healInterval: 1
+--- !u!4 &994113733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994113731}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.424438, y: 2.9916313, z: 0.023539834}
+  m_LocalScale: {x: 1.6806073, y: 1.7370025, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2140633633}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001617876
 GameObject:
   m_ObjectHideFlags: 0
@@ -15295,8 +15382,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1040880932
 GameObject:
@@ -17386,8 +17473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1120893765
 GameObject:
@@ -17877,6 +17964,7 @@ GameObject:
   - component: {fileID: 1146037226}
   - component: {fileID: 1146037225}
   - component: {fileID: 1146037229}
+  - component: {fileID: 1146037230}
   m_Layer: 6
   m_Name: Crewmate (2)
   m_TagString: Untagged
@@ -18015,10 +18103,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
-  crewData: {fileID: 0}
-  crewname: {fileID: 0}
-  healthSlider: {fileID: 0}
-  hungerSlider: {fileID: 0}
+  health: 100
+  maxHealth: 0
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+--- !u!114 &1146037230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146037223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 1146037229}
+  healthSlider: {fileID: 182763493}
+  hungerSlider: {fileID: 237080754}
 --- !u!1 &1149185068
 GameObject:
   m_ObjectHideFlags: 0
@@ -20836,7 +20940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1336504855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21961,7 +22065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1452914202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23723,6 +23827,9 @@ MonoBehaviour:
   hoverImage: {fileID: 1844923265}
   isFilled: 0
   roomHealth: {fileID: 1099138311}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1592536684
 SpriteRenderer:
   serializedVersion: 2
@@ -25470,6 +25577,7 @@ GameObject:
   - component: {fileID: 1696687553}
   - component: {fileID: 1696687552}
   - component: {fileID: 1696687556}
+  - component: {fileID: 1696687557}
   m_Layer: 6
   m_Name: Crewmate (3)
   m_TagString: Untagged
@@ -25608,10 +25716,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
-  crewData: {fileID: 0}
-  crewname: {fileID: 0}
-  healthSlider: {fileID: 0}
-  hungerSlider: {fileID: 0}
+  health: 100
+  maxHealth: 0
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+--- !u!114 &1696687557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696687550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 1696687556}
+  healthSlider: {fileID: 14901003}
+  hungerSlider: {fileID: 71708944}
 --- !u!1 &1698121314
 GameObject:
   m_ObjectHideFlags: 0
@@ -26519,8 +26643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1804933941
 GameObject:
@@ -30023,7 +30147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2022761661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30381,7 +30505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2033392690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30640,7 +30764,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 670865135}
   m_FillRect: {fileID: 1248345594}
   m_HandleRect: {fileID: 670865134}
@@ -30652,6 +30776,53 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2049844462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049844464}
+  - component: {fileID: 2049844463}
+  m_Layer: 6
+  m_Name: KitchenEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2049844463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049844462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3c48f2c05a1c24b9ea4628141d2ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KitchenEffect
+  crewTarget: {fileID: 2065016797}
+  feedAmount: 10
+  feedInterval: 1
+--- !u!4 &2049844464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049844462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2065016795}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2060862246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4860968279891990298, guid: 70f1859e53051c84b84db265aa6c11f0, type: 3}
@@ -31121,6 +31292,7 @@ Transform:
   - {fileID: 1021661643}
   - {fileID: 8447171619224851509}
   - {fileID: 1084183083}
+  - {fileID: 2049844464}
   m_Father: {fileID: 1914201393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2065016796
@@ -31199,6 +31371,21 @@ MonoBehaviour:
   hoverImage: {fileID: 1084183084}
   isFilled: 0
   roomHealth: {fileID: 1175612479}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2049844463}
+        m_TargetAssemblyTypeName: KitchenEffect, Assembly-CSharp
+        m_MethodName: StartEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &2065016799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32277,8 +32464,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2135718311
 GameObject:
@@ -32346,6 +32533,7 @@ Transform:
   m_Children:
   - {fileID: 1209033127}
   - {fileID: 616503080}
+  - {fileID: 994113733}
   m_Father: {fileID: 1914201393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2140633635
@@ -32386,6 +32574,21 @@ MonoBehaviour:
   hoverImage: {fileID: 616503081}
   isFilled: 0
   roomHealth: {fileID: 1339308941}
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 994113732}
+        m_TargetAssemblyTypeName: MedbayEffect, Assembly-CSharp
+        m_MethodName: StartEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &2140633637
 SpriteRenderer:
   serializedVersion: 2

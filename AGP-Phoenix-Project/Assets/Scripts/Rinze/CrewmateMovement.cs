@@ -85,6 +85,12 @@ public class CrewmateMovement : MonoBehaviour
 
         if (currentRoom != null)
         {
+            RoomEffect oldEffect = currentRoom.GetComponent<RoomEffect>();
+            if (oldEffect != null)
+            {
+                oldEffect.StopEffect();
+            }
+            
             currentRoom.isFilled = false;
             currentRoom.hoverImage.color = new Color(0f, 0.7f, 0f, 0f);
         }
