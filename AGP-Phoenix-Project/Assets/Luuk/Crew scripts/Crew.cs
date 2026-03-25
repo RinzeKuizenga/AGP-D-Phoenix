@@ -5,8 +5,12 @@ public class Crew : ScriptableObject
 {
     public Sprite sprite;
     public Sprite SpecialtyIcon;
-    public string crewclass;
+    public string specialtyText;
+    public string specialty;
+    public int crewSkillLevel;
     public string crewname;
     public int crewSpeed;
+    public int crewHealth;
+    public int crewHunger;
 
 }

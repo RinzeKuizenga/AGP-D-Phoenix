@@ -15,8 +15,8 @@ public class CrewDisplay : MonoBehaviour
     void Start()
     {
         crewname.text = crewMate.crewname;
-        crewclass.text = crewMate.crewclass;
-        crewImage.sprite = crewMate.sprite;
+        crewclass.text = crewMate.specialtyText;
+    crewImage.sprite = crewMate.sprite;
         crewIcon.sprite = crewMate.SpecialtyIcon;
     }
 
