@@ -21,3 +21,4 @@ MonoBehaviour:
   crewSpeed: 5
   crewHealth: 100
   crewHunger: 100
+  crewDamageReceived: 0.2
