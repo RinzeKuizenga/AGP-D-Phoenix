@@ -175,3 +175,37 @@
 .compass-marker-hidden {
     display: none;
 }
+
+/* ============================================================
+   Destination Feedback Panel (bottom-left corner)
+   ============================================================ */
+.destination-panel {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    flex-direction: column;
+    padding: 10px 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.destination-name {
+    color: rgb(255, 200, 50);
+    font-size: 16px;
+    -unity-font-style: bold;
+    -unity-text-outline-width: 0.5px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.destination-distance {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    margin-top: 4px;
+    padding: 0;
+    white-space: nowrap;
+}

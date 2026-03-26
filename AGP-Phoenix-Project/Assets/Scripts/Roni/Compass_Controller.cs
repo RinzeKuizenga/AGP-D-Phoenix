@@ -266,7 +266,7 @@ public class Compass_Controller : MonoBehaviour
         float strip_width = 720f * pixels_per_degree;
         compass_strip.style.width = strip_width;
 
-        // Generate ticks from -180 to 540 (720° for seamless wrapping)
+        // Generate ticks from -180 to 540 (720Â° for seamless wrapping)
         for (int deg = -180; deg <= 540; deg += 5)
         {
             float x = (deg + 180f) * pixels_per_degree;
@@ -425,6 +425,15 @@ public class Compass_Controller : MonoBehaviour
     /// Returns true if all waypoints have been reached.
     /// </summary>
     public bool all_waypoints_reached() => active_waypoint_index >= waypoints.Count;
+
+    /// <summary>
+    /// Returns the data of the current active waypoint, or null if all are reached.
+    /// </summary>
+    public Compass_Marker_Data get_active_waypoint_data()
+    {
+        if (active_waypoint_index >= waypoints.Count) return null;
+        return waypoints[active_waypoint_index];
+    }
 
     #endregion
 
