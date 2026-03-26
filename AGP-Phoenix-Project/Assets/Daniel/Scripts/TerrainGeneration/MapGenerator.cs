@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using UnityEditor.AssetImporters;
 using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour

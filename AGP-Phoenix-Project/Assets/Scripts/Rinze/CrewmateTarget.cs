@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum RoomType
 {
@@ -12,24 +13,29 @@ public enum RoomType
 public class CrewTarget : MonoBehaviour
 {
     [SerializeField] public Transform target;
-    [SerializeField] RoomType roomType;
+    [SerializeField] public RoomType roomType;
     [SerializeField] public SpriteRenderer hoverImage;
     [SerializeField] public bool isFilled;
-
-
+    [SerializeField] public RoomHealth roomHealth;
+    
+    [Header("Events")]
+    public UnityEvent onEnter;
+    
+    
     void OnMouseDown()
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)
         {
-            TextBubble.Instance.BubbleText("Travel");
+            CrewmateMovement.selectedCrewmate.ShowBubble("Travel");
             return;
         }
 
-        TextBubble.Instance.BubbleText("Denied");
+        CrewmateMovement.selectedCrewmate.ShowBubble("Denied");
 
         CrewmateMovement[] crew = FindObjectsOfType<CrewmateMovement>();
         foreach (var c in crew)
         {
+            if (CrewmateMovement.selectedCrewmate == null) return;
             CrewmateMovement.selectedCrewmate.MoveToArea(target.transform, this);
         }
 
@@ -57,5 +63,10 @@ public class CrewTarget : MonoBehaviour
         Color c = sr.color;
         c.a = 0f;
         sr.color = c;
+    }
+
+    public void StartEffect()
+    {
+        onEnter.Invoke();
     }
 }

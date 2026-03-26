@@ -13,6 +13,7 @@ public class RoomHealth : MonoBehaviour
     private float currentHealth;
     private bool isDestroyed = false;
     private float pauseTimer = 0f;
+    public bool isHealing;
 
     public event Action<float, float> OnHealthChanged;
     public event Action<RoomHealth> OnRoomDestroyed;
@@ -42,8 +43,18 @@ public class RoomHealth : MonoBehaviour
             return;
         }
 
-        float decay = decayPerSecond * Time.deltaTime;
-        currentHealth = Mathf.Max(0f, currentHealth - decay);
+        float change = decayPerSecond * Time.deltaTime;
+
+        if (!isHealing)
+        {
+            currentHealth -= change;
+        }
+        else
+        {
+            currentHealth += change;
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
 
@@ -59,7 +70,10 @@ public class RoomHealth : MonoBehaviour
         if (isDestroyed) return;
 
         pauseTimer = pauseDuration;
-        currentHealth = Mathf.Min(maxHealth, currentHealth + healAmount);
+        currentHealth += healAmount;
+
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 

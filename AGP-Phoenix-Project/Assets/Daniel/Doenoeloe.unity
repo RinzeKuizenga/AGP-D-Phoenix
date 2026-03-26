@@ -9841,7 +9841,6 @@ GameObject:
   - component: {fileID: 1201440806}
   - component: {fileID: 1201440809}
   - component: {fileID: 1201440811}
-  - component: {fileID: 1201440812}
   - component: {fileID: 1201440810}
   m_Layer: 0
   m_Name: Ship Object
@@ -10026,23 +10025,6 @@ MonoBehaviour:
   OnBoatSunk:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1201440812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1201440803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62c77d25fb960f4ea114ed7248783f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebrisToHullDamage
-  plankDamage: 10
-  wreckDamage: 35
-  debrisTag: Debris
-  wreckTag: Wreck
-  hitCooldown: 2
 --- !u!1 &1211605336
 GameObject:
   m_ObjectHideFlags: 0
@@ -10052,7 +10034,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1211605338}
-  - component: {fileID: 1211605339}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10075,31 +10056,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1211605339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211605336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0dafd8704641f41b32284cb026455e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebrisSpawner
-  player: {fileID: 1201440804}
-  plankPrefabs:
-  - {fileID: 3001970110166375089, guid: 4c3ae2e27c009ed4a9a350ef1c763625, type: 3}
-  wreckPrefabs:
-  - {fileID: 6811390840361564508, guid: d2454b009f318f3438345f01671ee9ca, type: 3}
-  spawnDistanceAhead: 100
-  laneHalfWidth: 40
-  despawnDistanceBehind: 30
-  plankSpawnInterval: 10
-  wreckSpawnInterval: 25
-  minPlanksPerCluster: 2
-  maxPlanksPerCluster: 5
-  clusterRadius: 3
 --- !u!1 &1320305153
 GameObject:
   m_ObjectHideFlags: 0
@@ -10168,7 +10124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3715419b25f35b4478ae6fd96147b9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  target: {fileID: 2065016795}
+  speed: 1
+  currentRoom: {fileID: 0}
+  previousRoom: {fileID: 0}
+  popupScreen: {fileID: 0}
+  popupTransform: {fileID: 0}
+  targetAlpha: 0
+  isSelected: 0
 --- !u!212 &1320305157
 SpriteRenderer:
   serializedVersion: 2
@@ -11713,6 +11675,8 @@ MonoBehaviour:
   transitionSpeed: 3
   oceanAmbience: {fileID: 574630877}
   waterCutter: {fileID: 582548639}
+  regularShip: {fileID: 0}
+  sideShip: {fileID: 0}
 --- !u!114 &1823688470
 MonoBehaviour:
   m_ObjectHideFlags: 0
