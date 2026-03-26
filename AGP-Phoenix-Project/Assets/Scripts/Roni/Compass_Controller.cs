@@ -33,9 +33,6 @@ public class Compass_Controller : MonoBehaviour
     [SerializeField, Tooltip("Color used to highlight the active (next) waypoint.")]
     private Color active_marker_color = new Color(1f, 0.78f, 0.2f, 1f); // gold
 
-    [SerializeField, Tooltip("Distance in meters at which a waypoint is considered reached.")]
-    private float arrival_threshold = 3f;
-
     [Header("Editor Preview")]
     [SerializeField, Tooltip("Simulated heading in edit mode. 0=N 90=E 180=S 270=W."), Range(0f, 360f)]
     private float editor_preview_heading;
@@ -122,7 +119,6 @@ public class Compass_Controller : MonoBehaviour
         }
 
         update_strip_position();
-        check_waypoint_arrival();
         update_markers();
     }
 
@@ -199,7 +195,7 @@ public class Compass_Controller : MonoBehaviour
         if (root.childCount == 0)
             return;
 
-        compass_strip = root.Q<VisualElement>("compass-strip");
+        compass_strip   = root.Q<VisualElement>("compass-strip");
         compass_markers = root.Q<VisualElement>("compass-markers");
 
         if (compass_strip != null && compass_strip.childCount == 0)
@@ -230,7 +226,7 @@ public class Compass_Controller : MonoBehaviour
     private void initialize_compass()
     {
         VisualElement root = ui_document.rootVisualElement;
-        compass_strip = root.Q<VisualElement>("compass-strip");
+        compass_strip   = root.Q<VisualElement>("compass-strip");
         compass_markers = root.Q<VisualElement>("compass-markers");
 
         if (compass_strip == null)
@@ -365,29 +361,6 @@ public class Compass_Controller : MonoBehaviour
     #endregion
 
     #region Waypoint Progression
-
-    /// <summary>
-    /// Checks if the player has reached the active waypoint and advances if so.
-    /// </summary>
-    private void check_waypoint_arrival()
-    {
-#if UNITY_EDITOR
-        if (!Application.isPlaying) return;
-#endif
-        if (active_waypoint_index >= waypoints.Count) return;
-
-        Transform active_target = waypoints[active_waypoint_index].target;
-        if (active_target == null) return;
-
-        Vector3 player_pos = get_player_position();
-        Vector3 delta = active_target.position - player_pos;
-        delta.y = 0f;
-
-        if (delta.magnitude <= arrival_threshold)
-        {
-            advance_to_next_waypoint();
-        }
-    }
 
     /// <summary>
     /// Advances to the next waypoint in the list and refreshes marker visuals.
@@ -593,7 +566,7 @@ public class Compass_Controller : MonoBehaviour
             return player_transform != null ? player_transform.position : transform.position;
 #endif
         if (player_transform != null) return player_transform.position;
-        if (cam_transform != null) return cam_transform.position;
+        if (cam_transform != null)    return cam_transform.position;
         return transform.position;
     }
 
