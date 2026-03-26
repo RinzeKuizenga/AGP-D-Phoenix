@@ -27,11 +27,15 @@ public class CameraOrbiter : MonoBehaviour
 
     [Header("Spatial Audios")]
     [SerializeField] AudioLowPassFilter oceanAmbience;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
 
     [Header("Objects")]
     [SerializeField] GameObject waterCutter;
     [SerializeField] GameObject regularShip;
     [SerializeField] GameObject sideShip;
+
+
 
     void Start()
     {
@@ -89,6 +93,7 @@ public class CameraOrbiter : MonoBehaviour
         if (!isInSideView)
         {
             // Switch to side view
+            AudioManager.Instance.PlaySFX(openSound, 0.20f);
             savedOrbitPosition = transform.position;
             savedOrbitRotation = transform.rotation;
             savedOrbitRadius = orbitRadius;
@@ -104,6 +109,7 @@ public class CameraOrbiter : MonoBehaviour
         else
         {
             // Return to orbit view
+            AudioManager.Instance.PlaySFX(closeSound, 0.20f);
             oceanAmbience.cutoffFrequency = 22000f;
             regularShip.SetActive(true);
             sideShip.SetActive(false);
