@@ -18,6 +18,7 @@ public class DebrisToHullDamage : MonoBehaviour
     private BoatHullManager _hullManager;
     private float _lastHitTime = -999f;
 
+
     void Awake()
     {
         _hullManager = GetComponent<BoatHullManager>();

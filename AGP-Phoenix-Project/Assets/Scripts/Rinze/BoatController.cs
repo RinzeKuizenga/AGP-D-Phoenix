@@ -127,7 +127,7 @@ public class BoatController : MonoBehaviour
         else if (windTurn < -1)
         {
             windParticles.transform.position = windposRight.position;
-            windArrow.rectTransform.localEulerAngles = new Vector3(0f, 0f, 90f);
+            windArrow.rectTransform.localEulerAngles = new Vector3(0f, -180f, 90f);
             if (!windParticles.isPlaying) windParticles.Play();
         }
         else

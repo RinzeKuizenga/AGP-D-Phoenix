@@ -1687,10 +1687,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 1.5
-  lightDuration: 1
-  heavyMagnitude: 2.4
-  heavyDuration: 1.5
+  lightMagnitude: 0.2
+  lightDuration: 0.3
+  heavyMagnitude: 0.6
+  heavyDuration: 0.6
 --- !u!114 &145255634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2975,6 +2975,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 0}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!114 &185243970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2987,6 +3038,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
+  database: {fileID: 0}
+  context:
+    scaleAnimations: 1
+    scaleUniformly: 1
+    useScaledTime: 1
+    tmpAnimator: {fileID: 185243970}
+  updateFrom: 0
+  animateOnStart: 1
+  animationsOverride: 0
+  defaultAnimationsStrings: []
+  defaultShowAnimationsStrings: []
+  defaultHideAnimationsStrings: []
+  excludedCharacters: 
+  excludedCharactersShow: 
+  excludedCharactersHide: 
+  excludePunctuation: 0
+  excludePunctuationShow: 0
+  excludePunctuationHide: 0
+  sceneKeywordDatabase: {fileID: 0}
+  keywordDatabase: {fileID: 0}
+  sceneAnimations:
+    _serializedList: []
+  sceneShowAnimations:
+    _serializedList: []
+  sceneHideAnimations:
+    _serializedList: []
+  preview: 0
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  previewUpdatesPerSecond: 60
+  previewTimeScale: 1
 --- !u!114 &185243971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7019,6 +7102,7 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  smashSound: {fileID: 0}
 --- !u!23 &490803290
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12736,6 +12820,7 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  smashSound: {fileID: 0}
 --- !u!23 &894362641
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13717,6 +13802,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 0}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!114 &950398939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13729,6 +13865,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
+  database: {fileID: 0}
+  context:
+    scaleAnimations: 1
+    scaleUniformly: 1
+    useScaledTime: 1
+    tmpAnimator: {fileID: 950398939}
+  updateFrom: 0
+  animateOnStart: 1
+  animationsOverride: 0
+  defaultAnimationsStrings: []
+  defaultShowAnimationsStrings: []
+  defaultHideAnimationsStrings: []
+  excludedCharacters: 
+  excludedCharactersShow: 
+  excludedCharactersHide: 
+  excludePunctuation: 0
+  excludePunctuationShow: 0
+  excludePunctuationHide: 0
+  sceneKeywordDatabase: {fileID: 0}
+  keywordDatabase: {fileID: 0}
+  sceneAnimations:
+    _serializedList: []
+  sceneShowAnimations:
+    _serializedList: []
+  sceneHideAnimations:
+    _serializedList: []
+  preview: 0
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  previewUpdatesPerSecond: 60
+  previewTimeScale: 1
 --- !u!114 &950398940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15180,10 +15348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 1.5
-  lightDuration: 1
-  heavyMagnitude: 2.4
-  heavyDuration: 1.5
+  lightMagnitude: 0.2
+  lightDuration: 0.3
+  heavyMagnitude: 0.6
+  heavyDuration: 0.6
 --- !u!114 &1035411576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17658,6 +17826,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
+  database: {fileID: 0}
+  context:
+    scaleAnimations: 1
+    scaleUniformly: 1
+    useScaledTime: 1
+    tmpAnimator: {fileID: 1125132369}
+  updateFrom: 0
+  animateOnStart: 1
+  animationsOverride: 0
+  defaultAnimationsStrings: []
+  defaultShowAnimationsStrings: []
+  defaultHideAnimationsStrings: []
+  excludedCharacters: 
+  excludedCharactersShow: 
+  excludedCharactersHide: 
+  excludePunctuation: 0
+  excludePunctuationShow: 0
+  excludePunctuationHide: 0
+  sceneKeywordDatabase: {fileID: 0}
+  keywordDatabase: {fileID: 0}
+  sceneAnimations:
+    _serializedList: []
+  sceneShowAnimations:
+    _serializedList: []
+  sceneHideAnimations:
+    _serializedList: []
+  preview: 0
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  previewUpdatesPerSecond: 60
+  previewTimeScale: 1
 --- !u!114 &1125132370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17670,6 +17870,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 0}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!1 &1138330900
 GameObject:
   m_ObjectHideFlags: 0
@@ -17716,10 +17967,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 1.5
-  lightDuration: 1
-  heavyMagnitude: 2.4
-  heavyDuration: 1.5
+  lightMagnitude: 0.2
+  lightDuration: 0.3
+  heavyMagnitude: 0.6
+  heavyDuration: 0.6
 --- !u!114 &1138330903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18034,6 +18285,7 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  smashSound: {fileID: 0}
 --- !u!23 &1146037227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19162,6 +19414,7 @@ MonoBehaviour:
   turnSpeed: 5.7
   maxSpeed: 20
   waterResistance: 0.95
+  boatHullManager: {fileID: 0}
   cam: {fileID: 1823688466}
   normalFOV: 60
   boostFOV: 75
@@ -19174,6 +19427,9 @@ MonoBehaviour:
   rainPos: {fileID: 1769880189}
   windArrow: {fileID: 1042544992}
   animator: {fileID: 0}
+  sailUp: {fileID: 0}
+  sailOut: {fileID: 0}
+  sailSnap: {fileID: 0}
 --- !u!95 &1201440810
 Animator:
   serializedVersion: 7
@@ -19297,6 +19553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211605338}
   - component: {fileID: 1211605340}
+  - component: {fileID: 1211605341}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -19344,6 +19601,22 @@ MonoBehaviour:
   minPlanksPerCluster: 2
   maxPlanksPerCluster: 5
   clusterRadius: 3
+--- !u!114 &1211605341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211605336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ecc548d1c224648895cdf8e2651461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shake
+  mainCamera: {fileID: 1823688466}
+  magnitude: 0
+  duration: 0
+  smashSound: {fileID: 8300000, guid: 157cdd504e15b2c4cba2d5fa52a0413f, type: 3}
 --- !u!4 &1234638720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4860968279891990298, guid: 70f1859e53051c84b84db265aa6c11f0, type: 3}
@@ -19545,10 +19818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 1.5
-  lightDuration: 1
-  heavyMagnitude: 2.4
-  heavyDuration: 1.5
+  lightMagnitude: 0.2
+  lightDuration: 0.3
+  heavyMagnitude: 0.6
+  heavyDuration: 0.6
 --- !u!114 &1260023440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20669,6 +20942,7 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 0}
   doneStairs: 0
+  smashSound: {fileID: 0}
 --- !u!212 &1320305157
 SpriteRenderer:
   serializedVersion: 2
@@ -25647,6 +25921,7 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  smashSound: {fileID: 0}
 --- !u!23 &1696687554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27115,6 +27390,8 @@ MonoBehaviour:
   sideViewOffset: {x: 5, y: -2.13, z: 0}
   transitionSpeed: 3.5
   oceanAmbience: {fileID: 574630877}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
   waterCutter: {fileID: 582548639}
   regularShip: {fileID: 1686510466}
   sideShip: {fileID: 919132149425031648}
@@ -28183,6 +28460,7 @@ MonoBehaviour:
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
   warningColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   criticalColor: {r: 1, g: 0, b: 0, a: 1}
+  fixButton: {fileID: 0}
 --- !u!114 &1866086994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29635,6 +29913,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 0}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!114 &2002763279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29647,6 +29976,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
+  database: {fileID: 0}
+  context:
+    scaleAnimations: 1
+    scaleUniformly: 1
+    useScaledTime: 1
+    tmpAnimator: {fileID: 2002763279}
+  updateFrom: 0
+  animateOnStart: 1
+  animationsOverride: 0
+  defaultAnimationsStrings: []
+  defaultShowAnimationsStrings: []
+  defaultHideAnimationsStrings: []
+  excludedCharacters: 
+  excludedCharactersShow: 
+  excludedCharactersHide: 
+  excludePunctuation: 0
+  excludePunctuationShow: 0
+  excludePunctuationHide: 0
+  sceneKeywordDatabase: {fileID: 0}
+  keywordDatabase: {fileID: 0}
+  sceneAnimations:
+    _serializedList: []
+  sceneShowAnimations:
+    _serializedList: []
+  sceneHideAnimations:
+    _serializedList: []
+  preview: 0
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 1
+  initDatabase: 0
+  previewUpdatesPerSecond: 60
+  previewTimeScale: 1
 --- !u!114 &2002763280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34349,6 +34710,7 @@ MonoBehaviour:
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
   warningColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   criticalColor: {r: 1, g: 0, b: 0, a: 1}
+  fixButton: {fileID: 0}
 --- !u!1 &3470958301811777050
 GameObject:
   m_ObjectHideFlags: 0
