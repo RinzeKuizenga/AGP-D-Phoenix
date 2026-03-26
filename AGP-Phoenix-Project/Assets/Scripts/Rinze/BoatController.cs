@@ -16,7 +16,7 @@ public class BoatController : MonoBehaviour
     private Rigidbody rb;
     private float currentMotorInput;
     private float currentTurnInput;
-    private BoatHullManager boatHullManager;
+    public BoatHullManager boatHullManager;
     
     [Header("Boost Functions")]
     public Camera cam;

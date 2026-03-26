@@ -1,12 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering;
 using System.Collections;
 
 public class DayNightCycle : MonoBehaviour
 {
-
-
     [Header("Volume Reference")]
     public Volume volume;
 
@@ -25,13 +23,13 @@ public class DayNightCycle : MonoBehaviour
     [Range(0f, 1f)]
     [Tooltip("Separate chance for rain specifically at night")]
     public float nightRainChance = 0.5f;
-    [Tooltip("Min and max duration of a rain event in seconds")]
     public float rainMinDuration = 60f;
     public float rainMaxDuration = 150f;
 
     [Header("Day Cycle Settings")]
-    [Tooltip("How long each part of day lasts in seconds (default 150 = 2.5 min)")]
     public float timePerPhase = 60f;
+    [Tooltip("How long the full fade out + fade in takes in seconds")]
+    public float fadeDuration = 0.8f;
     public bool autoStart = true;
     public bool loopCycle = true;
 
@@ -39,12 +37,15 @@ public class DayNightCycle : MonoBehaviour
     public bool showDebugLogs = true;
 
     private HDRISky hdriSky;
+    private Exposure exposure;
+    private float originalExposure;
     private Cubemap[] dayCycle;
     private string[] phaseNames = { "Dawn", "Midday", "Sunset", "Night" };
     private int currentPhase = 0;
     private bool isRaining = false;
     private Coroutine cycleCoroutine;
     private Coroutine rainCoroutine;
+    private Coroutine fadeCoroutine;
 
     void Start()
     {
@@ -52,15 +53,28 @@ public class DayNightCycle : MonoBehaviour
 
         dayCycle = new Cubemap[] { dawn, midday, sunset, night };
 
-        // Make sure rain object starts disabled
         if (rainObject != null)
             rainObject.SetActive(false);
+
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart()
+    {
+        // Wait for HDRP to fully initialize before capturing exposure
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        originalExposure = exposure.fixedExposure.value;
+        Log($"Baseline exposure captured: {originalExposure} EV");
+
+        hdriSky.hdriSky.Override(dayCycle[0]);
 
         if (autoStart)
             StartCycle();
     }
 
-    // ??? Public Controls ???????????????????????????????????????????
+    // ─── Public Controls ───────────────────────────────────────────
 
     public void StartCycle()
     {
@@ -93,7 +107,7 @@ public class DayNightCycle : MonoBehaviour
     {
         if (isRaining) return;
         currentPhase = Mathf.Clamp(index, 0, dayCycle.Length - 1);
-        ApplySkybox(currentPhase);
+        FadeTo(dayCycle[currentPhase]);
     }
 
     public void TriggerRain(float duration = -1f)
@@ -123,7 +137,7 @@ public class DayNightCycle : MonoBehaviour
         {
             isRaining = false;
             SetRainObject(false);
-            ApplySkybox(currentPhase);
+            FadeTo(dayCycle[currentPhase]);
             Log("Rain stopped early.");
         }
     }
@@ -131,7 +145,7 @@ public class DayNightCycle : MonoBehaviour
     public bool IsRaining() => isRaining;
     public string GetCurrentPhaseName() => isRaining ? $"{phaseNames[currentPhase]} (Rainy)" : phaseNames[currentPhase];
 
-    // ??? Coroutines ????????????????????????????????????????????????
+    // ─── Coroutines ────────────────────────────────────────────────
 
     private IEnumerator DayCycleRoutine()
     {
@@ -143,7 +157,7 @@ public class DayNightCycle : MonoBehaviour
             {
                 currentPhase = i;
 
-                bool isNight = i == 6;
+                bool isNight = i == 3;
                 float chance = isNight ? nightRainChance : rainChance;
 
                 bool shouldRain = rainySkybox != null
@@ -158,10 +172,10 @@ public class DayNightCycle : MonoBehaviour
                 }
                 else if (!isRaining)
                 {
-                    ApplySkybox(i);
+                    FadeTo(dayCycle[i]);
                 }
 
-                Log($"Phase: {phaseNames[i]}{(shouldRain ? " + Rain" : "")} � {timePerPhase}s");
+                Log($"Phase: {phaseNames[i]}{(shouldRain ? " + Rain" : "")} — {timePerPhase}s");
 
                 yield return new WaitForSeconds(timePerPhase);
             }
@@ -176,19 +190,68 @@ public class DayNightCycle : MonoBehaviour
     {
         isRaining = true;
         SetRainObject(true);
-        hdriSky.hdriSky.Override(rainySkybox);
+        FadeTo(rainySkybox);
         Log($"Rain started for {duration:F0}s");
 
         yield return new WaitForSeconds(duration);
 
         isRaining = false;
         SetRainObject(false);
-        ApplySkybox(currentPhase);
+        FadeTo(dayCycle[currentPhase]);
         Log("Rain ended, restoring day phase skybox.");
         rainCoroutine = null;
     }
 
-    // ??? Core ??????????????????????????????????????????????????????
+    private IEnumerator FadeRoutine(Cubemap next)
+    {
+        float halfFade = fadeDuration / 2f;
+        float elapsed = 0f;
+        float blackExposure = originalExposure + 1.5f;
+
+        // ── Fade OUT ──
+        while (elapsed < halfFade)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / halfFade);
+            exposure.fixedExposure.Override(Mathf.Lerp(originalExposure, blackExposure, t));
+            yield return null;
+        }
+
+        // ── Swap skybox while dimmed ──
+        hdriSky.hdriSky.Override(next);
+        Log($"Swapped skybox to: {next.name}");
+
+        // ── Fade IN ──
+        elapsed = 0f;
+
+        while (elapsed < halfFade)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / halfFade);
+            exposure.fixedExposure.Override(Mathf.Lerp(blackExposure, originalExposure, t));
+            yield return null;
+        }
+
+        // Snap back to exact original value
+        exposure.fixedExposure.Override(originalExposure);
+        fadeCoroutine = null;
+    }
+
+    // ─── Core ──────────────────────────────────────────────────────
+
+    private void FadeTo(Cubemap next)
+    {
+        if (next == null)
+        {
+            Log("FadeTo called with null cubemap, skipping.", isWarning: true);
+            return;
+        }
+
+        if (fadeCoroutine != null)
+            StopCoroutine(fadeCoroutine);
+
+        fadeCoroutine = StartCoroutine(FadeRoutine(next));
+    }
 
     private void SetRainObject(bool active)
     {
@@ -198,31 +261,23 @@ public class DayNightCycle : MonoBehaviour
             Log("No rain object assigned!", isWarning: true);
     }
 
-    private void ApplySkybox(int index)
-    {
-        Cubemap target = dayCycle[index];
-
-        if (target == null)
-        {
-            Log($"No cubemap assigned for '{phaseNames[index]}', skipping.", isWarning: true);
-            return;
-        }
-
-        hdriSky.hdriSky.Override(target);
-        Log($"Skybox set to: {target.name}");
-    }
-
     private bool InitializeVolume()
     {
         if (volume == null)
         {
-            Debug.LogError("[HDRISkyboxChanger] No Volume assigned!");
+            Debug.LogError("[DayNightCycle] No Volume assigned!");
             return false;
         }
 
         if (!volume.profile.TryGet<HDRISky>(out hdriSky))
         {
-            Debug.LogError("[HDRISkyboxChanger] No HDRISky override found in the Volume Profile!");
+            Debug.LogError("[DayNightCycle] No HDRISky override found in the Volume Profile!");
+            return false;
+        }
+
+        if (!volume.profile.TryGet<Exposure>(out exposure))
+        {
+            Debug.LogError("[DayNightCycle] No Exposure override found in the Volume Profile! Add one and set Mode to Fixed.");
             return false;
         }
 
@@ -232,8 +287,8 @@ public class DayNightCycle : MonoBehaviour
     private void Log(string message, bool isWarning = false)
     {
         if (!showDebugLogs) return;
-        if (isWarning) Debug.LogWarning($"[HDRISkyboxChanger] {message}");
-        else Debug.Log($"[HDRISkyboxChanger] {message}");
+        if (isWarning) Debug.LogWarning($"[DayNightCycle] {message}");
+        else Debug.Log($"[DayNightCycle] {message}");
     }
 
 }
