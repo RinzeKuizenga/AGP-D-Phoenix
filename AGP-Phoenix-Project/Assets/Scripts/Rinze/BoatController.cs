@@ -137,6 +137,11 @@ public class BoatController : MonoBehaviour
         rainParticles.transform.position = rainPos.position;
     }
 
+    public void WindChange()
+    {
+        windTurn = Random.Range(-3f, 3);
+    }
+
     public void PlaySailOutSound()
     {
         AudioManager.Instance.PlaySFX(sailOut, 1f);
