@@ -8051,18 +8051,15 @@ MonoBehaviour:
   ui_document: {fileID: 1608819867}
   compass_width: 808
   compass_fov: 150
+  active_marker_color: {r: 1, g: 0.78, b: 0.2, a: 1}
+  arrival_threshold: 3
   editor_preview_heading: 90
   player_transform: {fileID: 1188718280}
-  editor_markers:
-  - target: {fileID: 908371932}
-    icon: {fileID: 0}
-    color: {r: 1, g: 1, b: 1, a: 0}
+  waypoints:
+  - target: {fileID: 1967820320}
+    color: {r: 0.9115257, g: 0, b: 1, a: 0}
   - target: {fileID: 1931415109}
-    icon: {fileID: 0}
-    color: {r: 1, g: 1, b: 1, a: 0}
-  - target: {fileID: 1120893766}
-    icon: {fileID: 0}
-    color: {r: 0, g: 0.7882353, b: 0.62172824, a: 0}
+    color: {r: 0.060541894, g: 0.899371, b: 0, a: 0}
 --- !u!4 &733811204
 Transform:
   m_ObjectHideFlags: 0
@@ -9610,6 +9607,7 @@ MonoBehaviour:
   turnSpeed: 5.7
   maxSpeed: 20
   waterResistance: 0.95
+  boatHullManager: {fileID: 0}
   cam: {fileID: 1823688466}
   normalFOV: 60
   boostFOV: 75
@@ -9622,6 +9620,9 @@ MonoBehaviour:
   rainPos: {fileID: 1769880189}
   windArrow: {fileID: 1042544992}
   animator: {fileID: 0}
+  sailUp: {fileID: 0}
+  sailOut: {fileID: 0}
+  sailSnap: {fileID: 0}
 --- !u!95 &1201440810
 Animator:
   serializedVersion: 7
@@ -9855,7 +9856,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3715419b25f35b4478ae6fd96147b9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  target: {fileID: 2065016795}
+  speed: 1
+  currentRoom: {fileID: 0}
+  previousRoom: {fileID: 0}
+  popupScreen: {fileID: 0}
+  popupTransform: {fileID: 0}
+  targetAlpha: 0
+  textBubble: {fileID: 0}
+  distance: 0
+  stairDistance: 0
+  isSelected: 0
+  stairAnchor: {fileID: 0}
+  doneStairs: 0
 --- !u!212 &1320305157
 SpriteRenderer:
   serializedVersion: 2
@@ -11049,7 +11061,11 @@ MonoBehaviour:
   sideViewOffset: {x: 30, y: -2.13, z: 0}
   transitionSpeed: 3
   oceanAmbience: {fileID: 574630877}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
   waterCutter: {fileID: 582548639}
+  regularShip: {fileID: 0}
+  sideShip: {fileID: 0}
 --- !u!1 &1836635978
 GameObject:
   m_ObjectHideFlags: 0
@@ -11925,6 +11941,7 @@ MonoBehaviour:
   turnSpeed: 50
   maxSpeed: 20
   waterResistance: 0.95
+  boatHullManager: {fileID: 0}
   cam: {fileID: 0}
   normalFOV: 60
   boostFOV: 60
@@ -11937,6 +11954,9 @@ MonoBehaviour:
   rainPos: {fileID: 0}
   windArrow: {fileID: 0}
   animator: {fileID: 0}
+  sailUp: {fileID: 0}
+  sailOut: {fileID: 0}
+  sailSnap: {fileID: 0}
 --- !u!1 &1872400030
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,64 +2,34 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Data class representing a waypoint marker on the compass.
+/// Runtime representation of a single waypoint marker on the compass.
 /// </summary>
 public class Compass_Marker
 {
-
-    #region Public Fields
-
-    /// <summary>
-    /// The world-space transform this marker tracks.
-    /// </summary>
+    /// <summary>The world-space transform this marker tracks.</summary>
     public Transform target;
 
-    /// <summary>
-    /// Optional icon to display for this marker.
-    /// </summary>
-    public Texture2D icon;
-
-    /// <summary>
-    /// Color tint for the marker.
-    /// </summary>
+    /// <summary>Color of the marker dot.</summary>
     public Color color;
 
-    /// <summary>
-    /// The UI element representing this marker on the compass.
-    /// </summary>
+    /// <summary>Root UI element for this marker.</summary>
     public VisualElement element;
 
-    /// <summary>
-    /// The icon element within the marker.
-    /// </summary>
-    public VisualElement icon_element;
+    /// <summary>The colored dot element.</summary>
+    public VisualElement dot_element;
 
-    /// <summary>
-    /// The label showing distance to target.
-    /// </summary>
+    /// <summary>Label showing distance to target (only visible on active marker).</summary>
     public Label distance_label;
 
-    /// <summary>
-    /// Cached visibility state to avoid repeated class changes.
-    /// </summary>
+    /// <summary>Cached visibility state to avoid repeated class toggles.</summary>
     public bool is_visible = true;
 
-    /// <summary>
-    /// Cached distance for change detection.
-    /// </summary>
+    /// <summary>Cached rounded distance for change detection.</summary>
     public int cached_distance = -1;
 
-    #endregion
-
-    #region Constructor
-
-    public Compass_Marker(Transform target, Texture2D icon = null, Color? color = null)
+    public Compass_Marker(Transform target, Color color)
     {
         this.target = target;
-        this.icon = icon;
-        this.color = color ?? Color.white;
+        this.color = color;
     }
-
-    #endregion
-
 }
