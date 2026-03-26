@@ -69,7 +69,7 @@ public class MainMenu : MonoBehaviour
         currentState = MenuState.Select;
 
         titleScreen.SetTrigger("Start");
-        AudioManager.Instance.PlaySFX(openSound);
+        AudioManager.Instance.PlaySFX(openSound, 1f);
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -79,7 +79,7 @@ public class MainMenu : MonoBehaviour
         currentState = MenuState.Title;
 
         titleScreen.SetTrigger("Back");
-        AudioManager.Instance.PlaySFX(openSound);
+        AudioManager.Instance.PlaySFX(openSound, 1f);
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -89,7 +89,7 @@ public class MainMenu : MonoBehaviour
         currentState = MenuState.Options;
 
         titleScreen.SetTrigger("Options");
-        AudioManager.Instance.PlaySFX(openSound);
+        AudioManager.Instance.PlaySFX(openSound, 1f);
         EventSystem.current.SetSelectedGameObject(null);
     }
 
@@ -99,7 +99,7 @@ public class MainMenu : MonoBehaviour
         currentState = MenuState.Select;
 
         titleScreen.SetTrigger("OptionsBack");
-        AudioManager.Instance.PlaySFX(openSound);
+        AudioManager.Instance.PlaySFX(openSound, 1f);
         EventSystem.current.SetSelectedGameObject(null);
     }
 

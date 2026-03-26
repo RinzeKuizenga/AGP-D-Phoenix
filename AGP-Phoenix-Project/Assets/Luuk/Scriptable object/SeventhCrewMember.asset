@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66962805d03e1c34fb4f90cc8ee0c89b, type: 3}
   m_Name: SeventhCrewMember
   m_EditorClassIdentifier: Assembly-CSharp::Crew
-  sprite: {fileID: 21300000, guid: 46a2c0d0cc38afc44a4f2fc5b82d7364, type: 3}
+  sprite: {fileID: 21300000, guid: 095bc3a50b8d82547a98cc2341f4c573, type: 3}
   SpecialtyIcon: {fileID: -1637542526, guid: fb7777e50be19e94493567e52d3aece2, type: 3}
   specialtyText: 'Vaardigheid: Zeilmaker'
   specialty: Zeilmaker
   crewSkillLevel: 5
-  crewname: Piet Zeiler
+  crewname: Pien Zeiler
   crewSpeed: 3
   crewHealth: 95
   crewHunger: 90
