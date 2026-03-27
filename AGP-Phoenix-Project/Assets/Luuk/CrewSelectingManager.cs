@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrewSelectingManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CrewSelectingManager : MonoBehaviour
 
     private GameObject[] slotContents = new GameObject[5];
     private Crew[] slotCrew = new Crew[5];
+
 
     public void SelectCrewMember(GameObject crewImage, Crew crewData, bool isRandom = false)
     {
@@ -86,6 +88,13 @@ public class CrewSelectingManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StartGame()
+    {
+        FillEmptySlotsRandomly();
+        CrewRoster.Save(slotCrew);
+        FadeManager.Instance.FadeToScene("RinzeScene");
     }
 
 }

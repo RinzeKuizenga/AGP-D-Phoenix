@@ -23,7 +23,7 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] public Transform stairAnchor;
     [SerializeField] public bool doneStairs = false;
 
-    [SerializeField] private AudioClip smashSound;
+    [SerializeField] private AudioClip buildSound;
 
 
     private void Update()

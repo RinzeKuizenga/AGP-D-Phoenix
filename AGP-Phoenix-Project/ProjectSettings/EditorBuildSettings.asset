@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Rinze/MainMenu.unity
     guid: a548882cf9b1bdc4aa8c6dcee19141fd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Rinze/RinzeScene 1.unity
     guid: e8162593e39d4de469dc6386f1adffe7
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Luuk/Crew selecting.unity
+    guid: 94638a282eb2c0d41bfa5fb451b09ffd
+  - enabled: 1
     path: Assets/Rinze/RinzeScene.unity
     guid: c7e1268a4ea02334baa10293f35d906d
   - enabled: 0

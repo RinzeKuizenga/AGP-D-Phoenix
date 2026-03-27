@@ -54,7 +54,7 @@ public class MainMenu : MonoBehaviour
 
     public void newgamePress()
     {
-        FadeManager.Instance.FadeToScene("RinzeScene");
+        FadeManager.Instance.FadeToScene("Crew selecting");
     }
 
     public void quitPress()
