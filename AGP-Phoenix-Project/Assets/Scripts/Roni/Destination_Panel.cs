@@ -51,6 +51,13 @@ public class Destination_Panel : MonoBehaviour
 
         if (distance_text != null)
             distance_text.color = distance_color;
+
+        // Forceer dat dit paneel de muis NIET blokkeert bij de start
+        if (canvas_group != null)
+        {
+            canvas_group.interactable = false;
+            canvas_group.blocksRaycasts = false;
+        }
     }
 
     private void Update()
@@ -100,8 +107,8 @@ public class Destination_Panel : MonoBehaviour
         if (canvas_group != null)
         {
             canvas_group.alpha = visible ? 1f : 0f;
-            canvas_group.interactable = visible;
-            canvas_group.blocksRaycasts = visible;
+            canvas_group.interactable = false;
+            canvas_group.blocksRaycasts = false;
         }
         else
         {

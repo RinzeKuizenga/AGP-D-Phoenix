@@ -6,13 +6,7 @@ using UnityEngine.UIElements;
 using UnityEditor;
 #endif
 
-/// <summary>
-/// Controls the horizontal compass UI strip, manages waypoint markers,
-/// and advances through an ordered list of destinations.
-/// The active (next) waypoint is highlighted with a distinct color and
-/// is the only marker that displays its distance. When the player
-/// reaches it, the compass automatically advances to the next waypoint.
-/// </summary>
+
 [ExecuteAlways]
 public class Compass_Controller : MonoBehaviour
 {
@@ -195,7 +189,7 @@ public class Compass_Controller : MonoBehaviour
         if (root.childCount == 0)
             return;
 
-        compass_strip   = root.Q<VisualElement>("compass-strip");
+        compass_strip = root.Q<VisualElement>("compass-strip");
         compass_markers = root.Q<VisualElement>("compass-markers");
 
         if (compass_strip != null && compass_strip.childCount == 0)
@@ -226,7 +220,7 @@ public class Compass_Controller : MonoBehaviour
     private void initialize_compass()
     {
         VisualElement root = ui_document.rootVisualElement;
-        compass_strip   = root.Q<VisualElement>("compass-strip");
+        compass_strip = root.Q<VisualElement>("compass-strip");
         compass_markers = root.Q<VisualElement>("compass-markers");
 
         if (compass_strip == null)
@@ -534,7 +528,6 @@ public class Compass_Controller : MonoBehaviour
             set_marker_visible(marker, true);
             marker.element.style.left = relative * pixels_per_degree + half_width;
 
-            // Update distance text (only matters for active marker whose label is visible)
             int distance = Mathf.RoundToInt(dir.magnitude);
             if (distance != marker.cached_distance)
             {
@@ -566,7 +559,7 @@ public class Compass_Controller : MonoBehaviour
             return player_transform != null ? player_transform.position : transform.position;
 #endif
         if (player_transform != null) return player_transform.position;
-        if (cam_transform != null)    return cam_transform.position;
+        if (cam_transform != null) return cam_transform.position;
         return transform.position;
     }
 

@@ -47,7 +47,7 @@ public class Arrival_Panel : MonoBehaviour
     {
         canvas_group = GetComponent<CanvasGroup>();
 
-        // Start hidden
+        // Start hidden en blokkeer de muis niet
         if (canvas_group != null)
         {
             canvas_group.alpha = 0f;
@@ -88,29 +88,21 @@ public class Arrival_Panel : MonoBehaviour
     {
         is_showing = true;
 
-        // Update text
         if (arrival_text != null)
             arrival_text.text = destination_name;
 
-        // Fade in
         yield return StartCoroutine(fade(0f, 1f, fade_in_duration));
 
-        // Hold
         yield return new WaitForSeconds(display_duration);
 
-        // Fade out
         yield return StartCoroutine(fade(1f, 0f, fade_out_duration));
 
-        // Advance to next waypoint after panel disappears
         if (compass_controller != null)
             compass_controller.advance_to_next_waypoint();
 
         is_showing = false;
     }
 
-    /// <summary>
-    /// Smoothly interpolates the CanvasGroup alpha between two values.
-    /// </summary>
     private IEnumerator fade(float from, float to, float duration)
     {
         if (canvas_group == null) yield break;
@@ -118,8 +110,8 @@ public class Arrival_Panel : MonoBehaviour
         float elapsed = 0f;
 
         canvas_group.alpha = from;
-        canvas_group.interactable = to > 0f;
-        canvas_group.blocksRaycasts = to > 0f;
+        canvas_group.interactable = false;
+        canvas_group.blocksRaycasts = false;
 
         while (elapsed < duration)
         {

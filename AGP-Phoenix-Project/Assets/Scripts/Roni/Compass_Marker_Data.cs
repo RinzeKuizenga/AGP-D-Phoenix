@@ -1,9 +1,6 @@
 using System;
 using UnityEngine;
 
-/// <summary>
-/// Serializable data for configuring compass markers in the Inspector.
-/// </summary>
 [Serializable]
 public class Compass_Marker_Data
 {
