@@ -1,0 +1,11 @@
+Model Information:
+* title:	3D scissors
+* source:	https://sketchfab.com/3d-models/3d-scissors-d03d723540e34b028eeb97bce6127086
+* author:	Fares.Islem (https://sketchfab.com/Fares.Islem)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "3D scissors" (https://sketchfab.com/3d-models/3d-scissors-d03d723540e34b028eeb97bce6127086) by Fares.Islem (https://sketchfab.com/Fares.Islem) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

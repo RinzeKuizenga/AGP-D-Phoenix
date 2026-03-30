@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66962805d03e1c34fb4f90cc8ee0c89b, type: 3}
   m_Name: FirstcrewMember
   m_EditorClassIdentifier: Assembly-CSharp::Crew
-  sprite: {fileID: 21300000, guid: af6cd6c88c4236f43a0e5960aa41fa2b, type: 3}
+  sprite: {fileID: 21300000, guid: 747aabc84cb82804bbadfbec5fa63a26, type: 3}
   SpecialtyIcon: {fileID: -1169042125, guid: fb7777e50be19e94493567e52d3aece2, type: 3}
-  crewclass: 'Vaardigheid: Timmerman'
+  specialtyText: 'Vaardigheid: Timmerman'
+  specialty: Timmerman
+  crewSkillLevel: 4
   crewname: Tim der Man
   crewSpeed: 5
+  crewHealth: 100
+  crewHunger: 100
+  crewDamageReceived: 0.2

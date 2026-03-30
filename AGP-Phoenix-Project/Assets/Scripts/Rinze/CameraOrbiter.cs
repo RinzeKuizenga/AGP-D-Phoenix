@@ -27,9 +27,15 @@ public class CameraOrbiter : MonoBehaviour
 
     [Header("Spatial Audios")]
     [SerializeField] AudioLowPassFilter oceanAmbience;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
 
     [Header("Objects")]
     [SerializeField] GameObject waterCutter;
+    [SerializeField] GameObject regularShip;
+    [SerializeField] GameObject sideShip;
+
+
 
     void Start()
     {
@@ -87,20 +93,26 @@ public class CameraOrbiter : MonoBehaviour
         if (!isInSideView)
         {
             // Switch to side view
+            AudioManager.Instance.PlaySFX(openSound, 0.20f);
             savedOrbitPosition = transform.position;
             savedOrbitRotation = transform.rotation;
             savedOrbitRadius = orbitRadius;
             isInSideView = true;
-            Camera.main.orthographic = true;
-            Camera.main.orthographicSize = 4.5f;
+            regularShip.SetActive(false);
+            sideShip.SetActive(true);
             oceanAmbience.cutoffFrequency = 1908f;
             waterCutter.SetActive(true);
             //Camera.main.nearClipPlane = 3.44f;
+            Camera.main.orthographic = true;
+            Camera.main.orthographicSize = 3.7f;
         }
         else
         {
             // Return to orbit view
+            AudioManager.Instance.PlaySFX(closeSound, 0.20f);
             oceanAmbience.cutoffFrequency = 22000f;
+            regularShip.SetActive(true);
+            sideShip.SetActive(false);
             StartCoroutine(ReturnToOrbitView());
             waterCutter.SetActive(false);
         }
@@ -109,6 +121,7 @@ public class CameraOrbiter : MonoBehaviour
     private IEnumerator ReturnToOrbitView()
     {
         Camera.main.orthographic = false;
+        isInSideView = false;
         Camera.main.nearClipPlane = 0.57f;
         float elapsedTime = 0f;
         float duration = 1f / transitionSpeed;
@@ -121,8 +134,11 @@ public class CameraOrbiter : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
 
-            transform.position = Vector3.Lerp(startPosition, savedOrbitPosition, t);
-            transform.rotation = Quaternion.Slerp(startRotation, savedOrbitRotation, t);
+            // Smoothstep easing: slow start, fast middle, slow end
+            float smoothT = t * t * (3f - 2f * t);
+
+            transform.position = Vector3.Lerp(startPosition, savedOrbitPosition, smoothT);
+            transform.rotation = Quaternion.Slerp(startRotation, savedOrbitRotation, smoothT);
 
             yield return null;
         }
@@ -130,6 +146,10 @@ public class CameraOrbiter : MonoBehaviour
         transform.position = savedOrbitPosition;
         transform.rotation = savedOrbitRotation;
         orbitRadius = savedOrbitRadius;
-        isInSideView = false;
+    }
+
+    public void ZoomIn(Transform transform)
+    {
+
     }
 }

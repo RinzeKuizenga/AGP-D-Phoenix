@@ -12,6 +12,7 @@ public class EyeButton : MonoBehaviour
     [SerializeField] public Sprite eyeYellow;
 
     [SerializeField] CameraOrbiter cameraOrbiter;
+
     void FixedUpdate()
     {
         backgroundStar.rectTransform.Rotate(0f, 0f, 20f * Time.deltaTime);

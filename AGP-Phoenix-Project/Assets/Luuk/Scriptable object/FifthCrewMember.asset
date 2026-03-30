@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crew
   sprite: {fileID: 21300000, guid: e713dc3ac54ffab4ea8e1c7483ba469e, type: 3}
   SpecialtyIcon: {fileID: -1169042125, guid: fb7777e50be19e94493567e52d3aece2, type: 3}
-  crewclass: 'Vaardigheid: Timmerman'
+  specialtyText: 'Vaardigheid: Timmerman'
+  specialty: Timmerman
+  crewSkillLevel: 4
   crewname: Harold Hamer
   crewSpeed: 3
+  crewHealth: 100
+  crewHunger: 100

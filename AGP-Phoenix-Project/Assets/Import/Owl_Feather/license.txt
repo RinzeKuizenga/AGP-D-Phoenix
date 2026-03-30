@@ -1,0 +1,11 @@
+Model Information:
+* title:	Owl Feather
+* source:	https://sketchfab.com/3d-models/owl-feather-1863156cd78f40efa44bab05a4fd027e
+* author:	Satori (https://sketchfab.com/gillroyc)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Owl Feather" (https://sketchfab.com/3d-models/owl-feather-1863156cd78f40efa44bab05a4fd027e) by Satori (https://sketchfab.com/gillroyc) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
