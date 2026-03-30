@@ -1021,138 +1021,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75759703}
   m_CullTransparentMesh: 1
---- !u!1 &79139003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 79139004}
-  - component: {fileID: 79139007}
-  - component: {fileID: 79139006}
-  - component: {fileID: 79139005}
-  m_Layer: 0
-  m_Name: Zone_Starboard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &79139004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79139003}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.460001, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 542974099}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &79139005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79139003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 0.2
-  lightDuration: 0.3
-  heavyMagnitude: 0.6
-  heavyDuration: 0.6
-  smallSmash: {fileID: 8300000, guid: 295d7abe63f91914badbbd3fddc18789, type: 3}
-  bigSmash: {fileID: 8300000, guid: ef35965cefb8929498abe7d5d838cf92, type: 3}
---- !u!114 &79139006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79139003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902dfb0c3c8a84746998baaec3f0a048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HullZone
-  sectionName: Hull Section
-  damageMultiplier: 1
-  maxHealth: 100
-  currentHealth: 0
-  damagedThreshold: 0.6
-  criticalThreshold: 0.3
-  sectionRenderers: []
-  damagedMaterial: {fileID: 0}
-  criticalMaterial: {fileID: 0}
-  damageDecal: {fileID: 0}
-  criticalDecal: {fileID: 0}
-  leakParticles: {fileID: 0}
-  floodParticles: {fileID: 0}
-  impactParticles: {fileID: 0}
-  OnSectionDamaged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 79139005}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeLight
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 79139006}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionCritical:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866881764}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeHeavy
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 79139006}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!65 &79139007
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79139003}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 6.214358, z: 15.56644}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &97734031
 GameObject:
   m_ObjectHideFlags: 0
@@ -12195,7 +12063,7 @@ MonoBehaviour:
   - lod: 4
     visibleDstThreshold: 600
     useForCollider: 0
-  viewer: {fileID: 1823688467}
+  viewer: {fileID: 0}
   mapMaterial: {fileID: 2100000, guid: 659c325f2d47c624da594ad2ae5ddd50, type: 2}
   chunckHeightPos: -1.5
   islandSpawnChance: 0.12
@@ -18683,138 +18551,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4860968279891990298, guid: 70f1859e53051c84b84db265aa6c11f0, type: 3}
   m_PrefabInstance: {fileID: 1651491217}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &866881762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 866881763}
-  - component: {fileID: 866881766}
-  - component: {fileID: 866881765}
-  - component: {fileID: 866881764}
-  m_Layer: 0
-  m_Name: Zone_Stern
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &866881763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866881762}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.660005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 542974099}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &866881764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866881762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 0.2
-  lightDuration: 0.3
-  heavyMagnitude: 0.6
-  heavyDuration: 0.6
-  smallSmash: {fileID: 8300000, guid: 295d7abe63f91914badbbd3fddc18789, type: 3}
-  bigSmash: {fileID: 8300000, guid: ef35965cefb8929498abe7d5d838cf92, type: 3}
---- !u!114 &866881765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866881762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902dfb0c3c8a84746998baaec3f0a048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HullZone
-  sectionName: Hull Section
-  damageMultiplier: 1
-  maxHealth: 100
-  currentHealth: 0
-  damagedThreshold: 0.6
-  criticalThreshold: 0.3
-  sectionRenderers: []
-  damagedMaterial: {fileID: 0}
-  criticalMaterial: {fileID: 0}
-  damageDecal: {fileID: 0}
-  criticalDecal: {fileID: 0}
-  leakParticles: {fileID: 0}
-  floodParticles: {fileID: 0}
-  impactParticles: {fileID: 0}
-  OnSectionDamaged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866881764}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeLight
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 866881765}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionCritical:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866881764}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeHeavy
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 866881765}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!65 &866881766
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866881762}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.5463285, y: 9.057673, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &868161408
 GameObject:
   m_ObjectHideFlags: 0
@@ -35718,7 +35454,6 @@ GameObject:
   - component: {fileID: 1201440809}
   - component: {fileID: 1201440810}
   - component: {fileID: 1201440811}
-  - component: {fileID: 1201440812}
   m_Layer: 2
   m_Name: Ship Object
   m_TagString: Untagged
@@ -35834,7 +35569,7 @@ MonoBehaviour:
   turnSpeed: 5.7
   maxSpeed: 20
   waterResistance: 0.95
-  boatHullManager: {fileID: 1201440811}
+  boatHullManager: {fileID: 0}
   cam: {fileID: 1823688466}
   normalFOV: 60
   boostFOV: 75
@@ -35884,11 +35619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ae7873d13ad2d43a695c2e9fba1e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatHullManager
-  hullSections:
-  - {fileID: 2006459254}
-  - {fileID: 1364947488}
-  - {fileID: 79139006}
-  - {fileID: 866881765}
+  hullSections: []
   sinkThreshold: 0.5
   sinkSpeed: 0.5
   sinkTiltSpeed: 5
@@ -35903,23 +35634,6 @@ MonoBehaviour:
   OnBoatSunk:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1201440812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1201440803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62c77d25fb960f4ea114ed7248783f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebrisToHullDamage
-  plankDamage: 8
-  wreckDamage: 35
-  debrisTag: Debris
-  wreckTag: Wreck
-  hitCooldown: 0.4
 --- !u!1 &1209033126
 GameObject:
   m_ObjectHideFlags: 0
@@ -35962,8 +35676,6 @@ GameObject:
   - component: {fileID: 1211605338}
   - component: {fileID: 1211605339}
   - component: {fileID: 1211605340}
-  - component: {fileID: 1211605341}
-  - component: {fileID: 1211605342}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -36028,46 +35740,6 @@ MonoBehaviour:
   showDebugLogs: 1
   boatController: {fileID: 1201440809}
   rainSound: {fileID: 0}
---- !u!114 &1211605341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211605336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0dafd8704641f41b32284cb026455e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebrisSpawner
-  player: {fileID: 1201440804}
-  plankPrefabs:
-  - {fileID: 3001970110166375089, guid: 4c3ae2e27c009ed4a9a350ef1c763625, type: 3}
-  wreckPrefabs:
-  - {fileID: 6811390840361564508, guid: d2454b009f318f3438345f01671ee9ca, type: 3}
-  spawnDistanceAhead: 100
-  laneHalfWidth: 40
-  despawnDistanceBehind: 30
-  plankSpawnInterval: 10
-  wreckSpawnInterval: 25
-  minPlanksPerCluster: 2
-  maxPlanksPerCluster: 5
-  clusterRadius: 3
---- !u!114 &1211605342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211605336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ecc548d1c224648895cdf8e2651461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shake
-  mainCamera: {fileID: 1823688466}
-  magnitude: 0
-  duration: 0
 --- !u!4 &1234638720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4860968279891990298, guid: 70f1859e53051c84b84db265aa6c11f0, type: 3}
@@ -38228,138 +37900,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1364947485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1364947486}
-  - component: {fileID: 1364947489}
-  - component: {fileID: 1364947488}
-  - component: {fileID: 1364947487}
-  m_Layer: 0
-  m_Name: Zone_Port
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1364947486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364947485}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.460002, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 542974099}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1364947487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364947485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 0.2
-  lightDuration: 0.3
-  heavyMagnitude: 0.6
-  heavyDuration: 0.6
-  smallSmash: {fileID: 8300000, guid: 295d7abe63f91914badbbd3fddc18789, type: 3}
-  bigSmash: {fileID: 8300000, guid: ef35965cefb8929498abe7d5d838cf92, type: 3}
---- !u!114 &1364947488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364947485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902dfb0c3c8a84746998baaec3f0a048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HullZone
-  sectionName: Hull Section
-  damageMultiplier: 1
-  maxHealth: 100
-  currentHealth: 0
-  damagedThreshold: 0.6
-  criticalThreshold: 0.3
-  sectionRenderers: []
-  damagedMaterial: {fileID: 0}
-  criticalMaterial: {fileID: 0}
-  damageDecal: {fileID: 0}
-  criticalDecal: {fileID: 0}
-  leakParticles: {fileID: 0}
-  floodParticles: {fileID: 0}
-  impactParticles: {fileID: 0}
-  OnSectionDamaged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1364947487}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeLight
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1364947488}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionCritical:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866881764}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeHeavy
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1364947488}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!65 &1364947489
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364947485}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 6.2143583, z: 15.5664425}
-  m_Center: {x: 0, y: -0.06706928, z: 0}
 --- !u!1 &1370011855
 GameObject:
   m_ObjectHideFlags: 0
@@ -41556,18 +41096,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4197034244102341046, guid: 86ba56a816d186c488e7a1946513326a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1937517716}
-    - targetCorrespondingSourceObject: {fileID: 4197034244102341046, guid: 86ba56a816d186c488e7a1946513326a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2006459252}
-    - targetCorrespondingSourceObject: {fileID: 4197034244102341046, guid: 86ba56a816d186c488e7a1946513326a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1364947486}
-    - targetCorrespondingSourceObject: {fileID: 4197034244102341046, guid: 86ba56a816d186c488e7a1946513326a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 79139004}
-    - targetCorrespondingSourceObject: {fileID: 4197034244102341046, guid: 86ba56a816d186c488e7a1946513326a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 866881763}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ba56a816d186c488e7a1946513326a, type: 3}
 --- !u!1 &1633470439
@@ -52846,138 +52374,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &2006459251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2006459252}
-  - component: {fileID: 2006459255}
-  - component: {fileID: 2006459254}
-  - component: {fileID: 2006459253}
-  m_Layer: 0
-  m_Name: Zone_Bow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2006459252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006459251}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.20999953, z: -6.840002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 542974099}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2006459253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006459251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb1945f143bea04683639a2b371c674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShakeEvent
-  lightMagnitude: 0.2
-  lightDuration: 0.3
-  heavyMagnitude: 0.6
-  heavyDuration: 0.6
-  smallSmash: {fileID: 8300000, guid: 295d7abe63f91914badbbd3fddc18789, type: 3}
-  bigSmash: {fileID: 8300000, guid: ef35965cefb8929498abe7d5d838cf92, type: 3}
---- !u!114 &2006459254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006459251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902dfb0c3c8a84746998baaec3f0a048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HullZone
-  sectionName: Hull Section
-  damageMultiplier: 1
-  maxHealth: 100
-  currentHealth: 0
-  damagedThreshold: 0.6
-  criticalThreshold: 0.3
-  sectionRenderers: []
-  damagedMaterial: {fileID: 0}
-  criticalMaterial: {fileID: 0}
-  damageDecal: {fileID: 0}
-  criticalDecal: {fileID: 0}
-  leakParticles: {fileID: 0}
-  floodParticles: {fileID: 0}
-  impactParticles: {fileID: 0}
-  OnSectionDamaged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2006459253}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeLight
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2006459254}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionCritical:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 866881764}
-        m_TargetAssemblyTypeName: CameraShakeEvent, Assembly-CSharp
-        m_MethodName: ShakeHeavy
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2006459254}
-          m_ObjectArgumentAssemblyTypeName: HullSection, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnSectionDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!65 &2006459255
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006459251}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.8237865, y: 5.4658694, z: 2.8232908}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2007086286
 GameObject:
   m_ObjectHideFlags: 0
@@ -65932,7 +65328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1063312214450453066, guid: 1ce21799bc1f9fb4fb53cea3e9adb40e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2493215691197354411, guid: 1ce21799bc1f9fb4fb53cea3e9adb40e, type: 3}
       propertyPath: m_LocalPosition.x

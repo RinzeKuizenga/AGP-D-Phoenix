@@ -14,7 +14,6 @@ public class CameraShakeEvent : MonoBehaviour
     // ── Wire to OnSectionDamaged ──────────────────────────────────────────────
     public void ShakeLight(HullSection _)
     {
-        Debug.Log("BABABABABABABAB");
         if (Shake.Instance == null) return;
  
         // Use override values if set, otherwise fall back to the singleton's defaults
