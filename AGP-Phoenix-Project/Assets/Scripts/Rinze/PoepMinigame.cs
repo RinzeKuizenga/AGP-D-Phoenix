@@ -1,27 +1,17 @@
-﻿using System.Collections;
-using UnityEngine;
-
+﻿using UnityEngine;
 public class ScrubClean : MonoBehaviour
 {
     [SerializeField] private CanvasGroup dirtCanvas;
     [SerializeField] private RectTransform scrubArea;
-    [SerializeField] private GameObject Bubble;
-
     [SerializeField] private float scrubThreshold = 100f;
-    [SerializeField] private float cleanSpeed = 0.15f;
-
+    [SerializeField] private float cleanSpeed = 0.5f;
     private Vector3 lastMousePos;
     private bool isCleaned = false;
-
     public System.Action<ScrubClean> OnCleaned;
-
-
 
     void Update()
     {
-
         if (isCleaned) return;
-
 
         float speed = (Input.mousePosition - lastMousePos).magnitude / Time.deltaTime;
 
@@ -29,26 +19,28 @@ public class ScrubClean : MonoBehaviour
         {
             if (speed > scrubThreshold)
             {
-                StartCoroutine(BubbleSpawn());
+                BubbleTrailManager.Instance.ActivateTrail();
+
                 dirtCanvas.alpha -= cleanSpeed * Time.deltaTime;
                 dirtCanvas.alpha = Mathf.Clamp01(dirtCanvas.alpha);
-
-                if (dirtCanvas.alpha <= 0.01f)
-                {
-                    isCleaned = true;
-                    OnCleaned?.Invoke(this);
-                    gameObject.SetActive(false); 
-                }
+            }
+            else
+            {
+                BubbleTrailManager.Instance.DeactivateTrail();
             }
         }
 
-        lastMousePos = Input.mousePosition;
-    }
+        if (dirtCanvas.alpha <= 0.01f && !isCleaned)
+        {
+            isCleaned = true;
 
-    IEnumerator BubbleSpawn()
-    {
-        Instantiate(Bubble, Input.mousePosition, Quaternion.identity);
-        yield return new WaitForSeconds(0.4f);
-        Destroy(Bubble);
+            BubbleTrailManager.Instance.DeactivateTrail();
+
+            OnCleaned?.Invoke(this);
+
+            gameObject.SetActive(false);
+        }
+
+        lastMousePos = Input.mousePosition;
     }
 }
