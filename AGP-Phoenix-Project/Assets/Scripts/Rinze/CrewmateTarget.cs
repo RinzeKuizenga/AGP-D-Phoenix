@@ -20,8 +20,7 @@ public class CrewTarget : MonoBehaviour
     
     [Header("Events")]
     public UnityEvent onEnter;
-    
-    
+
     void OnMouseDown()
     {
         if (isFilled || !CrewmateMovement.selectedCrewmate.isSelected)

@@ -124,7 +124,7 @@ public class DayNightCycle : MonoBehaviour
         if (rainCoroutine != null)
             StopCoroutine(rainCoroutine);
 
-        AudioManager.Instance.PlaySFX(rainSound, 0.4f);
+        AudioManager.Instance.PlaySFX(rainSound, 0.1f);
         float d = duration > 0 ? duration : Random.Range(rainMinDuration, rainMaxDuration);
         rainCoroutine = StartCoroutine(RainRoutine(d));
     }

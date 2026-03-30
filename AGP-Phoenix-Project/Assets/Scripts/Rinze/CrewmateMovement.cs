@@ -25,6 +25,15 @@ public class CrewmateMovement : MonoBehaviour
 
     [SerializeField] private AudioClip buildSound;
 
+    void Start()
+    {
+        Debug.Log("START");
+        if (currentRoom != null)
+        {
+            isSelected = true;
+            MoveToArea(currentRoom.target, currentRoom);
+        }
+    }
 
     private void Update()
     {
