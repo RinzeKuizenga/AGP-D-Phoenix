@@ -20,8 +20,7 @@ public class Shake : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject); // Remove this if you don't need it to persist across scenes
+        Instance = this; // Remove this if you don't need it to persist across scenes
     }
     
     private void Update()

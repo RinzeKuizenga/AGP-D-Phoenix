@@ -8,9 +8,12 @@ public class PageTurner : MonoBehaviour
     [SerializeField] public GameObject NextPageButton;
     [SerializeField] public GameObject BackButton;
     [SerializeField] private float disableTime = 4.5f;
+    [SerializeField] private AudioClip paperFold;
     private float timer = 0f;
     private bool isCounting = false;
     private bool pageBackCounter = false;
+
+
 
     void Update()
     {
@@ -45,6 +48,7 @@ public class PageTurner : MonoBehaviour
     public void BookPress()
     {
         animator.SetTrigger("Page1");
+        AudioManager.Instance.PlaySFX(paperFold, 2f);
         NextPageButton.SetActive(false);
         page1.SetActive(false);
         isCounting = true;
@@ -53,6 +57,7 @@ public class PageTurner : MonoBehaviour
     public void PageBack()
     {
         animator.SetTrigger("PageBack");
+        AudioManager.Instance.PlaySFX(paperFold, 2f);
         page2.SetActive(false);
         BackButton.SetActive(false);
         pageBackCounter = true;

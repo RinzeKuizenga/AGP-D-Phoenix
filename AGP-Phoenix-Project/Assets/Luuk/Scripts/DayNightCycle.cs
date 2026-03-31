@@ -47,6 +47,9 @@ public class DayNightCycle : MonoBehaviour
     private Coroutine rainCoroutine;
     private Coroutine fadeCoroutine;
 
+    [SerializeField] private BoatController boatController;
+    [SerializeField] private AudioClip rainSound;
+
     void Start()
     {
         if (!InitializeVolume()) return;
@@ -121,6 +124,7 @@ public class DayNightCycle : MonoBehaviour
         if (rainCoroutine != null)
             StopCoroutine(rainCoroutine);
 
+        AudioManager.Instance.PlaySFX(rainSound, 0.1f);
         float d = duration > 0 ? duration : Random.Range(rainMinDuration, rainMaxDuration);
         rainCoroutine = StartCoroutine(RainRoutine(d));
     }
@@ -129,12 +133,14 @@ public class DayNightCycle : MonoBehaviour
     {
         if (rainCoroutine != null)
         {
+            AudioManager.Instance.StopSFX(rainSound);
             StopCoroutine(rainCoroutine);
             rainCoroutine = null;
         }
 
         if (isRaining)
         {
+            AudioManager.Instance.StopSFX(rainSound);
             isRaining = false;
             SetRainObject(false);
             FadeTo(dayCycle[currentPhase]);
@@ -235,6 +241,7 @@ public class DayNightCycle : MonoBehaviour
         // Snap back to exact original value
         exposure.fixedExposure.Override(originalExposure);
         fadeCoroutine = null;
+        boatController.WindChange();
     }
 
     // ─── Core ──────────────────────────────────────────────────────

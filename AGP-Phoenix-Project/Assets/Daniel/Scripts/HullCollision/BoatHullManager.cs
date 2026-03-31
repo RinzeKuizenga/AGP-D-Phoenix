@@ -1,36 +1,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+
 public class BoatHullManager : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private CameraOrbiter cameraOrbiter;
-    
-    [Header("Sections")]
+    [Header("Sections  (auto-discovered if left empty)")]
     public List<HullSection> hullSections = new List<HullSection>();
 
     [Header("Sinking")]
+    [Tooltip("When this fraction of sections are Destroyed the boat starts sinking")]
     [Range(0f, 1f)]
     public float sinkThreshold = 0.5f;
-    
+
+    [Tooltip("How fast the boat sinks (units/second)")]
     public float sinkSpeed = 0.5f;
-    
+
+    [Tooltip("Extra downward tilt added as the boat sinks (degrees/second)")]
     public float sinkTiltSpeed = 5f;
-    
+
+    [Tooltip("The Y position at which the boat is considered fully sunk")]
     public float fullySubmergedY = -10f;
 
     [Header("Flooding (slows the boat)")]
+    [Tooltip("Each critical section reduces forward speed by this fraction")]
     [Range(0f, 0.5f)]
     public float speedPenaltyPerCriticalSection = 0.1f;
 
+    [Header("Section Damage Visuals")]
+    [Tooltip("Assign one damage GameObject per hull section, in the same order as hullSections")]
+    public List<GameObject> sectionDamageObjects = new List<GameObject>();
+
     [Header("Events")]
-    public UnityEvent          OnBoatSinking;
-    public UnityEvent<float>   OnOverallHealthChanged;  // 0–1
-    public UnityEvent          OnBoatSunk;
-    
-    public bool  IsSinking { get; private set; }
-    public bool  IsSunk    { get; private set; }
-    
+    public UnityEvent OnBoatSinking;
+    public UnityEvent<float> OnOverallHealthChanged;
+    public UnityEvent OnBoatSunk;
+
+    public AudioClip smashSound;
+
+    public bool IsSinking { get; private set; }
+    public bool IsSunk { get; private set; }
+
     public float OverallHealth
     {
         get
@@ -41,7 +50,7 @@ public class BoatHullManager : MonoBehaviour
             return sum / hullSections.Count;
         }
     }
-    
+
     public float SpeedMultiplier
     {
         get
@@ -63,14 +72,16 @@ public class BoatHullManager : MonoBehaviour
 
     void Start()
     {
-        // Auto-discover sections if none were manually assigned
         if (hullSections.Count == 0)
             hullSections.AddRange(GetComponentsInChildren<HullSection>());
 
         if (hullSections.Count == 0)
-            Debug.LogWarning("[BoatHullManager] No HullSections found! Add HullSection components to child objects.");
+            Debug.LogWarning("[BoatHullManager] No HullSections found!");
 
-        // Subscribe to each section's events
+        // Hide all section damage objects at start
+        foreach (var dmg in sectionDamageObjects)
+            if (dmg != null) dmg.SetActive(false);
+
         foreach (var section in hullSections)
         {
             section.OnSectionDamaged.AddListener(HandleSectionDamaged);
@@ -83,7 +94,7 @@ public class BoatHullManager : MonoBehaviour
         if (IsSinking && !IsSunk)
             UpdateSinking();
     }
-    
+
     public float DamageSection(string sectionName, float damage)
     {
         HullSection section = FindSection(sectionName);
@@ -94,7 +105,7 @@ public class BoatHullManager : MonoBehaviour
         }
         return section.ApplyDamage(damage);
     }
-    
+
     public float DamageAtPoint(Vector3 worldPoint, float damage)
     {
         HullSection nearest = GetNearestSection(worldPoint);
@@ -103,17 +114,17 @@ public class BoatHullManager : MonoBehaviour
         Debug.Log($"[BoatHullManager] Hit resolved to section: {nearest.sectionName}");
         return nearest.ApplyDamage(damage);
     }
-    
+
     public void RepairSection(string sectionName, float amount)
     {
         FindSection(sectionName)?.Repair(amount);
     }
-    
+
     public void RepairAll(float amount)
     {
         foreach (var s in hullSections) s.Repair(amount);
     }
-    
+
     public HullSection GetMostDamagedSection()
     {
         HullSection worst = null;
@@ -128,7 +139,7 @@ public class BoatHullManager : MonoBehaviour
         }
         return worst;
     }
-    
+
     private void HandleSectionDamaged(HullSection section)
     {
         OnOverallHealthChanged?.Invoke(OverallHealth);
@@ -138,6 +149,16 @@ public class BoatHullManager : MonoBehaviour
     private void HandleSectionDestroyed(HullSection section)
     {
         Debug.Log($"[BoatHullManager] Section DESTROYED: {section.sectionName}");
+
+        // Show the damage object mapped to this section's index
+        int index = hullSections.IndexOf(section);
+        if (index >= 0 && index < sectionDamageObjects.Count)
+        {
+            GameObject dmg = sectionDamageObjects[index];
+            if (dmg != null) dmg.SetActive(true);
+            AudioManager.Instance.PlaySFX(smashSound, 1f);
+        }
+
         OnOverallHealthChanged?.Invoke(OverallHealth);
         CheckSinkCondition();
     }
@@ -162,10 +183,6 @@ public class BoatHullManager : MonoBehaviour
         IsSinking = true;
         if (!_sinkEventFired)
         {
-            if (cameraOrbiter.IsInSideView)
-            {
-                cameraOrbiter.ToggleSideView();
-            }
             _sinkEventFired = true;
             Debug.Log("[BoatHullManager] Boat is SINKING!");
             OnBoatSinking?.Invoke();
@@ -174,13 +191,11 @@ public class BoatHullManager : MonoBehaviour
 
     private void UpdateSinking()
     {
-        // Tilt towards the most damaged side
         HullSection worst = GetMostDamagedSection();
-        Vector3 tiltAxis = Vector3.forward; // default: tilt forward/back
+        Vector3 tiltAxis = Vector3.forward;
 
         if (worst != null)
         {
-            // Tilt towards the damaged section's local position
             Vector3 localPos = transform.InverseTransformPoint(worst.transform.position);
             tiltAxis = new Vector3(localPos.z, 0f, -localPos.x).normalized;
         }
@@ -188,7 +203,6 @@ public class BoatHullManager : MonoBehaviour
         _sinkTiltAngle += sinkTiltSpeed * Time.deltaTime;
         transform.Rotate(tiltAxis, sinkTiltSpeed * Time.deltaTime, Space.Self);
 
-        // Sink downward
         transform.position += Vector3.down * sinkSpeed * Time.deltaTime;
 
         if (transform.position.y <= fullySubmergedY && !_sunkEventFired)

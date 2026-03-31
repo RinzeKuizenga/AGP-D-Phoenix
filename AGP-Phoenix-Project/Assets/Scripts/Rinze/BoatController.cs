@@ -17,6 +17,7 @@ public class BoatController : MonoBehaviour
     private float currentMotorInput;
     private float currentTurnInput;
     public BoatHullManager boatHullManager;
+    public CameraOrbiter cameraOrbiter;
     
     [Header("Boost Functions")]
     public Camera cam;
@@ -60,20 +61,20 @@ public class BoatController : MonoBehaviour
         currentTurnInput = 0f;
 
         animator.SetBool("SailDown", Input.GetKey(KeyCode.W));
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && !cameraOrbiter.IsInSideView)
         {
             currentMotorInput = 1f;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && !cameraOrbiter.IsInSideView)
         {
             currentMotorInput = -1f;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !cameraOrbiter.IsInSideView)
         {
             currentTurnInput = -1f;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && !cameraOrbiter.IsInSideView)
         {
             currentTurnInput = 1f;
         }
@@ -127,7 +128,7 @@ public class BoatController : MonoBehaviour
         else if (windTurn < -1)
         {
             windParticles.transform.position = windposRight.position;
-            windArrow.rectTransform.localEulerAngles = new Vector3(0f, 0f, 90f);
+            windArrow.rectTransform.localEulerAngles = new Vector3(0f, -180f, 90f);
             if (!windParticles.isPlaying) windParticles.Play();
         }
         else
