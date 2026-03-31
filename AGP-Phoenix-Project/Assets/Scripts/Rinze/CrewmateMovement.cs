@@ -43,26 +43,31 @@ public class CrewmateMovement : MonoBehaviour
     {
         if (target == null) return;
         popupScreen.alpha = Mathf.Lerp(popupScreen.alpha, targetAlpha, Time.deltaTime * 8f);
+
+        float moveDirection = target.position.x - transform.position.x;
+        if (moveDirection > 0.01f)
+        {
+            if (sr != null) sr.flipX = false;
+        }
+        else if (moveDirection < -0.01f)
+        {
+            if (sr != null) sr.flipX = true;
+        }
+
         if (CheckStairs()) return;
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         distance = Vector3.Distance(transform.position, target.position);
 
-        // Flip based on direction
-        float moveDirection = target.position.x - transform.position.x;
-        if (moveDirection > 0.01f)
-            sr.flipX = false;
-        else if (moveDirection < -0.01f)
-            sr.flipX = true;
 
         if (distance < 0.1f)
         {
-            animator.SetBool("isWalking", false); // arrived, play Build
+            if (animator != null) animator.SetBool("isWalking", false); // arrived, play Build
             currentRoom.roomHealth.isHealing = true;
         }
         else
         {
-            animator.SetBool("isWalking", true); // moving, play Walk
+            if (animator != null) animator.SetBool("isWalking", true); // moving, play Walk
             currentRoom.roomHealth.isHealing = false;
             if (previousRoom != null) previousRoom.roomHealth.isHealing = false;
         }
@@ -83,10 +88,10 @@ public class CrewmateMovement : MonoBehaviour
                 doneStairs = true;
             }
 
-            return true; 
+            return true;
         }
 
-        return false; 
+        return false;
     }
 
     public void ShowBubble(string type)
@@ -114,7 +119,7 @@ public class CrewmateMovement : MonoBehaviour
             {
                 oldEffect.StopEffect();
             }
-            
+
             currentRoom.isFilled = false;
             currentRoom.hoverImage.color = new Color(0f, 0.7f, 0f, 0f);
         }
