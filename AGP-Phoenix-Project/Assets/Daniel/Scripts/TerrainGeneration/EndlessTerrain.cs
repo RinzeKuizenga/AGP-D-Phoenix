@@ -27,6 +27,13 @@ public class EndlessTerrain : MonoBehaviour {
 	static List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
 
 	void Start() {
+		
+		terrainChunksVisibleLastUpdate.Clear();
+		terrainChunkDictionary.Clear();
+		
+		viewerPosition = new Vector2(viewer.position.x, vsiewer.position.z);
+		viewerPositionOld = viewerPosition;
+		
 		mapGenerator = FindObjectOfType<MapGenerator> ();
 
 		maxViewDst = detailLevels [detailLevels.Length - 1].visibleDstThreshold;

@@ -65,8 +65,14 @@ public class CrewTarget : MonoBehaviour
         sr.color = c;
     }
 
-    public void StartEffect()
+    public void StartEffect(CrewmateMovement crewmate)
     {
+        Debug.Log($"CrewTarget: StartEffect called on {gameObject.name}");
+    
+        RoomEffect effect = GetComponentInChildren<RoomEffect>();
+        Debug.Log($"CrewTarget: RoomEffect found = {effect}");  // ← is this null?
+    
+        if (effect != null) effect.StartEffect(crewmate);
         onEnter.Invoke();
     }
 }

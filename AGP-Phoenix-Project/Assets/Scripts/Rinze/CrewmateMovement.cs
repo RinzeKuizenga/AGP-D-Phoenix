@@ -22,7 +22,8 @@ public class CrewmateMovement : MonoBehaviour
 
     [SerializeField] public Transform stairAnchor;
     [SerializeField] public bool doneStairs = false;
-
+    private bool effectStarted = false; 
+    
 
     private void Update()
     {
@@ -36,9 +37,16 @@ public class CrewmateMovement : MonoBehaviour
         if (distance < 0.1f)
         {
             currentRoom.roomHealth.isHealing = true;
+            if (!effectStarted)
+            {
+                effectStarted = true;
+                Debug.Log($"CrewmateMovement: Arrived at {currentRoom.gameObject.name}, calling StartEffect");
+                currentRoom.StartEffect(this); // ← pass this crewmate in
+            }
         }
         else
         {
+            effectStarted = false;
             currentRoom.roomHealth.isHealing = false;
             if(previousRoom != null) previousRoom.roomHealth.isHealing = false;
         }
@@ -100,6 +108,7 @@ public class CrewmateMovement : MonoBehaviour
         currentRoom.isFilled = true;
         currentRoom.hoverImage.color = new Color(0.7f, 0f, 0f, 0f);
 
+        effectStarted = false;
         doneStairs = false;
         target = newTarget;
         isSelected = false;

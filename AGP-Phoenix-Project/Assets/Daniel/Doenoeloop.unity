@@ -7093,6 +7093,7 @@ MonoBehaviour:
   hunger: 100
   maxHunger: 100
   hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!114 &490803293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7106,8 +7107,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
   stats: {fileID: 490803292}
+  icon: {fileID: 1370011857}
   healthSlider: {fileID: 500348000}
   hungerSlider: {fileID: 1960456581}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
 --- !u!1001 &496129698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12827,10 +12832,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
   health: 100
-  maxHealth: 0
+  maxHealth: 100
   hunger: 100
   maxHunger: 100
   hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!114 &894362645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12844,8 +12850,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
   stats: {fileID: 894362644}
+  icon: {fileID: 747471013}
   healthSlider: {fileID: 668226058}
   hungerSlider: {fileID: 2042016618}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
 --- !u!1 &907819352
 GameObject:
   m_ObjectHideFlags: 0
@@ -18104,10 +18114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
   health: 100
-  maxHealth: 0
+  maxHealth: 100
   hunger: 100
   maxHunger: 100
   hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!114 &1146037230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18121,8 +18132,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
   stats: {fileID: 1146037229}
+  icon: {fileID: 854194288}
   healthSlider: {fileID: 182763493}
   hungerSlider: {fileID: 237080754}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
 --- !u!1 &1149185068
 GameObject:
   m_ObjectHideFlags: 0
@@ -19047,6 +19062,7 @@ GameObject:
   - component: {fileID: 1201440810}
   - component: {fileID: 1201440812}
   - component: {fileID: 1201440811}
+  - component: {fileID: 1201440813}
   m_Layer: 2
   m_Name: Ship Object
   m_TagString: Untagged
@@ -19225,6 +19241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ae7873d13ad2d43a695c2e9fba1e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatHullManager
+  cameraOrbiter: {fileID: 1823688469}
   hullSections:
   - {fileID: 145255634}
   - {fileID: 1260023440}
@@ -19240,22 +19257,27 @@ MonoBehaviour:
       m_Calls: []
   OnOverallHealthChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CrewDisplay, Assembly-CSharp
-        m_MethodName: DepleteHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnBoatSunk:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1201440813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201440803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfb6f0b9fd1a4a41aa1d34d244880c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipSystem
+  sailRoom: {fileID: 1418014128}
+  kitchen: {fileID: 1175612479}
+  medbay: {fileID: 1339308941}
+  handymanRoom: {fileID: 1099138311}
+  boatHullManager: {fileID: 1201440812}
 --- !u!1 &1209033126
 GameObject:
   m_ObjectHideFlags: 0
@@ -19297,6 +19319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211605338}
   - component: {fileID: 1211605340}
+  - component: {fileID: 1211605341}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -19344,6 +19367,21 @@ MonoBehaviour:
   minPlanksPerCluster: 2
   maxPlanksPerCluster: 5
   clusterRadius: 3
+--- !u!114 &1211605341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211605336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ecc548d1c224648895cdf8e2651461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shake
+  mainCamera: {fileID: 1823688466}
+  magnitude: 0
+  duration: 0
 --- !u!4 &1234638720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4860968279891990298, guid: 70f1859e53051c84b84db265aa6c11f0, type: 3}
@@ -25717,10 +25755,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewStatManager
   health: 100
-  maxHealth: 0
+  maxHealth: 100
   hunger: 100
   maxHunger: 100
   hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!114 &1696687557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25734,8 +25773,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
   stats: {fileID: 1696687556}
+  icon: {fileID: 1175146619}
   healthSlider: {fileID: 14901003}
   hungerSlider: {fileID: 71708944}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
 --- !u!1 &1698121314
 GameObject:
   m_ObjectHideFlags: 0
@@ -30806,8 +30849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KitchenEffect
   crewTarget: {fileID: 2065016797}
-  feedAmount: 10
-  feedInterval: 1
+  feedAmount: 100
+  feedInterval: 0.2
 --- !u!4 &2049844464
 Transform:
   m_ObjectHideFlags: 0
@@ -31373,19 +31416,7 @@ MonoBehaviour:
   roomHealth: {fileID: 1175612479}
   onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2049844463}
-        m_TargetAssemblyTypeName: KitchenEffect, Assembly-CSharp
-        m_MethodName: StartEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!65 &2065016799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32576,19 +32607,7 @@ MonoBehaviour:
   roomHealth: {fileID: 1339308941}
   onEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 994113732}
-        m_TargetAssemblyTypeName: MedbayEffect, Assembly-CSharp
-        m_MethodName: StartEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!212 &2140633637
 SpriteRenderer:
   serializedVersion: 2

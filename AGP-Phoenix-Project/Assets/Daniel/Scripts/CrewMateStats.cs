@@ -10,7 +10,9 @@ public class CrewMateStats : MonoBehaviour
     public float hunger = 100f;
     public float maxHunger = 100f;
     public float hungerDecayRate = 1f; // per second
-
+    
+    public bool isBeingFed = false;
+    
     private void Update()
     {
         DecayHunger();
@@ -18,10 +20,12 @@ public class CrewMateStats : MonoBehaviour
 
     private void DecayHunger()
     {
+        if (isBeingFed) return;
+        
         hunger = Mathf.Max(hunger - hungerDecayRate * Time.deltaTime, 0f);
 
         if (hunger <= 0f)
-            health = Mathf.Max(health - Time.deltaTime, 0f); // starving damages health
+            health = Mathf.Max(health - Time.deltaTime, 0f);
     }
 
     public void Heal(float amount)

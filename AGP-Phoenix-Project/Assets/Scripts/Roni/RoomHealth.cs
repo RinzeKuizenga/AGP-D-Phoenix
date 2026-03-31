@@ -64,7 +64,7 @@ public class RoomHealth : MonoBehaviour
             OnRoomDestroyed?.Invoke(this);
         }
     }
-
+    
     public void PerformAction(float healAmount)
     {
         if (isDestroyed) return;

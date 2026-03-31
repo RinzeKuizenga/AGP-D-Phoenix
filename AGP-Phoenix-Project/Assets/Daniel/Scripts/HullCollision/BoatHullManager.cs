@@ -3,25 +3,23 @@ using UnityEngine;
 using UnityEngine.Events;
 public class BoatHullManager : MonoBehaviour
 {
-    [Header("Sections  (auto-discovered if left empty)")]
+    [Header("References")]
+    [SerializeField] private CameraOrbiter cameraOrbiter;
+    
+    [Header("Sections")]
     public List<HullSection> hullSections = new List<HullSection>();
 
     [Header("Sinking")]
-    [Tooltip("When this fraction of sections are Destroyed the boat starts sinking")]
     [Range(0f, 1f)]
     public float sinkThreshold = 0.5f;
-
-    [Tooltip("How fast the boat sinks (units/second)")]
+    
     public float sinkSpeed = 0.5f;
-
-    [Tooltip("Extra downward tilt added as the boat sinks (degrees/second)")]
+    
     public float sinkTiltSpeed = 5f;
-
-    [Tooltip("The Y position at which the boat is considered fully sunk")]
+    
     public float fullySubmergedY = -10f;
 
     [Header("Flooding (slows the boat)")]
-    [Tooltip("Each critical section reduces forward speed by this fraction")]
     [Range(0f, 0.5f)]
     public float speedPenaltyPerCriticalSection = 0.1f;
 
@@ -29,7 +27,7 @@ public class BoatHullManager : MonoBehaviour
     public UnityEvent          OnBoatSinking;
     public UnityEvent<float>   OnOverallHealthChanged;  // 0–1
     public UnityEvent          OnBoatSunk;
-
+    
     public bool  IsSinking { get; private set; }
     public bool  IsSunk    { get; private set; }
     
@@ -164,6 +162,10 @@ public class BoatHullManager : MonoBehaviour
         IsSinking = true;
         if (!_sinkEventFired)
         {
+            if (cameraOrbiter.IsInSideView)
+            {
+                cameraOrbiter.ToggleSideView();
+            }
             _sinkEventFired = true;
             Debug.Log("[BoatHullManager] Boat is SINKING!");
             OnBoatSinking?.Invoke();
