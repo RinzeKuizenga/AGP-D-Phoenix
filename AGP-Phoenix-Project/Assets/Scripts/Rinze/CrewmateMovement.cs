@@ -24,6 +24,8 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] public bool doneStairs = false;
 
     [SerializeField] private AudioClip buildSound;
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer sr;
 
     void Start()
     {
@@ -35,6 +37,8 @@ public class CrewmateMovement : MonoBehaviour
         }
     }
 
+
+    // In Update, replace your current movement block with:
     private void Update()
     {
         if (target == null) return;
@@ -44,14 +48,23 @@ public class CrewmateMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         distance = Vector3.Distance(transform.position, target.position);
 
+        // Flip based on direction
+        float moveDirection = target.position.x - transform.position.x;
+        if (moveDirection > 0.01f)
+            sr.flipX = false;
+        else if (moveDirection < -0.01f)
+            sr.flipX = true;
+
         if (distance < 0.1f)
         {
+            animator.SetBool("isWalking", false); // arrived, play Build
             currentRoom.roomHealth.isHealing = true;
         }
         else
         {
+            animator.SetBool("isWalking", true); // moving, play Walk
             currentRoom.roomHealth.isHealing = false;
-            if(previousRoom != null) previousRoom.roomHealth.isHealing = false;
+            if (previousRoom != null) previousRoom.roomHealth.isHealing = false;
         }
     }
 
