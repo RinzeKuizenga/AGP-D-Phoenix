@@ -1,18 +1,18 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 /// <summary>
-/// Displays the active waypoint name and distance on a Canvas panel.
-/// Reads waypoint data from the Compass_Controller.
-/// Place this on a UI panel inside your existing Canvas.
+/// Always-visible panel at the bottom of the screen showing:
+/// - Current destination name
+/// - Live distance in km/m
+/// Reads from Compass_Controller. Never blocks mouse input.
 /// </summary>
 public class Destination_Panel : MonoBehaviour
 {
     #region Serialized Fields
 
     [Header("References")]
-    [SerializeField, Tooltip("Reference to the Compass_Controller that manages waypoints.")]
+    [SerializeField, Tooltip("Reference to the Compass_Controller.")]
     private Compass_Controller compass_controller;
 
     [SerializeField, Tooltip("Text element showing the destination name.")]
@@ -22,14 +22,14 @@ public class Destination_Panel : MonoBehaviour
     private TextMeshProUGUI distance_text;
 
     [Header("Settings")]
-    [SerializeField, Tooltip("Color of the destination name text.")]
-    private Color name_color = new Color(1f, 0.78f, 0.2f, 1f); // gold
+    [SerializeField] private Color name_color = new Color(1f, 0.78f, 0.2f, 1f);
+    [SerializeField] private Color distance_color = new Color(1f, 1f, 1f, 0.9f);
 
-    [SerializeField, Tooltip("Color of the distance text.")]
-    private Color distance_color = new Color(1f, 1f, 1f, 0.9f);
-
-    [SerializeField, Tooltip("Player transform for distance calculation. Falls back to main camera.")]
+    [SerializeField, Tooltip("Ship/player transform for distance calculation.")]
     private Transform player_transform;
+
+    [Header("Label")]
+    [SerializeField] private string destination_prefix = "Bestemming: ";
 
     #endregion
 
@@ -46,13 +46,9 @@ public class Destination_Panel : MonoBehaviour
     {
         canvas_group = GetComponent<CanvasGroup>();
 
-        if (name_text != null)
-            name_text.color = name_color;
+        if (name_text != null) name_text.color = name_color;
+        if (distance_text != null) distance_text.color = distance_color;
 
-        if (distance_text != null)
-            distance_text.color = distance_color;
-
-        // Forceer dat dit paneel de muis NIET blokkeert bij de start
         if (canvas_group != null)
         {
             canvas_group.interactable = false;
@@ -60,20 +56,25 @@ public class Destination_Panel : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (compass_controller == null)
+            Debug.LogError("Destination_Panel: compass_controller niet toegewezen!");
+        if (player_transform == null)
+            Debug.LogWarning("Destination_Panel: player_transform niet toegewezen! Wijs je schip toe.");
+    }
+
     private void Update()
     {
         if (compass_controller == null) return;
 
-        // Hide panel when all waypoints are reached
         if (compass_controller.all_waypoints_reached())
         {
             set_visible(false);
             return;
         }
 
-        // Get active waypoint data
         Compass_Marker_Data active = compass_controller.get_active_waypoint_data();
-
         if (active == null || active.target == null)
         {
             set_visible(false);
@@ -82,11 +83,11 @@ public class Destination_Panel : MonoBehaviour
 
         set_visible(true);
 
-        // Update name
+        // Update destination name
         if (name_text != null)
-            name_text.text = $"Bestemming: {active.destination_name}";
+            name_text.text = $"{destination_prefix}{active.destination_name}";
 
-        // Update distance
+        // Update live distance
         Vector3 delta = active.target.position - get_player_position();
         delta.y = 0f;
         int meters = Mathf.RoundToInt(delta.magnitude);

@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 using UnityEditor;
 #endif
 
-
 [ExecuteAlways]
 public class Compass_Controller : MonoBehaviour
 {
@@ -25,10 +24,10 @@ public class Compass_Controller : MonoBehaviour
 
     [Header("Waypoint Settings")]
     [SerializeField, Tooltip("Color used to highlight the active (next) waypoint.")]
-    private Color active_marker_color = new Color(1f, 0.78f, 0.2f, 1f); // gold
+    private Color active_marker_color = new Color(1f, 0.78f, 0.2f, 1f);
 
     [Header("Editor Preview")]
-    [SerializeField, Tooltip("Simulated heading in edit mode. 0=N 90=E 180=S 270=W."), Range(0f, 360f)]
+    [SerializeField, Tooltip("Simulated heading in edit mode."), Range(0f, 360f)]
     private float editor_preview_heading;
 
     [Header("Player Reference")]
@@ -45,16 +44,11 @@ public class Compass_Controller : MonoBehaviour
 
     private VisualElement compass_strip;
     private VisualElement compass_markers;
-
     private readonly List<Compass_Marker> marker_instances = new List<Compass_Marker>();
-
     private Transform cam_transform;
-
     private float pixels_per_degree;
     private float strip_offset;
     private float half_fov;
-
-    /// <summary>Index into <see cref="waypoints"/> pointing at the current active destination.</summary>
     private int active_waypoint_index;
 
     private static readonly (string label, float angle)[] cardinals =
@@ -104,7 +98,6 @@ public class Compass_Controller : MonoBehaviour
         if (compass_strip == null)
             return;
 
-        // Regenerate if elements were cleared (e.g. USS hot-reload)
         if (compass_strip.childCount == 0)
         {
             recalculate_metrics();
@@ -256,7 +249,6 @@ public class Compass_Controller : MonoBehaviour
         float strip_width = 720f * pixels_per_degree;
         compass_strip.style.width = strip_width;
 
-        // Generate ticks from -180 to 540 (720° for seamless wrapping)
         for (int deg = -180; deg <= 540; deg += 5)
         {
             float x = (deg + 180f) * pixels_per_degree;
@@ -267,7 +259,6 @@ public class Compass_Controller : MonoBehaviour
                 compass_strip.Add(create_degree_label(norm, x));
         }
 
-        // Cardinal labels with wrapping copies
         foreach ((string text, float angle) in cardinals)
         {
             add_cardinal_label(text, angle);
@@ -354,64 +345,58 @@ public class Compass_Controller : MonoBehaviour
 
     #endregion
 
-    #region Waypoint Progression
+    #region Waypoint Progression (Public API)
 
-    /// <summary>
-    /// Advances to the next waypoint in the list and refreshes marker visuals.
-    /// </summary>
-    public void advance_to_next_waypoint()
-    {
-        active_waypoint_index++;
-        refresh_marker_styles();
-    }
+    /// <summary>Returns the total number of waypoints.</summary>
+    public int get_waypoint_count() => waypoints.Count;
 
-    /// <summary>
-    /// Resets progression back to the first waypoint.
-    /// </summary>
-    public void reset_progression()
-    {
-        active_waypoint_index = 0;
-        refresh_marker_styles();
-    }
-
-    /// <summary>
-    /// Sets the active waypoint to a specific index.
-    /// </summary>
-    public void set_active_waypoint(int index)
-    {
-        active_waypoint_index = Mathf.Clamp(index, 0, waypoints.Count);
-        refresh_marker_styles();
-    }
-
-    /// <summary>
-    /// Returns the index of the current active waypoint.
-    /// </summary>
+    /// <summary>Returns the index of the current active waypoint.</summary>
     public int get_active_waypoint_index() => active_waypoint_index;
 
-    /// <summary>
-    /// Returns true if all waypoints have been reached.
-    /// </summary>
+    /// <summary>Returns true if all waypoints have been reached.</summary>
     public bool all_waypoints_reached() => active_waypoint_index >= waypoints.Count;
 
-    /// <summary>
-    /// Returns the data of the current active waypoint, or null if all are reached.
-    /// </summary>
+    /// <summary>Returns the data of the current active waypoint, or null if all are reached.</summary>
     public Compass_Marker_Data get_active_waypoint_data()
     {
         if (active_waypoint_index >= waypoints.Count) return null;
         return waypoints[active_waypoint_index];
     }
 
+    /// <summary>Returns waypoint data at a specific index, or null if out of range.</summary>
+    public Compass_Marker_Data get_waypoint_data(int index)
+    {
+        if (index < 0 || index >= waypoints.Count) return null;
+        return waypoints[index];
+    }
+
+    /// <summary>Advances to the next waypoint and refreshes visuals.</summary>
+    public void advance_to_next_waypoint()
+    {
+        active_waypoint_index++;
+        refresh_marker_styles();
+    }
+
+    /// <summary>Resets progression back to the first waypoint.</summary>
+    public void reset_progression()
+    {
+        active_waypoint_index = 0;
+        refresh_marker_styles();
+    }
+
+    /// <summary>Sets the active waypoint to a specific index.</summary>
+    public void set_active_waypoint(int index)
+    {
+        active_waypoint_index = Mathf.Clamp(index, 0, waypoints.Count);
+        refresh_marker_styles();
+    }
+
     #endregion
 
     #region Marker Management
 
-    /// <summary>
-    /// Destroys all marker UI and recreates from the waypoints list.
-    /// </summary>
     private void rebuild_marker_ui()
     {
-        // Clear existing UI
         foreach (Compass_Marker m in marker_instances)
         {
             if (m.element != null)
@@ -421,7 +406,6 @@ public class Compass_Controller : MonoBehaviour
 
         if (compass_markers == null) return;
 
-        // Create a marker for each waypoint
         for (int i = 0; i < waypoints.Count; i++)
         {
             Compass_Marker_Data data = waypoints[i];
@@ -432,11 +416,9 @@ public class Compass_Controller : MonoBehaviour
 
             Compass_Marker marker = new Compass_Marker(data.target, color);
 
-            // Root element
             marker.element = new VisualElement();
             marker.element.AddToClassList("compass-marker");
 
-            // Dot
             marker.dot_element = new VisualElement();
             marker.dot_element.AddToClassList("compass-marker-dot");
             marker.dot_element.style.backgroundColor = color;
@@ -444,7 +426,6 @@ public class Compass_Controller : MonoBehaviour
             if (is_active)
                 marker.dot_element.AddToClassList("compass-marker-dot-active");
 
-            // Distance label (only visible on active marker)
             marker.distance_label = new Label();
             marker.distance_label.AddToClassList("compass-marker-distance");
             marker.distance_label.style.display = is_active ? DisplayStyle.Flex : DisplayStyle.None;
@@ -457,9 +438,6 @@ public class Compass_Controller : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Updates colors and distance label visibility after the active waypoint changes.
-    /// </summary>
     private void refresh_marker_styles()
     {
         int instance_idx = 0;

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
 public class Compass_Marker
 {
     public Transform target;
