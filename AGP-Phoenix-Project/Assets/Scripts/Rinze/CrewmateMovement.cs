@@ -44,16 +44,13 @@ public class CrewmateMovement : MonoBehaviour
         if (target == null) return;
         popupScreen.alpha = Mathf.Lerp(popupScreen.alpha, targetAlpha, Time.deltaTime * 8f);
 
-        float moveDirection = target.position.x - transform.position.x;
-        if (moveDirection > 0.01f)
-        {
-            if (sr != null) sr.flipX = false;
-        }
-        else if (moveDirection < -0.01f)
-        {
-            if (sr != null) sr.flipX = true;
-        }
+        Vector3 movement = target.position - transform.position;
 
+        if (Mathf.Abs(movement.x) > 0.01f)
+        {
+           if(sr != null) sr.flipX = movement.x < 0f;
+        }
+        CheckClimbAnimation();
         if (CheckStairs()) return;
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -62,12 +59,14 @@ public class CrewmateMovement : MonoBehaviour
 
         if (distance < 0.1f)
         {
-            if (animator != null) animator.SetBool("isWalking", false); // arrived, play Build
+            if (animator != null) animator.SetBool("isWalking", false);
+            if (animator != null) animator.SetBool("isClimbing", false);
             currentRoom.roomHealth.isHealing = true;
         }
         else
         {
             if (animator != null) animator.SetBool("isWalking", true); // moving, play Walk
+            if (animator != null) animator.SetBool("isClimbing", false);
             currentRoom.roomHealth.isHealing = false;
             if (previousRoom != null) previousRoom.roomHealth.isHealing = false;
         }
@@ -79,6 +78,14 @@ public class CrewmateMovement : MonoBehaviour
             (previousRoom != null && previousRoom.roomType == RoomType.Hull))
             && !doneStairs)
         {
+            Vector3 dir = stairAnchor.position - transform.position;
+
+            // 🔥 HARD FORCE flip while using stairs
+            if (Mathf.Abs(dir.x) > 0.01f && sr != null)
+            {
+                sr.flipX = dir.x < 0f;
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, stairAnchor.position, speed * Time.deltaTime);
 
             stairDistance = Vector3.Distance(transform.position, stairAnchor.position);
@@ -92,6 +99,20 @@ public class CrewmateMovement : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void CheckClimbAnimation()
+    {
+        if (currentRoom.roomType == RoomType.Hull && stairDistance < 0.1f)
+        {
+            if (animator != null) animator.SetBool("isWalking", true); // moving, play Walk
+            if (animator != null) animator.SetBool("isClimbing", false);
+        }
+        else if (currentRoom.roomType != RoomType.Hull && stairDistance > 0.1f)
+        {
+            if (animator != null) animator.SetBool("isWalking", false); // moving, play Walk
+            if (animator != null) animator.SetBool("isClimbing", true);
+        }
     }
 
     public void ShowBubble(string type)
@@ -131,6 +152,14 @@ public class CrewmateMovement : MonoBehaviour
 
         doneStairs = false;
         target = newTarget;
+
+        // 🔥 HARDCODE FIX: set correct facing immediately
+        float dir = target.position.x - transform.position.x;
+        if (sr != null)
+        {
+            sr.flipX = dir < 0f;
+        }
+
         isSelected = false;
         selectedCrewmate = null;
     }
