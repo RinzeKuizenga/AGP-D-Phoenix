@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomHealth : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class RoomHealth : MonoBehaviour
     [SerializeField] private float decayPerSecond = 2f;
     [SerializeField] private float pauseDuration = 3f;
 
+    [SerializeField] private Image healthBarImg;
+
     private float currentHealth;
     private bool isDestroyed = false;
     private float pauseTimer = 0f;
@@ -17,6 +20,8 @@ public class RoomHealth : MonoBehaviour
 
     public event Action<float, float> OnHealthChanged;
     public event Action<RoomHealth> OnRoomDestroyed;
+
+
 
     public string RoomName => roomName;
     public float MaxHealth => maxHealth;
@@ -54,6 +59,7 @@ public class RoomHealth : MonoBehaviour
             currentHealth += change;
         }
 
+        UpdateHealthBar();
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
@@ -64,7 +70,7 @@ public class RoomHealth : MonoBehaviour
             OnRoomDestroyed?.Invoke(this);
         }
     }
-
+    
     public void PerformAction(float healAmount)
     {
         if (isDestroyed) return;
@@ -89,5 +95,10 @@ public class RoomHealth : MonoBehaviour
         currentHealth = maxHealth;
         pauseTimer = 0f;
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthBarImg.fillAmount = currentHealth / 100;
     }
 }

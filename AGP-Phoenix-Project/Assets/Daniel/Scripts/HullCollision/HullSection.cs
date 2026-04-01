@@ -34,41 +34,26 @@ public class HullSection : MonoBehaviour
     // ── Visuals ───────────────────────────────────────────────────────────────
 
     [Header("Visuals")]
-    [Tooltip("The MeshRenderer(s) that make up this hull section")]
+    
     public Renderer[] sectionRenderers;
-
-    [Tooltip("Material to swap in when section is Damaged")]
     public Material damagedMaterial;
-
-    [Tooltip("Material to swap in when section is Critical")]
     public Material criticalMaterial;
-
-    [Tooltip("Optional: crack/damage decal GameObject to show when Damaged")]
+    
     public GameObject damageDecal;
-
-    [Tooltip("Optional: larger crack/hole decal to show when Critical")]
+    
     public GameObject criticalDecal;
 
-    // ── Particles ─────────────────────────────────────────────────────────────
-
     [Header("Effects")]
-    [Tooltip("Water leak particle system — plays when Damaged")]
     public ParticleSystem leakParticles;
-
-    [Tooltip("Heavy flooding particle — plays when Critical")]
+    
     public ParticleSystem floodParticles;
-
-    [Tooltip("Impact particle — plays on each hit")]
+    
     public ParticleSystem impactParticles;
-
-    // ── Events ────────────────────────────────────────────────────────────────
 
     [Header("Events")]
     public UnityEvent<HullSection>       OnSectionDamaged;   // any hit
     public UnityEvent<HullSection>       OnSectionCritical;  // crossed critical threshold
     public UnityEvent<HullSection>       OnSectionDestroyed; // reached 0 HP
-
-    // ── State ─────────────────────────────────────────────────────────────────
 
     public enum DamageState { Intact, Damaged, Critical, Destroyed }
     public DamageState State { get; private set; } = DamageState.Intact;
@@ -76,8 +61,7 @@ public class HullSection : MonoBehaviour
     private Material[] _originalMaterials;
     private bool _criticalEventFired = false;
     private bool _destroyedEventFired = false;
-
-    // ── Lifecycle ─────────────────────────────────────────────────────────────
+    
 
     void Awake()
     {
@@ -93,8 +77,6 @@ public class HullSection : MonoBehaviour
         if (damageDecal)   damageDecal.SetActive(false);
         if (criticalDecal) criticalDecal.SetActive(false);
     }
-
-    // ── Public API ────────────────────────────────────────────────────────────
 
     /// <summary>Apply damage to this section. Returns actual damage dealt.</summary>
     public float ApplyDamage(float rawDamage)
@@ -124,8 +106,6 @@ public class HullSection : MonoBehaviour
 
     /// <summary>Health as a 0–1 fraction.</summary>
     public float HealthFraction => currentHealth / maxHealth;
-
-    // ── Internal ──────────────────────────────────────────────────────────────
 
     private void UpdateState()
     {
@@ -226,9 +206,7 @@ public class HullSection : MonoBehaviour
     {
         if (impactParticles) impactParticles.Play();
     }
-
-    // ── Gizmos ────────────────────────────────────────────────────────────────
-
+    
     void OnDrawGizmosSelected()
     {
         // Show section health as a coloured sphere in the editor

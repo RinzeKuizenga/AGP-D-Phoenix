@@ -7,7 +7,7 @@ public class KitchenEffect : RoomEffect
 
     private float feedTimer;
     private bool isFeeding;
-
+    
     private void Update()
     {
         if (!isFeeding) return;
@@ -20,55 +20,47 @@ public class KitchenEffect : RoomEffect
         }
     }
 
-    public override void StartEffect()
+    public override void StartEffect(CrewmateMovement crewmate)
     {
-        Debug.Log("KitchenEffect: StartEffect() called");
+        
+        if (!ShipSystem.Instance.CanEat)
+        {
+            Debug.Log("Kitchen is destroyed, cannot eat!");
+            return;
+        }
+        
+        base.StartEffect(crewmate);
+
+        Debug.Log($"KitchenEffect: cachedStats = {cachedStats}");  // ← is this null?
+        Debug.Log($"KitchenEffect: crewmate = {crewmate}");        // ← is crewmate null?
+
+        if (cachedStats == null) return;
+
+        cachedStats.isBeingFed = true;
+        Debug.Log($"KitchenEffect: isBeingFed set to {cachedStats.isBeingFed}");
+
         isFeeding = true;
         feedTimer = 0f;
     }
 
     public override void StopEffect()
     {
-        Debug.Log("KitchenEffect: StopEffect() called");
+        if (cachedStats != null)
+        {
+            cachedStats.isBeingFed = false;
+            cachedStats = null; // ← clear when done
+        }
+
         isFeeding = false;
         feedTimer = 0f;
     }
 
     private void FeedCrewmate()
     {
-        Debug.Log("KitchenEffect: FeedCrewmate() called");
+        if (cachedStats == null) { StopEffect(); return; }
+        if (cachedStats.hunger >= cachedStats.maxHunger) { StopEffect(); return; }
 
-        CrewmateMovement crewmate = CrewmateMovement.selectedCrewmate;
-
-        if (crewmate == null)
-        {
-            Debug.LogWarning("KitchenEffect: selectedCrewmate is NULL");
-            StopEffect();
-            return;
-        }
-
-        if (crewmate.currentRoom != crewTarget)
-        {
-            Debug.LogWarning($"KitchenEffect: crewmate.currentRoom ({crewmate.currentRoom}) != crewTarget ({crewTarget})");
-            StopEffect();
-            return;
-        }
-
-        CrewMateStats stats = crewmate.GetComponent<CrewMateStats>();
-        if (stats == null)
-        {
-            Debug.LogWarning("KitchenEffect: CrewmateStats component not found on crewmate!");
-            return;
-        }
-
-        if (stats.hunger >= stats.maxHunger)
-        {
-            Debug.Log("KitchenEffect: Crewmate is already full");
-            StopEffect();
-            return;
-        }
-
-        stats.Feed(feedAmount);
-        Debug.Log($"KitchenEffect: Fed crewmate, hunger is now {stats.hunger}/{stats.maxHunger}");
+        cachedStats.Feed(feedAmount);
+        Debug.Log($"KitchenEffect: Fed crewmate, hunger now {cachedStats.hunger}/{cachedStats.maxHunger}");
     }
 }

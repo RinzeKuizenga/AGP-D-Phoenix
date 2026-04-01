@@ -26,6 +26,7 @@ public class MapGenerator : MonoBehaviour
     [Range(0, 6)] public int editorPreviewLOD;
 
     public bool autoUpdate;
+    private bool _isActive;
 
     float[,] falloffMap;
 
@@ -39,7 +40,12 @@ public class MapGenerator : MonoBehaviour
             DrawMapInEditor();
         }
     }
-
+    void OnEnable()
+    {
+        _isActive = true;
+        falloffMap = null;
+    }
+    void OnDisable() => _isActive = false;
     void Start()
     {
         Debug.Log(
@@ -101,6 +107,7 @@ public class MapGenerator : MonoBehaviour
     void MapDataThread(Vector2 centre, Action<MapData> callback)
     {
         MapData mapData = GenerateMapData(centre);
+        if (!_isActive) return;
         lock (mapDataThreadInfoQueue)
         {
             mapDataThreadInfoQueue.Enqueue(new MapThreadInfo<MapData>(callback, mapData));
@@ -118,6 +125,7 @@ public class MapGenerator : MonoBehaviour
     {
         MeshData meshData = MeshGeneratorScript.GenerateTerrainMesh(mapData.heightMap, terrainData.meshHeightMultiplier,
             terrainData.meshHeightCurve, lod, terrainData.useFlatShading);
+        if (!_isActive) return;
         lock (meshDataThreadInfoQueue)
         {
             meshDataThreadInfoQueue.Enqueue(new MapThreadInfo<MeshData>(callback, meshData));

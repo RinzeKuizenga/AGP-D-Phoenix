@@ -1,23 +1,26 @@
+using System;
 using UnityEngine;
 
 public abstract class RoomEffect : MonoBehaviour
 {
     [SerializeField] protected CrewTarget crewTarget;
-
-    public abstract void StartEffect();
-    public abstract void StopEffect();
-
-    protected CrewMateStats GetCrewmateStats()
+    protected CrewmateMovement occupant;
+    [NonSerialized] protected CrewMateStats cachedStats; 
+    
+    public virtual void StartEffect(CrewmateMovement crewmate)
     {
-        CrewmateMovement crewmate = CrewmateMovement.selectedCrewmate;
-        if (crewmate == null || crewmate.currentRoom != crewTarget) return null;
-
-        return crewmate.GetComponent<CrewMateStats>();
+        occupant = crewmate;
+        cachedStats = crewmate.GetComponentInChildren<CrewMateStats>(); // ← change this
+    
+        if (cachedStats == null)
+            Debug.LogWarning($"RoomEffect: Still null! Check {crewmate.name}'s hierarchy for CrewMateStats");
+        else
+            Debug.Log($"RoomEffect: Found CrewMateStats on {cachedStats.gameObject.name}");
     }
+    public abstract void StopEffect();
 
     protected bool IsCrewmatePresent()
     {
-        CrewmateMovement crewmate = CrewmateMovement.selectedCrewmate;
-        return crewmate != null && crewmate.currentRoom == crewTarget;
-    }
+        return occupant != null && occupant.currentRoom == crewTarget;
+    } 
 }

@@ -22,4 +22,10 @@ public class AudioManager : MonoBehaviour
         if (clip == null) return;
         sfxSource.PlayOneShot(clip, volume);
     }
+
+    public void StopSFX(AudioClip clip)
+    {
+        if (clip == null) return;
+        sfxSource.Stop();
+    }
 }
