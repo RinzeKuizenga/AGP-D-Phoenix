@@ -5,7 +5,7 @@ public class DebrisToHullDamage : MonoBehaviour
 {
     [Header("Damage Values")]
     public float plankDamage = 8f;
-    public float wreckDamage = 35f;
+    public float wreckDamage = 17f;
 
     [Header("Tags")]
     public string debrisTag = "Debris";
@@ -17,6 +17,7 @@ public class DebrisToHullDamage : MonoBehaviour
 
     private BoatHullManager _hullManager;
     private float _lastHitTime = -999f;
+
 
     void Awake()
     {

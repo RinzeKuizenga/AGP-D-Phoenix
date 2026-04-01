@@ -20,26 +20,39 @@ public class MedbayEffect : RoomEffect
         }
     }
 
-    public override void StartEffect()
+    public override void StartEffect(CrewmateMovement crewmate)
     {
+        if (!ShipSystem.Instance.CanHeal)
+        {
+            Debug.Log("Medbay is destroyed, cannot heal!");
+            return;
+        }
+        
+        base.StartEffect(crewmate);
+        
+        if (cachedStats == null)
+        {
+            Debug.LogWarning("MedbayEffect: No CrewMateStats found on crewmate!");
+            return;
+        }
+
         isHealing = true;
         healTimer = 0f;
     }
 
     public override void StopEffect()
     {
+        cachedStats = null;
         isHealing = false;
         healTimer = 0f;
     }
 
     private void HealCrewmate()
     {
-        CrewMateStats stats = GetCrewmateStats();
-        if (stats == null) { StopEffect(); return; }
+        if (cachedStats == null) { StopEffect(); return; }
+        if (cachedStats.health >= cachedStats.maxHealth) { StopEffect(); return; }
 
-        if (stats.health >= stats.maxHealth) { StopEffect(); return; }
-
-        stats.Heal(healAmount);
-        Debug.Log($"{CrewmateMovement.selectedCrewmate.name} healed to {stats.health}/{stats.maxHealth}");
+        cachedStats.Heal(healAmount);
+        Debug.Log($"MedbayEffect: Healed crewmate to {cachedStats.health}/{cachedStats.maxHealth}");
     }
 }

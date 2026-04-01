@@ -5,6 +5,7 @@ public class CharacterButton : MonoBehaviour
     [HideInInspector] public Transform originalParent;
     public Crew crewData;
     private CrewSelectingManager manager;
+    [SerializeField] private AudioClip UIClick;
 
     void Start()
     {
@@ -13,6 +14,7 @@ public class CharacterButton : MonoBehaviour
 
         GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
         {
+            AudioManager.Instance.PlaySFX(UIClick, 1f);
             manager.SelectCrewMember(gameObject, crewData);
         });
     }

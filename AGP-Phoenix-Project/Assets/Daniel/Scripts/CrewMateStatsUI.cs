@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,11 +7,16 @@ public class CrewMateStatsUI : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private CrewMateStats stats;
-
+    [SerializeField] private Image icon;
+    
     [Header("Sliders")]
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Slider hungerSlider;
-
+    
+    [Header("Icons")]
+    [SerializeField] private Sprite smileyIcon;
+    [SerializeField] private Sprite mediumIcon;
+    [SerializeField] private Sprite NegativeIcon;
     private void Start()
     {
         // Set slider max values once
@@ -25,6 +31,7 @@ public class CrewMateStatsUI : MonoBehaviour
         
         UpdateSliderColor(healthSlider, stats.health, stats.maxHealth);
         UpdateSliderColor(hungerSlider, stats.hunger, stats.maxHunger);
+        UpdateSliderImage(stats.health, stats.maxHealth);
     }
     
     private void UpdateSliderColor(Slider slider, float current, float max)
@@ -38,5 +45,17 @@ public class CrewMateStatsUI : MonoBehaviour
             fill.color = Color.yellow;
         else
             fill.color = Color.red;
+    }
+
+    private void UpdateSliderImage(float current, float max)
+    {
+        float percent = current / max;
+
+        if (percent > 0.5f)
+            icon.sprite = smileyIcon;
+        else if (percent > 0.25f)
+            icon.sprite = mediumIcon;
+        else 
+            icon.sprite = NegativeIcon;
     }
 }

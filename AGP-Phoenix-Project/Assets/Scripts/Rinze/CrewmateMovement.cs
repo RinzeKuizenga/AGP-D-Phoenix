@@ -23,6 +23,17 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] public Transform stairAnchor;
     [SerializeField] public bool doneStairs = false;
 
+    [SerializeField] private AudioClip buildSound;
+
+    void Start()
+    {
+        Debug.Log("START");
+        if (currentRoom != null)
+        {
+            isSelected = true;
+            MoveToArea(currentRoom.target, currentRoom);
+        }
+    }
 
     private void Update()
     {
