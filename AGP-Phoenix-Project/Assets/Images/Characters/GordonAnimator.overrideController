@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GordonAnimator
+  m_Controller: {fileID: 9100000, guid: 3002f7bddd2256f4a9674abc6c837943, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c65880d8f5708f34699ae0add02511c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c65880d8f5708f34699ae0add02511c2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0fd1a55e1cd90be46aed628ee48087cb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0fd1a55e1cd90be46aed628ee48087cb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 70b35d0d191664443b6c898b6cad3d47, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 70b35d0d191664443b6c898b6cad3d47, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2520edc4c8505b146abfb9654f18a9a0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2520edc4c8505b146abfb9654f18a9a0, type: 2}

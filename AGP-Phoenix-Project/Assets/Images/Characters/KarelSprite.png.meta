@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Karel Kluser 1_0
+      name: KarelSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_1
+      name: KarelSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_2
+      name: KarelSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_3
+      name: KarelSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_4
+      name: KarelSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_5
+      name: KarelSprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_6
+      name: KarelSprite_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_7
+      name: KarelSprite_7
       rect:
         serializedVersion: 2
         x: 384
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_8
+      name: KarelSprite_8
       rect:
         serializedVersion: 2
         x: 576
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_9
+      name: KarelSprite_9
       rect:
         serializedVersion: 2
         x: 768
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_10
+      name: KarelSprite_10
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_11
+      name: KarelSprite_11
       rect:
         serializedVersion: 2
         x: 192
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_12
+      name: KarelSprite_12
       rect:
         serializedVersion: 2
         x: 384
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_13
+      name: KarelSprite_13
       rect:
         serializedVersion: 2
         x: 576
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_14
+      name: KarelSprite_14
       rect:
         serializedVersion: 2
         x: 768
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_15
+      name: KarelSprite_15
       rect:
         serializedVersion: 2
         x: 0
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_16
+      name: KarelSprite_16
       rect:
         serializedVersion: 2
         x: 192
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_17
+      name: KarelSprite_17
       rect:
         serializedVersion: 2
         x: 384
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_18
+      name: KarelSprite_18
       rect:
         serializedVersion: 2
         x: 576
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_19
+      name: KarelSprite_19
       rect:
         serializedVersion: 2
         x: 768
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Karel Kluser 1_20
+      name: KarelSprite_20
       rect:
         serializedVersion: 2
         x: 0
@@ -574,27 +574,27 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":192.0,"y":384.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Karel Kluser 1_0: 1965751705
-      Karel Kluser 1_1: 1442221877
-      Karel Kluser 1_10: 575004747
-      Karel Kluser 1_11: -1297737081
-      Karel Kluser 1_12: 1618025573
-      Karel Kluser 1_13: -1955157040
-      Karel Kluser 1_14: 219937044
-      Karel Kluser 1_15: -586943748
-      Karel Kluser 1_16: 575734970
-      Karel Kluser 1_17: 2036085877
-      Karel Kluser 1_18: 502973194
-      Karel Kluser 1_19: 715349788
-      Karel Kluser 1_2: -1172226260
-      Karel Kluser 1_20: 2012843981
-      Karel Kluser 1_3: -576826280
-      Karel Kluser 1_4: -1340155921
-      Karel Kluser 1_5: 2043444131
-      Karel Kluser 1_6: -1738028845
-      Karel Kluser 1_7: -68669395
-      Karel Kluser 1_8: 1380950434
-      Karel Kluser 1_9: -927496297
+      KarelSprite_0: 1965751705
+      KarelSprite_1: 1442221877
+      KarelSprite_10: 575004747
+      KarelSprite_11: -1297737081
+      KarelSprite_12: 1618025573
+      KarelSprite_13: -1955157040
+      KarelSprite_14: 219937044
+      KarelSprite_15: -586943748
+      KarelSprite_16: 575734970
+      KarelSprite_17: 2036085877
+      KarelSprite_18: 502973194
+      KarelSprite_19: 715349788
+      KarelSprite_2: -1172226260
+      KarelSprite_20: 2012843981
+      KarelSprite_3: -576826280
+      KarelSprite_4: -1340155921
+      KarelSprite_5: 2043444131
+      KarelSprite_6: -1738028845
+      KarelSprite_7: -68669395
+      KarelSprite_8: 1380950434
+      KarelSprite_9: -927496297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

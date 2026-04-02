@@ -21,3 +21,28 @@ MonoBehaviour:
   crewSpeed: 7
   crewHealth: 115
   crewHunger: 100
+  crewDamageReceived: 0
+  animationSprites:
+  - {fileID: 1959345192, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 1982550769, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 1816323342, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -2018877505, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -754516181, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 329360993, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 1639831428, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 22287369, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 642612198, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 1409027145, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -1384953792, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -1673836620, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -1898576875, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -2091406658, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -1422327068, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -206968092, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -1163015102, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -927860565, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 1976429763, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: 1997269433, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - {fileID: -661429122, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  spriteSheetTexture: {fileID: 2800000, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  crewMaterial: {fileID: 2100000, guid: 0fff3cb7d1ab2554ab0ed8bfb5a56a23, type: 2}
