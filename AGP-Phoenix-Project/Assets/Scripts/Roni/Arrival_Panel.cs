@@ -107,7 +107,6 @@ public class Arrival_Panel : MonoBehaviour
         Compass_Marker_Data arrived = compass_controller.get_waypoint_data(arrived_index);
         string arrived_name = arrived != null ? arrived.destination_name : "Onbekend";
 
-        // Check if there is a next waypoint
         int next_index = arrived_index + 1;
         Compass_Marker_Data next_wp = compass_controller.get_waypoint_data(next_index);
         bool is_final = (next_wp == null);
@@ -125,7 +124,6 @@ public class Arrival_Panel : MonoBehaviour
             }
             else
             {
-                // Calculate distance from current position to next waypoint
                 float dist_to_next = 0f;
                 if (next_wp.target != null)
                 {
@@ -139,16 +137,12 @@ public class Arrival_Panel : MonoBehaviour
             }
         }
 
-        // Fade in
         yield return StartCoroutine(fade(0f, 1f, fade_in_duration));
 
-        // Hold
         yield return new WaitForSeconds(display_duration);
 
-        // Fade out
         yield return StartCoroutine(fade(1f, 0f, fade_out_duration));
 
-        // Advance to next waypoint
         if (compass_controller != null)
             compass_controller.advance_to_next_waypoint();
 

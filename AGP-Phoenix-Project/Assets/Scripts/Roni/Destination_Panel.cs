@@ -1,12 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-/// <summary>
-/// Always-visible panel at the bottom of the screen showing:
-/// - Current destination name
-/// - Live distance in km/m
-/// Reads from Compass_Controller. Never blocks mouse input.
-/// </summary>
+
 public class Destination_Panel : MonoBehaviour
 {
     #region Serialized Fields
