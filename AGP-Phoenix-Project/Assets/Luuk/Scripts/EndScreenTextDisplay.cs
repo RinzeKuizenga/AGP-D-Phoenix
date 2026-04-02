@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using OpenCover.Framework.Model;
 
 public class EndScreenTextDisplay : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class EndScreenTextDisplay : MonoBehaviour
     public class SequenceEntry
     {
         public CanvasGroup canvasGroup;
+       
         public float displayDuration;
         public bool isPersistent;    // fades in and stays, no fade out
         public CanvasGroup[] companions;   // fade in/out together with main
     }
 
     public SequenceEntry[] entries;
+    [SerializeField] GameObject Skipped;
     public float fadeDuration = 0.5f;
 
     private bool _skipped = false;
@@ -23,11 +26,20 @@ public class EndScreenTextDisplay : MonoBehaviour
         foreach (var e in entries)
         {
             e.canvasGroup.alpha = 0f;
-            foreach (var c in e.companions)
-                c.alpha = 0f;
+            if (e.companions != null)
+            {
+                foreach (var c in e.companions)
+                {
+
+                    if (c != null)
+                    {
+                        c.alpha = 0f;
+                    }
+                }
+            }
         }
 
-        StartCoroutine(PlaySequence());
+            StartCoroutine(PlaySequence());
     }
 
     void Update()
@@ -55,16 +67,20 @@ public class EndScreenTextDisplay : MonoBehaviour
         foreach (var c in entries[entries.Length - 1].companions)
             c.alpha = 1f;
 
+
+       // Skipped.SetActive(true);
+
+
         StartCoroutine(SkipToEnd(last));
     }
 
     IEnumerator SkipToEnd(CanvasGroup last)
     {
         var fadeOuts = new List<Coroutine>();
+        fadeOuts.Add(StartCoroutine(Fade(last, 0f, 1f, fadeDuration)));
+        yield return new WaitForSeconds(3);
         fadeOuts.Add(StartCoroutine(Fade(last, 1f, 0f, fadeDuration)));
-        foreach (var c in entries[entries.Length - 1].companions)
-            fadeOuts.Add(StartCoroutine(Fade(c, 1f, 0f, fadeDuration)));
-        foreach (var f in fadeOuts) yield return f;
+        FadeManager.Instance.FadeToScene("RinzeScene 1");
     }
 
     IEnumerator PlaySequence()
@@ -91,6 +107,7 @@ public class EndScreenTextDisplay : MonoBehaviour
             }
             // if persistent: fades in and sequence moves on, stays visible
         }
+        FadeManager.Instance.FadeToScene("RinzeScene 1");
     }
 
     IEnumerator Fade(CanvasGroup cg, float from, float to, float duration)
