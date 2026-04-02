@@ -14,11 +14,13 @@ public class Bucket_MG_Script : MonoBehaviour
     private int filledCountAmount;
     private bool bucketFilled = false;
 
-    public Winch_BMG Winch_BMG;
-
+    public Bucket_Winch Winch_BMG;
+    private RoomHealth roomHealth;
+    [SerializeField] private string roomName;
     private void Start()
     {
         fireImage.fillAmount = 1;
+        roomHealth = GameObject.Find(roomName).GetComponent<RoomHealth>();
     }
     private void Update()
     {
@@ -34,6 +36,8 @@ public class Bucket_MG_Script : MonoBehaviour
         }
         if (filledCountAmount == 5)
         {
+            roomHealth.ResetHealth(); 
+            Destroy(bucketMinigame);
             bucketMinigame.SetActive(false);
         }
     }
