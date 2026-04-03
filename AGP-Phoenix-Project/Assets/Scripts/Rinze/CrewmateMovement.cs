@@ -26,7 +26,7 @@ public class CrewmateMovement : MonoBehaviour
     [SerializeField] private AudioClip buildSound;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sr;
-
+    private bool effectStarted = false; 
     void Start()
     {
         Debug.Log("START");
@@ -62,9 +62,16 @@ public class CrewmateMovement : MonoBehaviour
             if (animator != null) animator.SetBool("isWalking", false);
             if (animator != null) animator.SetBool("isClimbing", false);
             currentRoom.roomHealth.isHealing = true;
+            if (!effectStarted)
+            {
+                effectStarted = true;
+                Debug.Log($"CrewmateMovement: Arrived at {currentRoom.gameObject.name}, calling StartEffect");
+                currentRoom.StartEffect(this); // ← pass this crewmate in
+            }
         }
         else
         {
+            effectStarted = false;
             if (animator != null) animator.SetBool("isWalking", true); // moving, play Walk
             if (animator != null) animator.SetBool("isClimbing", false);
             currentRoom.roomHealth.isHealing = false;
@@ -149,7 +156,7 @@ public class CrewmateMovement : MonoBehaviour
         currentRoom = room;
         currentRoom.isFilled = true;
         currentRoom.hoverImage.color = new Color(0.7f, 0f, 0f, 0f);
-
+        effectStarted = false;
         doneStairs = false;
         target = newTarget;
 
