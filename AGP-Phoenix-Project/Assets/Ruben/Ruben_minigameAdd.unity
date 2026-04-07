@@ -6325,9 +6325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameManager
   minigame1Prefab: {fileID: 8437818844331702806, guid: 189085f1255df12429fd74f2825cd1fa, type: 3}
-  minigame2Prefab: {fileID: 4341035325646201531, guid: 577b8e53ac1772944b173a4a66ac8e5e, type: 3}
+  minigame2Prefab: {fileID: 5960967893507696222, guid: d021e671fb38f1143b59b36d129acec4, type: 3}
   minigame3Prefab: {fileID: 7700805320307220057, guid: 5e66d96318cdc0145a1987139b317c3b, type: 3}
-  minigame4Prefab: {fileID: 6125698707921257129, guid: 63d21051a773c0b47b43e78620c692e1, type: 3}
+  minigame4Prefab: {fileID: 1297243981794496369, guid: 6eb67a9ffd4b81143837eed9969e5579, type: 3}
   minigame5Prefab: {fileID: 6560159524629557998, guid: 952bc0992348873458f8a3e68f4b4893, type: 3}
 --- !u!1 &113627877
 GameObject:
@@ -14919,7 +14919,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1968040461}
-  - {fileID: 891358984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &382153069
@@ -20472,18 +20471,10 @@ MonoBehaviour:
   ui_document: {fileID: 1608819867}
   compass_width: 800
   compass_fov: 150
+  active_marker_color: {r: 1, g: 0.78, b: 0.2, a: 1}
   editor_preview_heading: 0
   player_transform: {fileID: 0}
-  editor_markers:
-  - target: {fileID: 908371932}
-    icon: {fileID: 0}
-    color: {r: 0.8616352, g: 0.1923776, b: 0.1923776, a: 0}
-  - target: {fileID: 1931415109}
-    icon: {fileID: 2800000, guid: 5d4b367f0702b4b46a16ba3b67281419, type: 3}
-    color: {r: 0.21568629, g: 0.8745098, b: 0.21568629, a: 0}
-  - target: {fileID: 1120893766}
-    icon: {fileID: 2800000, guid: d9b984f8c9931dc499f788eba40f7674, type: 3}
-    color: {r: 0, g: 0, b: 0.7882353, a: 0}
+  waypoints: []
 --- !u!4 &733811204
 Transform:
   m_ObjectHideFlags: 0
@@ -22203,54 +22194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888307002}
   m_CullTransparentMesh: 1
---- !u!1 &891358983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 891358984}
-  - component: {fileID: 891358985}
-  m_Layer: 0
-  m_Name: BubbleManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &891358984
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891358983}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 381256902}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &891358985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891358983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e73eeded27b6d9428b128991a8a5c41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BubbleTrailManager
-  bubblePrefab: {fileID: 3962666913040861147, guid: aca10c77b85812f46b057f14ccb4d58c, type: 3}
-  canvasRect: {fileID: 0}
-  bubbleSpacing: 25
-  bubbleLifetime: 0.4
 --- !u!1 &894362637
 GameObject:
   m_ObjectHideFlags: 0
