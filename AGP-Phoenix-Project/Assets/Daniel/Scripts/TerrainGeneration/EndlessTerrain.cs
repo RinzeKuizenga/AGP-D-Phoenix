@@ -31,7 +31,7 @@ public class EndlessTerrain : MonoBehaviour {
 		terrainChunksVisibleLastUpdate.Clear();
 		terrainChunkDictionary.Clear();
 		
-		viewerPosition = new Vector2(viewer.position.x, viewer.position.z);
+		//viewerPosition = new Vector2(viewer.position.x, vsiewer.position.z);
 		viewerPositionOld = viewerPosition;
 		
 		mapGenerator = FindObjectOfType<MapGenerator> ();

@@ -1,21 +1,30 @@
+/* ============================================================
+   Compass UI Stylesheet
+   ============================================================ */
+
+/* --- Wrapper --- */
 .compass-wrapper {
     --compass-width: 800px;
     --compass-top: 30px;
+
     -unity-font: url("project://database/Assets/Scripts/Roni/UI/Fonts/Roboto-Regular.ttf?fileID=12800000&guid=603879639d5909043b52ba451b8059c7&type=3#Roboto-Regular");
-    margin: 0;
-    padding: 0;
-    border-width: 0;
+
     position: absolute;
     width: var(--compass-width);
     top: var(--compass-top);
     left: 50%;
     translate: -50% 0;
     overflow: visible;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
 }
 
+/* --- Container (visible bar) --- */
 .compass-container {
     --compass-height: 32px;
     --compass-bg: rgba(0, 0, 0, 0.8);
+
     position: relative;
     width: 100%;
     height: var(--compass-height);
@@ -25,6 +34,7 @@
     justify-content: center;
 }
 
+/* --- Sliding strip --- */
 .compass-strip {
     position: absolute;
     top: 0;
@@ -32,9 +42,11 @@
     overflow: visible;
 }
 
+/* --- Tick marks --- */
 .compass-tick {
     --tick-width: 1px;
     --tick-color: rgba(255, 255, 255, 0.5);
+
     position: absolute;
     width: var(--tick-width);
     background-color: var(--tick-color);
@@ -42,26 +54,21 @@
 }
 
 .compass-tick-small {
-    --tick-small-height: 6px;
-    height: var(--tick-small-height);
+    height: 6px;
 }
 
 .compass-tick-medium {
-    --tick-medium-height: 12px;
-    --tick-medium-color: rgba(255, 255, 255, 0.7);
-    height: var(--tick-medium-height);
-    background-color: var(--tick-medium-color);
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .compass-tick-large {
-    --tick-large-height: 14px;
-    --tick-large-width: 2px;
-    --tick-large-color: rgb(255, 255, 255);
-    height: var(--tick-large-height);
-    width: var(--tick-large-width);
-    background-color: var(--tick-large-color);
+    height: 14px;
+    width: 2px;
+    background-color: rgb(255, 255, 255);
 }
 
+/* --- Labels --- */
 .compass-label {
     position: absolute;
     color: rgb(255, 255, 255);
@@ -97,27 +104,29 @@
     white-space: nowrap;
 }
 
+/* --- Center indicator line --- */
 .compass-center-indicator {
-    --indicator-width: 2px;
-    --indicator-height: 100%;
     --indicator-color: rgb(255, 200, 50);
+
     position: absolute;
-    width: var(--indicator-width);
-    height: var(--indicator-height);
+    width: 2px;
+    height: 100%;
     left: 50%;
     translate: -50% 0;
     background-color: var(--indicator-color);
 }
 
+/* --- Marker layer --- */
 .compass-markers {
     position: absolute;
     width: 100%;
     height: 32px;
-    top: 20;
+    top: 20px;
     left: 0;
     overflow: visible;
 }
 
+/* --- Individual marker --- */
 .compass-marker {
     position: absolute;
     width: 24px;
@@ -129,39 +138,74 @@
     overflow: visible;
 }
 
-.compass-marker-icon {
-    width: 12px;
-    height: 12px;
+/* --- Marker dot (replaces old icon element) --- */
+.compass-marker-dot {
+    width: 10px;
+    height: 10px;
     flex-shrink: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 8px;
+    border-radius: 50%;
     border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.compass-marker-dot-active {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
     border-color: rgb(255, 255, 255);
 }
 
+/* --- Distance label (only shown on active marker) --- */
 .compass-marker-distance {
-    --marker-distance-color: rgb(255, 255, 255);
-    --marker-distance-font-size: 10px;
-    --marker-distance-bg: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 17px;
     left: 50%;
     translate: -50% 0;
-    color: var(--marker-distance-color);
-    font-size: var(--marker-distance-font-size);
+    color: rgb(255, 255, 255);
+    font-size: 10px;
     -unity-text-align: middle-center;
     padding: 2px 4px;
     border-width: 0;
     white-space: nowrap;
-    background-color: var(--marker-distance-bg);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 3px;
 }
 
+/* --- Hidden state --- */
 .compass-marker-hidden {
     display: none;
 }
 
-.side-objective-label {
+/* ============================================================
+   Destination Feedback Panel (bottom-left corner)
+   ============================================================ */
+.destination-panel {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    flex-direction: column;
+    padding: 10px 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.destination-name {
+    color: rgb(255, 200, 50);
+    font-size: 16px;
+    -unity-font-style: bold;
+    -unity-text-outline-width: 0.5px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.destination-distance {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    margin-top: 4px;
+    padding: 0;
+    white-space: nowrap;
 }
