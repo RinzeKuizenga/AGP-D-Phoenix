@@ -92,7 +92,7 @@ public class RoomHealth : MonoBehaviour
     public void ResetHealth()
     {
         isDestroyed = false;
-        currentHealth = maxHealth;
+        currentHealth = 50;
         pauseTimer = 0f;
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }

@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class StorageMGmanager : MonoBehaviour
 {
+    private RoomHealth roomHealth;
+    [SerializeField] private string roomName;
+    private void Start()
+    {
+        roomHealth = GameObject.Find(roomName).GetComponent<RoomHealth>();
+    }
     public GameObject storageMinigame;
 
     public int nailsLeft = 10;
@@ -15,7 +21,7 @@ public class StorageMGmanager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(nailsLeft);
+        Debug.Log(nailsLeft);
 
         if (nailsLeft == 0 && !gameFinished)
         {
@@ -29,6 +35,8 @@ public class StorageMGmanager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         Debug.Log("Storage MiniGame completed!!!");
+        roomHealth.ResetHealth();
+        Destroy(storageMinigame);
         storageMinigame.SetActive(false);
     }
 }
