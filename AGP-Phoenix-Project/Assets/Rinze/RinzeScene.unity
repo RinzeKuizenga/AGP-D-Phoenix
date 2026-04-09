@@ -7545,7 +7545,7 @@ MonoBehaviour:
     tmpAnimator: {fileID: 185243970}
   updateFrom: 0
   animateOnStart: 1
-  animationsOverride: 1
+  animationsOverride: 0
   defaultAnimationsStrings: []
   defaultShowAnimationsStrings: []
   defaultHideAnimationsStrings: []
@@ -22709,18 +22709,10 @@ MonoBehaviour:
   ui_document: {fileID: 1608819867}
   compass_width: 800
   compass_fov: 150
+  active_marker_color: {r: 1, g: 0.78, b: 0.2, a: 1}
   editor_preview_heading: 0
   player_transform: {fileID: 0}
-  editor_markers:
-  - target: {fileID: 908371932}
-    icon: {fileID: 0}
-    color: {r: 0.8616352, g: 0.1923776, b: 0.1923776, a: 0}
-  - target: {fileID: 1931415109}
-    icon: {fileID: 2800000, guid: 5d4b367f0702b4b46a16ba3b67281419, type: 3}
-    color: {r: 0.21568629, g: 0.8745098, b: 0.21568629, a: 0}
-  - target: {fileID: 1120893766}
-    icon: {fileID: 2800000, guid: d9b984f8c9931dc499f788eba40f7674, type: 3}
-    color: {r: 0, g: 0, b: 0.7882353, a: 0}
+  waypoints: []
 --- !u!4 &733811204
 Transform:
   m_ObjectHideFlags: 0
@@ -26415,7 +26407,7 @@ MonoBehaviour:
     tmpAnimator: {fileID: 950398939}
   updateFrom: 0
   animateOnStart: 1
-  animationsOverride: 1
+  animationsOverride: 0
   defaultAnimationsStrings: []
   defaultShowAnimationsStrings: []
   defaultHideAnimationsStrings: []
@@ -35431,7 +35423,7 @@ MonoBehaviour:
     tmpAnimator: {fileID: 1125132369}
   updateFrom: 0
   animateOnStart: 1
-  animationsOverride: 1
+  animationsOverride: 0
   defaultAnimationsStrings: []
   defaultShowAnimationsStrings: []
   defaultHideAnimationsStrings: []
@@ -58540,7 +58532,7 @@ MonoBehaviour:
     tmpAnimator: {fileID: 2002763279}
   updateFrom: 0
   animateOnStart: 1
-  animationsOverride: 1
+  animationsOverride: 0
   defaultAnimationsStrings: []
   defaultShowAnimationsStrings: []
   defaultHideAnimationsStrings: []
