@@ -11,8 +11,15 @@ public class MinigameManager : MonoBehaviour
 
     private GameObject currentMinigame;
 
+    private void Start()
+    {
+        {
+            Destroy(minigame2Prefab);
+        }
+    }
     public void OpenMinigame(int index)
     {
+        Debug.Log("MINIGAME SPAWNED");
         // Destroy current minigame if one is open
         if (currentMinigame != null)
             Destroy(currentMinigame);
@@ -30,6 +37,7 @@ public class MinigameManager : MonoBehaviour
         if (prefab != null)
             currentMinigame = Instantiate(prefab);
     }
+
     public void CloseMinigame()
     {
         if (currentMinigame != null)
