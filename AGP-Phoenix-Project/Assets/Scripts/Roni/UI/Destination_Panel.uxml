@@ -1,0 +1,53 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+         editor-extension-mode="False">
+
+    <Style src="USS/Destination_Panel.uss" />
+
+    <!-- Main panel container -->
+    <ui:VisualElement name="destination-panel" picking-mode="Ignore" class="destination-panel">
+
+        <!-- Top row: Final destination (left) + Distance (right) -->
+        <ui:VisualElement name="destination-top-row" picking-mode="Ignore" class="destination-top-row">
+
+            <!-- Left column: label + name -->
+            <ui:VisualElement name="destination-left" picking-mode="Ignore" class="destination-left">
+                <ui:Label text="EINDBESTEMMING" name="destination-label" picking-mode="Ignore" class="destination-label" />
+                <ui:Label text="---" name="destination-name" picking-mode="Ignore" class="destination-name" />
+            </ui:VisualElement>
+
+            <!-- Right column: label + distance -->
+            <ui:VisualElement name="destination-right" picking-mode="Ignore" class="destination-right">
+                <ui:Label text="AFSTAND" name="distance-label" picking-mode="Ignore" class="distance-label" />
+                <ui:VisualElement name="distance-value-row" picking-mode="Ignore" class="distance-value-row">
+                    <ui:Label text="---" name="distance-number" picking-mode="Ignore" class="distance-number" />
+                    <ui:Label text="" name="distance-unit" picking-mode="Ignore" class="distance-unit" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+        <!-- Divider line -->
+        <ui:VisualElement name="destination-divider" picking-mode="Ignore" class="destination-divider" />
+
+        <!-- Bottom row: Bearing (left) + Nearest waypoint (right) -->
+        <ui:VisualElement name="destination-bottom-row" picking-mode="Ignore" class="destination-bottom-row">
+
+            <!-- Bearing indicator -->
+            <ui:VisualElement name="bearing-group" picking-mode="Ignore" class="bearing-group">
+                <ui:Label text="&#x25B3;" name="bearing-arrow" picking-mode="Ignore" class="bearing-arrow" />
+                <ui:Label text="---" name="bearing-text" picking-mode="Ignore" class="bearing-text" />
+            </ui:VisualElement>
+
+            <!-- Nearest waypoint -->
+            <ui:VisualElement name="nearby-group" picking-mode="Ignore" class="nearby-group">
+                <ui:VisualElement name="nearby-dot" picking-mode="Ignore" class="nearby-dot" />
+                <ui:Label text="" name="nearby-text" picking-mode="Ignore" class="nearby-text" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+</ui:UXML>
