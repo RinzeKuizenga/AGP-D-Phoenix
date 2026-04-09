@@ -63,13 +63,21 @@ public class RoomHealthUI : MonoBehaviour
             else
                 fillImage.color = Color.Lerp(criticalColor, warningColor, pct / 0.5f);
         }
+
+        if(healthSlider.value <= 0)
+        {
+            fixButton.SetActive(true);
+        }
+        else
+        {
+            fixButton.SetActive(false);
+        }
     }
 
     private void HandleDestroyed(RoomHealth room)
     {
         if (healthText != null)
         {
-            fixButton.SetActive(true);
             healthText.text = "KAPOT!";
             healthText.color = criticalColor;
         }

@@ -48,7 +48,7 @@ public class CrewmateMovement : MonoBehaviour
 
         if (Mathf.Abs(movement.x) > 0.01f)
         {
-           if(sr != null) sr.flipX = movement.x < 0f;
+           if(sr != null) sr.flipX = movement.x > 0f;
         }
         CheckClimbAnimation();
         if (CheckStairs()) return;

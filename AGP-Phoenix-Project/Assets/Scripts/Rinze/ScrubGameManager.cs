@@ -5,13 +5,18 @@ public class ScrubGameManager : MonoBehaviour
 {
     private int totalDirt;
     private int cleanedDirt;
+    public GameObject scrubMG;
 
-    [SerializeField] public Animator animator;
+    public Animator animator;
+    private RoomHealth roomhealth;
+    [SerializeField] private string roomName;
 
     void Start()
     {
+        roomhealth = GameObject.Find(roomName).GetComponent<RoomHealth>();
         ScrubClean[] allDirt = FindObjectsOfType<ScrubClean>();
         totalDirt = allDirt.Length;
+
 
         foreach (var dirt in allDirt)
         {
@@ -40,6 +45,7 @@ public class ScrubGameManager : MonoBehaviour
     {
         animator.SetTrigger("sparkle");
         yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);  
+        roomhealth.ResetHealth();
+        Destroy(scrubMG);
     }
 }
