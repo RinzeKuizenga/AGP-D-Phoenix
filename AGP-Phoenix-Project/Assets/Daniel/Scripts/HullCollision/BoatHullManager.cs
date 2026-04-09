@@ -40,6 +40,8 @@ public class BoatHullManager : MonoBehaviour
     public bool IsSinking { get; private set; }
     public bool IsSunk { get; private set; }
 
+    public Animator gameOverAnim;
+
     public float OverallHealth
     {
         get
@@ -211,6 +213,7 @@ public class BoatHullManager : MonoBehaviour
             IsSunk = true;
             Debug.Log("[BoatHullManager] Boat has SUNK.");
             OnBoatSunk?.Invoke();
+            gameOverAnim.SetTrigger("GameOver");
         }
     }
 
