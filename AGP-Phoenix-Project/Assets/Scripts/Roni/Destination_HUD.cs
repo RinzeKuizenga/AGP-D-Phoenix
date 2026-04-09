@@ -1,17 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-/// <summary>
-/// Professional destination HUD panel built with UI Toolkit.
-/// Shows final destination name + distance, compass bearing, and nearest waypoint.
-/// Attaches to the same UIDocument as the compass or a separate one.
-///
-/// SETUP:
-/// 1. Add a UIDocument to a GameObject and assign Destination_Panel.uxml as the source asset.
-/// 2. Attach this script to the same GameObject.
-/// 3. Assign compass_controller and player_transform in the Inspector.
-/// 4. The panel auto-hides when the final destination is reached.
-/// </summary>
+
 [ExecuteAlways]
 public class Destination_Panel : MonoBehaviour
 {

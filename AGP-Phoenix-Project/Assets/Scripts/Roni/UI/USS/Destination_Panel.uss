@@ -1,7 +1,3 @@
-/* ============================================================
-   Destination Panel – Professional HUD Style
-   Matches the dark glassmorphic reference design
-   ============================================================ */
 
 /* --- Main Panel Container --- */
 .destination-panel {
