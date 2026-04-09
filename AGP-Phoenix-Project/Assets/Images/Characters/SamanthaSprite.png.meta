@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_0
+      name: SamanthaSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_1
+      name: SamanthaSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_2
+      name: SamanthaSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_3
+      name: SamanthaSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_4
+      name: SamanthaSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_5
+      name: SamanthaSprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_6
+      name: SamanthaSprite_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_7
+      name: SamanthaSprite_7
       rect:
         serializedVersion: 2
         x: 384
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_8
+      name: SamanthaSprite_8
       rect:
         serializedVersion: 2
         x: 576
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_9
+      name: SamanthaSprite_9
       rect:
         serializedVersion: 2
         x: 768
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_10
+      name: SamanthaSprite_10
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_11
+      name: SamanthaSprite_11
       rect:
         serializedVersion: 2
         x: 192
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_12
+      name: SamanthaSprite_12
       rect:
         serializedVersion: 2
         x: 384
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_13
+      name: SamanthaSprite_13
       rect:
         serializedVersion: 2
         x: 576
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_14
+      name: SamanthaSprite_14
       rect:
         serializedVersion: 2
         x: 768
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_15
+      name: SamanthaSprite_15
       rect:
         serializedVersion: 2
         x: 0
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_16
+      name: SamanthaSprite_16
       rect:
         serializedVersion: 2
         x: 192
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_17
+      name: SamanthaSprite_17
       rect:
         serializedVersion: 2
         x: 384
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_18
+      name: SamanthaSprite_18
       rect:
         serializedVersion: 2
         x: 576
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_19
+      name: SamanthaSprite_19
       rect:
         serializedVersion: 2
         x: 768
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SamanthaSchiller_Spritesheet-Sheet_20
+      name: SamanthaSprite_20
       rect:
         serializedVersion: 2
         x: 0
@@ -574,27 +574,27 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":192.0,"y":384.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      SamanthaSchiller_Spritesheet-Sheet_0: -64244477
-      SamanthaSchiller_Spritesheet-Sheet_1: -585037552
-      SamanthaSchiller_Spritesheet-Sheet_10: -74701584
-      SamanthaSchiller_Spritesheet-Sheet_11: 457238743
-      SamanthaSchiller_Spritesheet-Sheet_12: -555780619
-      SamanthaSchiller_Spritesheet-Sheet_13: -1972966368
-      SamanthaSchiller_Spritesheet-Sheet_14: -725033506
-      SamanthaSchiller_Spritesheet-Sheet_15: 58220724
-      SamanthaSchiller_Spritesheet-Sheet_16: 582881861
-      SamanthaSchiller_Spritesheet-Sheet_17: 172738016
-      SamanthaSchiller_Spritesheet-Sheet_18: 847343242
-      SamanthaSchiller_Spritesheet-Sheet_19: 6301689
-      SamanthaSchiller_Spritesheet-Sheet_2: -149153653
-      SamanthaSchiller_Spritesheet-Sheet_20: -571853155
-      SamanthaSchiller_Spritesheet-Sheet_3: -1436831514
-      SamanthaSchiller_Spritesheet-Sheet_4: 1661735373
-      SamanthaSchiller_Spritesheet-Sheet_5: 1917044763
-      SamanthaSchiller_Spritesheet-Sheet_6: 246595293
-      SamanthaSchiller_Spritesheet-Sheet_7: 71024697
-      SamanthaSchiller_Spritesheet-Sheet_8: -903200282
-      SamanthaSchiller_Spritesheet-Sheet_9: 707700924
+      SamanthaSprite_0: -64244477
+      SamanthaSprite_1: -585037552
+      SamanthaSprite_10: -74701584
+      SamanthaSprite_11: 457238743
+      SamanthaSprite_12: -555780619
+      SamanthaSprite_13: -1972966368
+      SamanthaSprite_14: -725033506
+      SamanthaSprite_15: 58220724
+      SamanthaSprite_16: 582881861
+      SamanthaSprite_17: 172738016
+      SamanthaSprite_18: 847343242
+      SamanthaSprite_19: 6301689
+      SamanthaSprite_2: -149153653
+      SamanthaSprite_20: -571853155
+      SamanthaSprite_3: -1436831514
+      SamanthaSprite_4: 1661735373
+      SamanthaSprite_5: 1917044763
+      SamanthaSprite_6: 246595293
+      SamanthaSprite_7: 71024697
+      SamanthaSprite_8: -903200282
+      SamanthaSprite_9: 707700924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

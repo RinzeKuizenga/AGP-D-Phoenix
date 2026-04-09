@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_0
+      name: PienSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_1
+      name: PienSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_2
+      name: PienSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_3
+      name: PienSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_4
+      name: PienSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_5
+      name: PienSprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_6
+      name: PienSprite_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_7
+      name: PienSprite_7
       rect:
         serializedVersion: 2
         x: 384
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_8
+      name: PienSprite_8
       rect:
         serializedVersion: 2
         x: 576
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_9
+      name: PienSprite_9
       rect:
         serializedVersion: 2
         x: 768
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_10
+      name: PienSprite_10
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_11
+      name: PienSprite_11
       rect:
         serializedVersion: 2
         x: 192
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_12
+      name: PienSprite_12
       rect:
         serializedVersion: 2
         x: 384
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_13
+      name: PienSprite_13
       rect:
         serializedVersion: 2
         x: 576
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_14
+      name: PienSprite_14
       rect:
         serializedVersion: 2
         x: 768
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_15
+      name: PienSprite_15
       rect:
         serializedVersion: 2
         x: 0
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_16
+      name: PienSprite_16
       rect:
         serializedVersion: 2
         x: 192
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_17
+      name: PienSprite_17
       rect:
         serializedVersion: 2
         x: 384
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_18
+      name: PienSprite_18
       rect:
         serializedVersion: 2
         x: 576
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_19
+      name: PienSprite_19
       rect:
         serializedVersion: 2
         x: 768
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pien Zeiler_Spritesheet-Sheet_20
+      name: PienSprite_20
       rect:
         serializedVersion: 2
         x: 0
@@ -574,27 +574,27 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":192.0,"y":384.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pien Zeiler_Spritesheet-Sheet_0: -1362148864
-      Pien Zeiler_Spritesheet-Sheet_1: 535673659
-      Pien Zeiler_Spritesheet-Sheet_10: -1141100489
-      Pien Zeiler_Spritesheet-Sheet_11: -2005626518
-      Pien Zeiler_Spritesheet-Sheet_12: -12436180
-      Pien Zeiler_Spritesheet-Sheet_13: -518608416
-      Pien Zeiler_Spritesheet-Sheet_14: -166337090
-      Pien Zeiler_Spritesheet-Sheet_15: 1498273862
-      Pien Zeiler_Spritesheet-Sheet_16: 1612080020
-      Pien Zeiler_Spritesheet-Sheet_17: 96851785
-      Pien Zeiler_Spritesheet-Sheet_18: 1902302897
-      Pien Zeiler_Spritesheet-Sheet_19: -1882323602
-      Pien Zeiler_Spritesheet-Sheet_2: 443287175
-      Pien Zeiler_Spritesheet-Sheet_20: -212677753
-      Pien Zeiler_Spritesheet-Sheet_3: -1032228537
-      Pien Zeiler_Spritesheet-Sheet_4: 797619391
-      Pien Zeiler_Spritesheet-Sheet_5: 208210723
-      Pien Zeiler_Spritesheet-Sheet_6: 700163032
-      Pien Zeiler_Spritesheet-Sheet_7: -1650532701
-      Pien Zeiler_Spritesheet-Sheet_8: 1377010543
-      Pien Zeiler_Spritesheet-Sheet_9: -1894463209
+      PienSprite_0: -1362148864
+      PienSprite_1: 535673659
+      PienSprite_10: -1141100489
+      PienSprite_11: -2005626518
+      PienSprite_12: -12436180
+      PienSprite_13: -518608416
+      PienSprite_14: -166337090
+      PienSprite_15: 1498273862
+      PienSprite_16: 1612080020
+      PienSprite_17: 96851785
+      PienSprite_18: 1902302897
+      PienSprite_19: -1882323602
+      PienSprite_2: 443287175
+      PienSprite_20: -212677753
+      PienSprite_3: -1032228537
+      PienSprite_4: 797619391
+      PienSprite_5: 208210723
+      PienSprite_6: 700163032
+      PienSprite_7: -1650532701
+      PienSprite_8: 1377010543
+      PienSprite_9: -1894463209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

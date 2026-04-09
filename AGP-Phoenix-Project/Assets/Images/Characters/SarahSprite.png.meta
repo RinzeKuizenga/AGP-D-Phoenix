@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_0
+      name: SarahSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_1
+      name: SarahSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_2
+      name: SarahSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_3
+      name: SarahSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_4
+      name: SarahSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_5
+      name: SarahSprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_6
+      name: SarahSprite_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_7
+      name: SarahSprite_7
       rect:
         serializedVersion: 2
         x: 384
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_8
+      name: SarahSprite_8
       rect:
         serializedVersion: 2
         x: 576
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_9
+      name: SarahSprite_9
       rect:
         serializedVersion: 2
         x: 768
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_10
+      name: SarahSprite_10
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_11
+      name: SarahSprite_11
       rect:
         serializedVersion: 2
         x: 192
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_12
+      name: SarahSprite_12
       rect:
         serializedVersion: 2
         x: 384
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_13
+      name: SarahSprite_13
       rect:
         serializedVersion: 2
         x: 576
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_14
+      name: SarahSprite_14
       rect:
         serializedVersion: 2
         x: 768
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_15
+      name: SarahSprite_15
       rect:
         serializedVersion: 2
         x: 0
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_16
+      name: SarahSprite_16
       rect:
         serializedVersion: 2
         x: 192
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_17
+      name: SarahSprite_17
       rect:
         serializedVersion: 2
         x: 384
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_18
+      name: SarahSprite_18
       rect:
         serializedVersion: 2
         x: 576
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_19
+      name: SarahSprite_19
       rect:
         serializedVersion: 2
         x: 768
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SarahStamper_Spritesheet-Sheet_20
+      name: SarahSprite_20
       rect:
         serializedVersion: 2
         x: 0
@@ -574,27 +574,27 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":192.0,"y":384.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      SarahStamper_Spritesheet-Sheet_0: 1201673067
-      SarahStamper_Spritesheet-Sheet_1: -1176036348
-      SarahStamper_Spritesheet-Sheet_10: 2064331845
-      SarahStamper_Spritesheet-Sheet_11: 1862257954
-      SarahStamper_Spritesheet-Sheet_12: -290051141
-      SarahStamper_Spritesheet-Sheet_13: -1394337521
-      SarahStamper_Spritesheet-Sheet_14: -736418465
-      SarahStamper_Spritesheet-Sheet_15: -246702838
-      SarahStamper_Spritesheet-Sheet_16: 816090882
-      SarahStamper_Spritesheet-Sheet_17: 888350496
-      SarahStamper_Spritesheet-Sheet_18: 158958402
-      SarahStamper_Spritesheet-Sheet_19: -440073512
-      SarahStamper_Spritesheet-Sheet_2: -586298917
-      SarahStamper_Spritesheet-Sheet_20: 1524769524
-      SarahStamper_Spritesheet-Sheet_3: 896649174
-      SarahStamper_Spritesheet-Sheet_4: -1902204455
-      SarahStamper_Spritesheet-Sheet_5: -856555534
-      SarahStamper_Spritesheet-Sheet_6: 1298017981
-      SarahStamper_Spritesheet-Sheet_7: -877650913
-      SarahStamper_Spritesheet-Sheet_8: -1048583865
-      SarahStamper_Spritesheet-Sheet_9: -1253057256
+      SarahSprite_0: 1201673067
+      SarahSprite_1: -1176036348
+      SarahSprite_10: 2064331845
+      SarahSprite_11: 1862257954
+      SarahSprite_12: -290051141
+      SarahSprite_13: -1394337521
+      SarahSprite_14: -736418465
+      SarahSprite_15: -246702838
+      SarahSprite_16: 816090882
+      SarahSprite_17: 888350496
+      SarahSprite_18: 158958402
+      SarahSprite_19: -440073512
+      SarahSprite_2: -586298917
+      SarahSprite_20: 1524769524
+      SarahSprite_3: 896649174
+      SarahSprite_4: -1902204455
+      SarahSprite_5: -856555534
+      SarahSprite_6: 1298017981
+      SarahSprite_7: -877650913
+      SarahSprite_8: -1048583865
+      SarahSprite_9: -1253057256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

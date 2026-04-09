@@ -1,37 +1,39 @@
 using UnityEngine;
 
-public class SpriteAssigner : MonoBehaviour
+public class CrewAnimationSwapper : MonoBehaviour
 {
-    public int skinNR;
+    [SerializeField] int slotIndex;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
-    public Skins[] skins;
-    SpriteRenderer spriteRenderer;
+    private Sprite[] crewSprites;
+    private bool shouldSwap = false;
 
-    void Start()
+    void Awake()
     {
-        
+        Crew crew = CrewRoster.SelectedCrew[slotIndex];
+        if (crew == null || crew.animationSprites == null || crew.animationSprites.Length == 0) return;
+
+        if (crew.crewMaterial != null)
+            spriteRenderer.material = new Material(crew.crewMaterial);
+
+        if (crew.animationSprites[0].name.StartsWith("HaroldSprite")) return;
+
+        crewSprites = crew.animationSprites;
+        shouldSwap = true;
     }
 
-    private void LateUpdate()
+    void LateUpdate()
     {
-        SkinChoice();
-    }
+        if (!shouldSwap || crewSprites == null) return;
 
-    void SkinChoice()
-    {
-        if (spriteRenderer.sprite.name.Contains("HaroldSprite"))
+        string spriteName = spriteRenderer.sprite.name;
+        int underscoreIndex = spriteName.LastIndexOf('_');
+        if (underscoreIndex < 0) return;
+
+        if (int.TryParse(spriteName.Substring(underscoreIndex + 1), out int index))
         {
-            string spriteName = spriteRenderer.sprite.name;
-            spriteName = spriteName.Replace("HaroldSprite", "");
-            int spriteNr = int.Parse(spriteName);
-
-            spriteRenderer.sprite = skins[skinNR].sprites[spriteNr];
+            if (index < crewSprites.Length)
+                spriteRenderer.sprite = crewSprites[index];
         }
-    }
-
-    [System.Serializable]
-    public struct Skins
-    {
-        public Sprite[] sprites;
     }
 }

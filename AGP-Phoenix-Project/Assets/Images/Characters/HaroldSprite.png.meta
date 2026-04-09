@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_0
+      name: HaroldSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_1
+      name: HaroldSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_2
+      name: HaroldSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_3
+      name: HaroldSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_4
+      name: HaroldSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_5
+      name: HaroldSprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_6
+      name: HaroldSprite_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_7
+      name: HaroldSprite_7
       rect:
         serializedVersion: 2
         x: 384
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_8
+      name: HaroldSprite_8
       rect:
         serializedVersion: 2
         x: 576
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_9
+      name: HaroldSprite_9
       rect:
         serializedVersion: 2
         x: 768
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_10
+      name: HaroldSprite_10
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_11
+      name: HaroldSprite_11
       rect:
         serializedVersion: 2
         x: 192
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_12
+      name: HaroldSprite_12
       rect:
         serializedVersion: 2
         x: 384
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_13
+      name: HaroldSprite_13
       rect:
         serializedVersion: 2
         x: 576
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_14
+      name: HaroldSprite_14
       rect:
         serializedVersion: 2
         x: 768
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_15
+      name: HaroldSprite_15
       rect:
         serializedVersion: 2
         x: 0
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_16
+      name: HaroldSprite_16
       rect:
         serializedVersion: 2
         x: 192
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_17
+      name: HaroldSprite_17
       rect:
         serializedVersion: 2
         x: 384
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_18
+      name: HaroldSprite_18
       rect:
         serializedVersion: 2
         x: 576
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_19
+      name: HaroldSprite_19
       rect:
         serializedVersion: 2
         x: 768
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HaroldHamer_Spritesheet 1_20
+      name: HaroldSprite_20
       rect:
         serializedVersion: 2
         x: 0
@@ -576,27 +576,27 @@ TextureImporter:
       - key: SpriteEditor.SliceOnImport
         value: False
     nameFileIdTable:
-      HaroldHamer_Spritesheet 1_0: -277016318
-      HaroldHamer_Spritesheet 1_1: -1714640377
-      HaroldHamer_Spritesheet 1_10: 756032330
-      HaroldHamer_Spritesheet 1_11: -962970179
-      HaroldHamer_Spritesheet 1_12: 700176728
-      HaroldHamer_Spritesheet 1_13: -1429570375
-      HaroldHamer_Spritesheet 1_14: -1121737102
-      HaroldHamer_Spritesheet 1_15: -12567529
-      HaroldHamer_Spritesheet 1_16: 566350642
-      HaroldHamer_Spritesheet 1_17: 17809997
-      HaroldHamer_Spritesheet 1_18: 744653996
-      HaroldHamer_Spritesheet 1_19: -1583943513
-      HaroldHamer_Spritesheet 1_2: -230884970
-      HaroldHamer_Spritesheet 1_20: -1142015114
-      HaroldHamer_Spritesheet 1_3: -888953302
-      HaroldHamer_Spritesheet 1_4: 77486388
-      HaroldHamer_Spritesheet 1_5: -969494554
-      HaroldHamer_Spritesheet 1_6: 477019145
-      HaroldHamer_Spritesheet 1_7: -579890385
-      HaroldHamer_Spritesheet 1_8: -441278305
-      HaroldHamer_Spritesheet 1_9: -731276661
+      HaroldSprite_0: -277016318
+      HaroldSprite_1: -1714640377
+      HaroldSprite_10: 756032330
+      HaroldSprite_11: -962970179
+      HaroldSprite_12: 700176728
+      HaroldSprite_13: -1429570375
+      HaroldSprite_14: -1121737102
+      HaroldSprite_15: -12567529
+      HaroldSprite_16: 566350642
+      HaroldSprite_17: 17809997
+      HaroldSprite_18: 744653996
+      HaroldSprite_19: -1583943513
+      HaroldSprite_2: -230884970
+      HaroldSprite_20: -1142015114
+      HaroldSprite_3: -888953302
+      HaroldSprite_4: 77486388
+      HaroldSprite_5: -969494554
+      HaroldSprite_6: 477019145
+      HaroldSprite_7: -579890385
+      HaroldSprite_8: -441278305
+      HaroldSprite_9: -731276661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

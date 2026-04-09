@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_0
+      name: GordonSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_1
+      name: GordonSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_2
+      name: GordonSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_3
+      name: GordonSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_4
+      name: GordonSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_5
+      name: GordonSprite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_6
+      name: GordonSprite_6
       rect:
         serializedVersion: 2
         x: 192
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_7
+      name: GordonSprite_7
       rect:
         serializedVersion: 2
         x: 384
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_8
+      name: GordonSprite_8
       rect:
         serializedVersion: 2
         x: 576
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_9
+      name: GordonSprite_9
       rect:
         serializedVersion: 2
         x: 768
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_10
+      name: GordonSprite_10
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_11
+      name: GordonSprite_11
       rect:
         serializedVersion: 2
         x: 192
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_12
+      name: GordonSprite_12
       rect:
         serializedVersion: 2
         x: 384
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_13
+      name: GordonSprite_13
       rect:
         serializedVersion: 2
         x: 576
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_14
+      name: GordonSprite_14
       rect:
         serializedVersion: 2
         x: 768
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_15
+      name: GordonSprite_15
       rect:
         serializedVersion: 2
         x: 0
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_16
+      name: GordonSprite_16
       rect:
         serializedVersion: 2
         x: 192
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_17
+      name: GordonSprite_17
       rect:
         serializedVersion: 2
         x: 384
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_18
+      name: GordonSprite_18
       rect:
         serializedVersion: 2
         x: 576
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_19
+      name: GordonSprite_19
       rect:
         serializedVersion: 2
         x: 768
@@ -537,11 +537,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GordonvanRamson_Spritesheet-export_20
+      name: GordonSprite_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 2
+        y: 2
         width: 192
         height: 384
       alignment: 0
@@ -574,27 +574,27 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":192.0,"y":384.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      GordonvanRamson_Spritesheet-export_0: -674713212
-      GordonvanRamson_Spritesheet-export_1: 1797878910
-      GordonvanRamson_Spritesheet-export_10: 870984644
-      GordonvanRamson_Spritesheet-export_11: -372310713
-      GordonvanRamson_Spritesheet-export_12: -1888058830
-      GordonvanRamson_Spritesheet-export_13: -2070991191
-      GordonvanRamson_Spritesheet-export_14: -1382326193
-      GordonvanRamson_Spritesheet-export_15: 1352662597
-      GordonvanRamson_Spritesheet-export_16: -125318074
-      GordonvanRamson_Spritesheet-export_17: 1810554988
-      GordonvanRamson_Spritesheet-export_18: -1639677296
-      GordonvanRamson_Spritesheet-export_19: 1076908270
-      GordonvanRamson_Spritesheet-export_2: -1437536375
-      GordonvanRamson_Spritesheet-export_20: -794565949
-      GordonvanRamson_Spritesheet-export_3: -1481118723
-      GordonvanRamson_Spritesheet-export_4: 684670268
-      GordonvanRamson_Spritesheet-export_5: 2071962673
-      GordonvanRamson_Spritesheet-export_6: 952844862
-      GordonvanRamson_Spritesheet-export_7: -1780815333
-      GordonvanRamson_Spritesheet-export_8: 1756313645
-      GordonvanRamson_Spritesheet-export_9: -315915212
+      GordonSprite_0: -674713212
+      GordonSprite_1: 1797878910
+      GordonSprite_10: 870984644
+      GordonSprite_11: -372310713
+      GordonSprite_12: -1888058830
+      GordonSprite_13: -2070991191
+      GordonSprite_14: -1382326193
+      GordonSprite_15: 1352662597
+      GordonSprite_16: -125318074
+      GordonSprite_17: 1810554988
+      GordonSprite_18: -1639677296
+      GordonSprite_19: 1076908270
+      GordonSprite_2: -1437536375
+      GordonSprite_20: -794565949
+      GordonSprite_3: -1481118723
+      GordonSprite_4: 684670268
+      GordonSprite_5: 2071962673
+      GordonSprite_6: 952844862
+      GordonSprite_7: -1780815333
+      GordonSprite_8: 1756313645
+      GordonSprite_9: -315915212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
