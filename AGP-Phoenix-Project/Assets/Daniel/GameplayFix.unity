@@ -7588,57 +7588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
-  OnTextEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCharacterShown:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStartWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStopWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  OnFinishWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSkipWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnResetWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  keywordDatabase: {fileID: 0}
-  sceneKeywordDatabase: {fileID: 0}
-  database: {fileID: 11400000, guid: 290ad04254a96934aa269d5b8d258008, type: 2}
-  maySkip: 1
-  writeOnStart: 1
-  writeOnNewText: 1
-  useScaledTime: 1
-  delays:
-    delay: 0.035
-    whitespaceDelay: 0
-    whitespaceDelayType: 0
-    linebreakDelay: 0
-    linebreakDelayType: 0
-    punctuationDelay: 0
-    punctuationDelayType: 0
-    visibleDelay: 0
-    visibleDelayType: 0
-  sceneCommands:
-    _serializedList: []
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  eventsEnabled: 0
-  commandsEnabled: 1
 --- !u!114 &185243970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7651,38 +7600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
-  database: {fileID: 11400000, guid: f0a33761ff6919d4a9979ee36980a29d, type: 2}
-  context:
-    scaleAnimations: 1
-    scaleUniformly: 1
-    useScaledTime: 1
-    tmpAnimator: {fileID: 185243970}
-  updateFrom: 0
-  animateOnStart: 1
-  animationsOverride: 1
-  defaultAnimationsStrings: []
-  defaultShowAnimationsStrings: []
-  defaultHideAnimationsStrings: []
-  excludedCharacters: 
-  excludedCharactersShow: 
-  excludedCharactersHide: 
-  excludePunctuation: 0
-  excludePunctuationShow: 0
-  excludePunctuationHide: 0
-  sceneKeywordDatabase: {fileID: 0}
-  keywordDatabase: {fileID: 0}
-  sceneAnimations:
-    _serializedList: []
-  sceneShowAnimations:
-    _serializedList: []
-  sceneHideAnimations:
-    _serializedList: []
-  preview: 1
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  previewUpdatesPerSecond: 60
-  previewTimeScale: 1
 --- !u!114 &185243971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15547,9 +15464,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376837117}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.49197, y: -0.50177, z: -3.13841}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.020309692, y: 0.014449743, z: 0.0029487093}
+  m_LocalScale: {x: 0.012919896, y: 0.012919901, z: 0.012919901}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6734872961912755148}
@@ -15557,7 +15474,7 @@ Transform:
   - {fileID: 6734872962913075766}
   - {fileID: 6734872962538523589}
   - {fileID: 6734872963025116931}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 543450653430551386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381256899
 GameObject:
@@ -17594,6 +17511,8 @@ GameObject:
   - component: {fileID: 490803289}
   - component: {fileID: 490803288}
   - component: {fileID: 490803292}
+  - component: {fileID: 490803294}
+  - component: {fileID: 490803293}
   m_Layer: 6
   m_Name: Crewmate (1)
   m_TagString: Untagged
@@ -17739,6 +17658,43 @@ MonoBehaviour:
   portraitImage: {fileID: 1037849932}
   specialtyIconImage: {fileID: 111710748}
   nameText: {fileID: 1189364966}
+--- !u!114 &490803293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490803286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 490803294}
+  icon: {fileID: 1370011857}
+  healthSlider: {fileID: 500348000}
+  hungerSlider: {fileID: 1960456581}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+--- !u!114 &490803294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490803286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStats
+  health: 100
+  maxHealth: 100
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!1001 &496129698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22365,18 +22321,10 @@ MonoBehaviour:
   ui_document: {fileID: 1608819867}
   compass_width: 800
   compass_fov: 150
+  active_marker_color: {r: 1, g: 0.78, b: 0.2, a: 1}
   editor_preview_heading: 0
   player_transform: {fileID: 0}
-  editor_markers:
-  - target: {fileID: 908371932}
-    icon: {fileID: 0}
-    color: {r: 0.8616352, g: 0.1923776, b: 0.1923776, a: 0}
-  - target: {fileID: 1931415109}
-    icon: {fileID: 2800000, guid: 5d4b367f0702b4b46a16ba3b67281419, type: 3}
-    color: {r: 0.21568629, g: 0.8745098, b: 0.21568629, a: 0}
-  - target: {fileID: 1120893766}
-    icon: {fileID: 2800000, guid: d9b984f8c9931dc499f788eba40f7674, type: 3}
-    color: {r: 0, g: 0, b: 0.7882353, a: 0}
+  waypoints: []
 --- !u!4 &733811204
 Transform:
   m_ObjectHideFlags: 0
@@ -24722,6 +24670,8 @@ GameObject:
   - component: {fileID: 894362645}
   - component: {fileID: 894362646}
   - component: {fileID: 894362647}
+  - component: {fileID: 894362649}
+  - component: {fileID: 894362648}
   m_Layer: 6
   m_Name: Crewmate
   m_TagString: Untagged
@@ -24903,17 +24853,243 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dab345945b13604ca2aee781d4104f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAssigner
-  skinNR: 0
+  skinNR: 1
   skins:
-  - sprites: []
-  - sprites: []
-  - sprites: []
-  - sprites: []
-  - sprites: []
-  - sprites: []
-  - sprites: []
-  - sprites: []
-  - sprites: []
+  - sprites:
+    - {fileID: -277016318, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -1714640377, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -230884970, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -888953302, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 77486388, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -969494554, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 477019145, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -579890385, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -441278305, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -731276661, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 756032330, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -962970179, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 700176728, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -1429570375, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -1121737102, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -12567529, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 566350642, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 17809997, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: 744653996, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -1583943513, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+    - {fileID: -1142015114, guid: c1275d1078b4da844abb727a42281bf2, type: 3}
+  - sprites:
+    - {fileID: -674713212, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 1797878910, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -1437536375, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -1481118723, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 684670268, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 2071962673, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 952844862, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -1780815333, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 1756313645, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -315915212, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 870984644, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -372310713, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -1888058830, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -2070991191, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -1382326193, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 1352662597, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -125318074, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 1810554988, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -1639677296, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: 1076908270, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+    - {fileID: -794565949, guid: f343c5309606d7640974f0977df6faa3, type: 3}
+  - sprites:
+    - {fileID: 1959345192, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 1982550769, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 1816323342, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -2018877505, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -754516181, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 329360993, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 1639831428, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 22287369, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 642612198, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 1409027145, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -1384953792, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -1673836620, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -1898576875, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -2091406658, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -1422327068, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -206968092, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -1163015102, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -927860565, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 1976429763, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: 1997269433, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+    - {fileID: -661429122, guid: df0bb807490649849a1de81e0bbf2908, type: 3}
+  - sprites:
+    - {fileID: 1965751705, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 1442221877, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -1172226260, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -576826280, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -1340155921, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 2043444131, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -1738028845, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -68669395, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 1380950434, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -927496297, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 575004747, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -1297737081, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 1618025573, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -1955157040, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 219937044, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: -586943748, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 575734970, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 2036085877, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 502973194, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 715349788, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+    - {fileID: 2012843981, guid: 142b8b86b2766514a8a01c936cef664d, type: 3}
+  - sprites:
+    - {fileID: -1362148864, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 535673659, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 443287175, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -1032228537, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 797619391, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 208210723, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 700163032, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -1650532701, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 1377010543, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -1894463209, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -1141100489, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -2005626518, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -12436180, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -518608416, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -166337090, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 1498273862, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 1612080020, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 96851785, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: 1902302897, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -1882323602, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+    - {fileID: -212677753, guid: 7c1fbd32a4a521d44b0bee0138059909, type: 3}
+  - sprites:
+    - {fileID: -64244477, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -585037552, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -149153653, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -1436831514, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 1661735373, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 1917044763, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 246595293, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 71024697, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -903200282, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 707700924, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -74701584, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 457238743, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -555780619, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -1972966368, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -725033506, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 58220724, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 582881861, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 172738016, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 847343242, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: 6301689, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+    - {fileID: -571853155, guid: ed106262f07e17a44aef83848773eb9b, type: 3}
+  - sprites:
+    - {fileID: 1201673067, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -1176036348, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -586298917, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 896649174, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -1902204455, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -856555534, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 1298017981, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -877650913, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -1048583865, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -1253057256, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 2064331845, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 1862257954, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -290051141, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -1394337521, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -736418465, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -246702838, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 816090882, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 888350496, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 158958402, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: -440073512, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+    - {fileID: 1524769524, guid: 689188bc165d8fc47befc6142ef79c00, type: 3}
+  - sprites:
+    - {fileID: -170783279, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 481364747, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -164176951, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 2142656754, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 703595152, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -2093169759, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 2058594013, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -302854802, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 468858969, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -435123296, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 163009007, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -1598409546, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 179511638, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 382779833, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 830521510, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 190401255, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 1188790824, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -1467014680, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -1273602284, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: -1996015067, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+    - {fileID: 947714288, guid: aa18d1bfa1bad5a4c9d4418c38a0c240, type: 3}
+  - sprites:
+    - {fileID: 218518455, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 1353009921, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 2042465990, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 304932060, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 568834920, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 1053266856, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1229127875, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1880942316, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1445731984, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 406165779, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -755922400, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -764077570, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1106439293, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1224615436, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -925745410, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1473475905, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -759856437, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1728055345, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 1902985904, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: 831121347, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+    - {fileID: -1180862326, guid: 332e64bb430eafc499aefbfc49cfbc3c, type: 3}
+--- !u!114 &894362648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894362637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 894362649}
+  icon: {fileID: 747471013}
+  healthSlider: {fileID: 668226058}
+  hungerSlider: {fileID: 2042016618}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+--- !u!114 &894362649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894362637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStats
+  health: 100
+  maxHealth: 100
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!1001 &904158062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26045,57 +26221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
-  OnTextEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCharacterShown:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStartWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStopWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  OnFinishWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSkipWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnResetWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  keywordDatabase: {fileID: 0}
-  sceneKeywordDatabase: {fileID: 0}
-  database: {fileID: 11400000, guid: 290ad04254a96934aa269d5b8d258008, type: 2}
-  maySkip: 1
-  writeOnStart: 1
-  writeOnNewText: 1
-  useScaledTime: 1
-  delays:
-    delay: 0.035
-    whitespaceDelay: 0
-    whitespaceDelayType: 0
-    linebreakDelay: 0
-    linebreakDelayType: 0
-    punctuationDelay: 0
-    punctuationDelayType: 0
-    visibleDelay: 0
-    visibleDelayType: 0
-  sceneCommands:
-    _serializedList: []
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  eventsEnabled: 0
-  commandsEnabled: 1
 --- !u!114 &950398939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26108,38 +26233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
-  database: {fileID: 11400000, guid: f0a33761ff6919d4a9979ee36980a29d, type: 2}
-  context:
-    scaleAnimations: 1
-    scaleUniformly: 1
-    useScaledTime: 1
-    tmpAnimator: {fileID: 950398939}
-  updateFrom: 0
-  animateOnStart: 1
-  animationsOverride: 1
-  defaultAnimationsStrings: []
-  defaultShowAnimationsStrings: []
-  defaultHideAnimationsStrings: []
-  excludedCharacters: 
-  excludedCharactersShow: 
-  excludedCharactersHide: 
-  excludePunctuation: 0
-  excludePunctuationShow: 0
-  excludePunctuationHide: 0
-  sceneKeywordDatabase: {fileID: 0}
-  keywordDatabase: {fileID: 0}
-  sceneAnimations:
-    _serializedList: []
-  sceneShowAnimations:
-    _serializedList: []
-  sceneHideAnimations:
-    _serializedList: []
-  preview: 1
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  previewUpdatesPerSecond: 60
-  previewTimeScale: 1
 --- !u!114 &950398940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34985,38 +35078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
-  database: {fileID: 11400000, guid: f0a33761ff6919d4a9979ee36980a29d, type: 2}
-  context:
-    scaleAnimations: 1
-    scaleUniformly: 1
-    useScaledTime: 1
-    tmpAnimator: {fileID: 1125132369}
-  updateFrom: 0
-  animateOnStart: 1
-  animationsOverride: 1
-  defaultAnimationsStrings: []
-  defaultShowAnimationsStrings: []
-  defaultHideAnimationsStrings: []
-  excludedCharacters: 
-  excludedCharactersShow: 
-  excludedCharactersHide: 
-  excludePunctuation: 0
-  excludePunctuationShow: 0
-  excludePunctuationHide: 0
-  sceneKeywordDatabase: {fileID: 0}
-  keywordDatabase: {fileID: 0}
-  sceneAnimations:
-    _serializedList: []
-  sceneShowAnimations:
-    _serializedList: []
-  sceneHideAnimations:
-    _serializedList: []
-  preview: 1
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  previewUpdatesPerSecond: 60
-  previewTimeScale: 1
 --- !u!114 &1125132370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35029,57 +35090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
-  OnTextEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCharacterShown:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStartWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStopWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  OnFinishWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSkipWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnResetWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  keywordDatabase: {fileID: 0}
-  sceneKeywordDatabase: {fileID: 0}
-  database: {fileID: 11400000, guid: 290ad04254a96934aa269d5b8d258008, type: 2}
-  maySkip: 1
-  writeOnStart: 1
-  writeOnNewText: 1
-  useScaledTime: 1
-  delays:
-    delay: 0.035
-    whitespaceDelay: 0
-    whitespaceDelayType: 0
-    linebreakDelay: 0
-    linebreakDelayType: 0
-    punctuationDelay: 0
-    punctuationDelayType: 0
-    visibleDelay: 0
-    visibleDelayType: 0
-  sceneCommands:
-    _serializedList: []
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  eventsEnabled: 0
-  commandsEnabled: 1
 --- !u!1 &1127127868
 GameObject:
   m_ObjectHideFlags: 0
@@ -40050,6 +40060,53 @@ PrefabInstance:
       addedObject: {fileID: 1448135066}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40169f0773a64334e8243a5f3ef5a5dd, type: 3}
+--- !u!1 &1145052400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145052401}
+  - component: {fileID: 1145052402}
+  m_Layer: 6
+  m_Name: KitchenEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145052401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145052400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2065016795}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145052402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145052400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3c48f2c05a1c24b9ea4628141d2ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KitchenEffect
+  crewTarget: {fileID: 2065016797}
+  feedAmount: 10
+  feedInterval: 1
 --- !u!1 &1145307336
 GameObject:
   m_ObjectHideFlags: 0
@@ -40214,6 +40271,8 @@ GameObject:
   - component: {fileID: 1146037226}
   - component: {fileID: 1146037225}
   - component: {fileID: 1146037229}
+  - component: {fileID: 1146037231}
+  - component: {fileID: 1146037230}
   m_Layer: 6
   m_Name: Crewmate (2)
   m_TagString: Untagged
@@ -40359,6 +40418,43 @@ MonoBehaviour:
   portraitImage: {fileID: 1937892086}
   specialtyIconImage: {fileID: 1798598800}
   nameText: {fileID: 944541367}
+--- !u!114 &1146037230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146037223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 1146037231}
+  icon: {fileID: 854194288}
+  healthSlider: {fileID: 182763493}
+  hungerSlider: {fileID: 237080754}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+--- !u!114 &1146037231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146037223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStats
+  health: 100
+  maxHealth: 100
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!1 &1149185068
 GameObject:
   m_ObjectHideFlags: 0
@@ -41435,6 +41531,7 @@ GameObject:
   - component: {fileID: 1201440810}
   - component: {fileID: 1201440811}
   - component: {fileID: 1201440812}
+  - component: {fileID: 1201440813}
   m_Layer: 2
   m_Name: Ship Object
   m_TagString: Untagged
@@ -41643,6 +41740,23 @@ MonoBehaviour:
   debrisTag: Debris
   wreckTag: Wreck
   hitCooldown: 0.4
+--- !u!114 &1201440813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201440803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfb6f0b9fd1a4a41aa1d34d244880c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipSystem
+  sailRoom: {fileID: 3928837247731376657}
+  kitchen: {fileID: 3928837248828208107}
+  medbay: {fileID: 3928837247305444322}
+  handymanRoom: {fileID: 3928837247463731237}
+  boatHullManager: {fileID: 1201440811}
 --- !u!1 &1206266530
 GameObject:
   m_ObjectHideFlags: 0
@@ -48223,6 +48337,8 @@ GameObject:
   - component: {fileID: 1696687553}
   - component: {fileID: 1696687552}
   - component: {fileID: 1696687556}
+  - component: {fileID: 1696687558}
+  - component: {fileID: 1696687557}
   m_Layer: 6
   m_Name: Crewmate (3)
   m_TagString: Untagged
@@ -48368,6 +48484,43 @@ MonoBehaviour:
   portraitImage: {fileID: 947213103}
   specialtyIconImage: {fileID: 1446396914}
   nameText: {fileID: 420995335}
+--- !u!114 &1696687557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696687550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e8386df3d71f848a2ad792742f4ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStatsUI
+  stats: {fileID: 1696687558}
+  icon: {fileID: 1175146619}
+  healthSlider: {fileID: 14901003}
+  hungerSlider: {fileID: 71708944}
+  smileyIcon: {fileID: 679739357, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  mediumIcon: {fileID: -1511518925, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+  NegativeIcon: {fileID: 1311265319, guid: 7fdaf108ed7fa0448b64cb9ada9eb1a4, type: 3}
+--- !u!114 &1696687558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696687550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1071a489dd85748aeee4c14b16de95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrewMateStats
+  health: 100
+  maxHealth: 100
+  hunger: 100
+  maxHunger: 100
+  hungerDecayRate: 1
+  isBeingFed: 0
 --- !u!1 &1698121314
 GameObject:
   m_ObjectHideFlags: 0
@@ -48907,6 +49060,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731441625}
   m_CullTransparentMesh: 1
+--- !u!1 &1731843183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731843184}
+  - component: {fileID: 1731843185}
+  m_Layer: 6
+  m_Name: MedbayEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731843184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731843183}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2140633633}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731843185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731843183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f336889befa30d34887bb41f26cb350c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MedbayEffect
+  crewTarget: {fileID: 2140633636}
+  healAmount: 10
+  healInterval: 1
 --- !u!1 &1753319268
 GameObject:
   m_ObjectHideFlags: 0
@@ -57869,57 +58069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPWriter
-  OnTextEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCharacterShown:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStartWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnStopWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnWaitEnded:
-    m_PersistentCalls:
-      m_Calls: []
-  OnFinishWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnSkipWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnResetWriter:
-    m_PersistentCalls:
-      m_Calls: []
-  keywordDatabase: {fileID: 0}
-  sceneKeywordDatabase: {fileID: 0}
-  database: {fileID: 11400000, guid: 290ad04254a96934aa269d5b8d258008, type: 2}
-  maySkip: 1
-  writeOnStart: 1
-  writeOnNewText: 1
-  useScaledTime: 1
-  delays:
-    delay: 0.035
-    whitespaceDelay: 0
-    whitespaceDelayType: 0
-    linebreakDelay: 0
-    linebreakDelayType: 0
-    punctuationDelay: 0
-    punctuationDelayType: 0
-    visibleDelay: 0
-    visibleDelayType: 0
-  sceneCommands:
-    _serializedList: []
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  eventsEnabled: 0
-  commandsEnabled: 1
 --- !u!114 &2002763279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57932,38 +58081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
-  database: {fileID: 11400000, guid: f0a33761ff6919d4a9979ee36980a29d, type: 2}
-  context:
-    scaleAnimations: 1
-    scaleUniformly: 1
-    useScaledTime: 1
-    tmpAnimator: {fileID: 2002763279}
-  updateFrom: 0
-  animateOnStart: 1
-  animationsOverride: 1
-  defaultAnimationsStrings: []
-  defaultShowAnimationsStrings: []
-  defaultHideAnimationsStrings: []
-  excludedCharacters: 
-  excludedCharactersShow: 
-  excludedCharactersHide: 
-  excludePunctuation: 0
-  excludePunctuationShow: 0
-  excludePunctuationHide: 0
-  sceneKeywordDatabase: {fileID: 0}
-  keywordDatabase: {fileID: 0}
-  sceneAnimations:
-    _serializedList: []
-  sceneShowAnimations:
-    _serializedList: []
-  sceneHideAnimations:
-    _serializedList: []
-  preview: 1
-  useDefaultDatabase: 1
-  useDefaultKeywordDatabase: 0
-  initDatabase: 1
-  previewUpdatesPerSecond: 60
-  previewTimeScale: 1
 --- !u!114 &2002763280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64415,6 +64532,7 @@ Transform:
   - {fileID: 1021661643}
   - {fileID: 8447171619224851509}
   - {fileID: 1084183083}
+  - {fileID: 1145052401}
   m_Father: {fileID: 1914201393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2065016796
@@ -66224,6 +66342,7 @@ Transform:
   - {fileID: 1209033127}
   - {fileID: 616503080}
   - {fileID: 421932205}
+  - {fileID: 1731843184}
   m_Father: {fileID: 1914201393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2140633635
@@ -67149,6 +67268,7 @@ Transform:
   - {fileID: 7390570822405580689}
   - {fileID: 7390570822835187298}
   - {fileID: 7390570822281624228}
+  - {fileID: 376837118}
   m_Father: {fileID: 1201440804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &571243672749506882
@@ -73606,5 +73726,4 @@ SceneRoots:
   - {fileID: 487406295}
   - {fileID: 1291494498}
   - {fileID: 726310697}
-  - {fileID: 376837118}
   - {fileID: 381256902}

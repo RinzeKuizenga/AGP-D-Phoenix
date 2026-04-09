@@ -1691,6 +1691,8 @@ MonoBehaviour:
   lightDuration: 1
   heavyMagnitude: 2.4
   heavyDuration: 1.5
+  smallSmash: {fileID: 0}
+  bigSmash: {fileID: 0}
 --- !u!114 &145255634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5073,6 +5075,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &361653371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7644624025637729470, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+  m_PrefabInstance: {fileID: 1371510576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!4 &364073357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4524247588576043627, guid: 03b5fa3cc6bec4c4799159ecee34aa86, type: 3}
@@ -7019,6 +7032,9 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  buildSound: {fileID: 0}
+  animator: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!23 &490803290
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10758,18 +10774,10 @@ MonoBehaviour:
   ui_document: {fileID: 1608819867}
   compass_width: 800
   compass_fov: 150
+  active_marker_color: {r: 1, g: 0.78, b: 0.2, a: 1}
   editor_preview_heading: 0
   player_transform: {fileID: 0}
-  editor_markers:
-  - target: {fileID: 908371932}
-    icon: {fileID: 0}
-    color: {r: 0.8616352, g: 0.1923776, b: 0.1923776, a: 0}
-  - target: {fileID: 1931415109}
-    icon: {fileID: 2800000, guid: 5d4b367f0702b4b46a16ba3b67281419, type: 3}
-    color: {r: 0.21568629, g: 0.8745098, b: 0.21568629, a: 0}
-  - target: {fileID: 1120893766}
-    icon: {fileID: 2800000, guid: d9b984f8c9931dc499f788eba40f7674, type: 3}
-    color: {r: 0, g: 0, b: 0.7882353, a: 0}
+  waypoints: []
 --- !u!4 &733811204
 Transform:
   m_ObjectHideFlags: 0
@@ -12741,6 +12749,9 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  buildSound: {fileID: 0}
+  animator: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!23 &894362641
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15194,6 +15205,8 @@ MonoBehaviour:
   lightDuration: 1
   heavyMagnitude: 2.4
   heavyDuration: 1.5
+  smallSmash: {fileID: 0}
+  bigSmash: {fileID: 0}
 --- !u!114 &1035411576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17730,6 +17743,8 @@ MonoBehaviour:
   lightDuration: 1
   heavyMagnitude: 2.4
   heavyDuration: 1.5
+  smallSmash: {fileID: 0}
+  bigSmash: {fileID: 0}
 --- !u!114 &1138330903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18044,6 +18059,9 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  buildSound: {fileID: 0}
+  animator: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!23 &1146037227
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19178,6 +19196,8 @@ MonoBehaviour:
   turnSpeed: 5.7
   maxSpeed: 20
   waterResistance: 0.95
+  boatHullManager: {fileID: 0}
+  cameraOrbiter: {fileID: 0}
   cam: {fileID: 1823688466}
   normalFOV: 60
   boostFOV: 75
@@ -19190,6 +19210,9 @@ MonoBehaviour:
   rainPos: {fileID: 1769880189}
   windArrow: {fileID: 1042544992}
   animator: {fileID: 0}
+  sailUp: {fileID: 0}
+  sailOut: {fileID: 0}
+  sailSnap: {fileID: 0}
 --- !u!95 &1201440810
 Animator:
   serializedVersion: 7
@@ -19241,7 +19264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ae7873d13ad2d43a695c2e9fba1e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatHullManager
-  cameraOrbiter: {fileID: 1823688469}
   hullSections:
   - {fileID: 145255634}
   - {fileID: 1260023440}
@@ -19252,6 +19274,7 @@ MonoBehaviour:
   sinkTiltSpeed: 3.74
   fullySubmergedY: -10
   speedPenaltyPerCriticalSection: 0.1
+  sectionDamageObjects: []
   OnBoatSinking:
     m_PersistentCalls:
       m_Calls: []
@@ -19261,6 +19284,7 @@ MonoBehaviour:
   OnBoatSunk:
     m_PersistentCalls:
       m_Calls: []
+  smashSound: {fileID: 0}
 --- !u!114 &1201440813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19587,6 +19611,8 @@ MonoBehaviour:
   lightDuration: 1
   heavyMagnitude: 2.4
   heavyDuration: 1.5
+  smallSmash: {fileID: 0}
+  bigSmash: {fileID: 0}
 --- !u!114 &1260023440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20707,6 +20733,9 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 0}
   doneStairs: 0
+  buildSound: {fileID: 0}
+  animator: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!212 &1320305157
 SpriteRenderer:
   serializedVersion: 2
@@ -21422,6 +21451,10 @@ PrefabInstance:
       propertyPath: roomName
       value: Zeilmakerij
       objectReference: {fileID: 0}
+    - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
+      propertyPath: healthBarImg
+      value: 
+      objectReference: {fileID: 361653371}
     - target: {fileID: 3928837248529052961, guid: 30db6a156f6f1b246af4d18c40e2cf2a, type: 3}
       propertyPath: decayPerSecond
       value: 0.87
@@ -25685,6 +25718,9 @@ MonoBehaviour:
   isSelected: 0
   stairAnchor: {fileID: 150899495}
   doneStairs: 0
+  buildSound: {fileID: 0}
+  animator: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!23 &1696687554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27158,6 +27194,8 @@ MonoBehaviour:
   sideViewOffset: {x: 5, y: -2.13, z: 0}
   transitionSpeed: 3.5
   oceanAmbience: {fileID: 574630877}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
   waterCutter: {fileID: 582548639}
   regularShip: {fileID: 1686510466}
   sideShip: {fileID: 919132149425031648}
@@ -28226,6 +28264,7 @@ MonoBehaviour:
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
   warningColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   criticalColor: {r: 1, g: 0, b: 0, a: 1}
+  fixButton: {fileID: 0}
 --- !u!114 &1866086994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28242,6 +28281,7 @@ MonoBehaviour:
   maxHealth: 100
   decayPerSecond: 0.87
   pauseDuration: 3
+  healthBarImg: {fileID: 0}
   isHealing: 1
 --- !u!1 &1870509453
 GameObject:
@@ -34129,6 +34169,7 @@ MonoBehaviour:
   maxHealth: 100
   decayPerSecond: 0.87
   pauseDuration: 3
+  healthBarImg: {fileID: 0}
   isHealing: 1
 --- !u!4 &2582190601500306847
 Transform:
@@ -34368,6 +34409,7 @@ MonoBehaviour:
   healthyColor: {r: 0, g: 1, b: 0, a: 1}
   warningColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   criticalColor: {r: 1, g: 0, b: 0, a: 1}
+  fixButton: {fileID: 0}
 --- !u!1 &3470958301811777050
 GameObject:
   m_ObjectHideFlags: 0
