@@ -6324,7 +6324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51da0777389eb241ae3521247816d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameManager
-  minigame1Prefab: {fileID: 1832311867099664079, guid: 61d09e0f69582e6458aee9e487424217, type: 3}
+  minigame1Prefab: {fileID: 8437818844331702806, guid: 189085f1255df12429fd74f2825cd1fa, type: 3}
   minigame2Prefab: {fileID: 5960967893507696222, guid: d021e671fb38f1143b59b36d129acec4, type: 3}
   minigame3Prefab: {fileID: 7700805320307220057, guid: 5e66d96318cdc0145a1987139b317c3b, type: 3}
   minigame4Prefab: {fileID: 1297243981794496369, guid: 6eb67a9ffd4b81143837eed9969e5579, type: 3}

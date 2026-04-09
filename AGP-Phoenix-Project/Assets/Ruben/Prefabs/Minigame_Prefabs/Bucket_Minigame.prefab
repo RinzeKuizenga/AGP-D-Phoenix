@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 1200133832517978200}
   - component: {fileID: 7581090606474477662}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: BucketImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,7 +477,6 @@ GameObject:
   - component: {fileID: 7897587984039716391}
   - component: {fileID: 6603967173737807075}
   - component: {fileID: 1815715253314457592}
-  - component: {fileID: 8418804420772949017}
   - component: {fileID: 1850390400914971206}
   m_Layer: 5
   m_Name: Bucket_Minigame
@@ -575,19 +574,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8418804420772949017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832311867099664079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates: []
 --- !u!114 &1850390400914971206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,14 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43afb420683fda45836b462d4ba2d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bucket_MG_Script
-  targetImage: {fileID: 7581090606474477662}
-  emptyBucket: {fileID: 313117841, guid: d3f6be9df6a5b454495a40d6972eb5b3, type: 3}
-  fullBucket: {fileID: 542740951, guid: d3f6be9df6a5b454495a40d6972eb5b3, type: 3}
-  sliderRope: {fileID: 3880326475288153601}
-  bucketMinigame: {fileID: 1832311867099664079}
-  fireImage: {fileID: 37717448533988799}
-  Winch_BMG: {fileID: 1510255586961978117}
-  roomName: RoomPrefab
+  emptyBucket: {fileID: 313117841, guid: a4812f57c1f1d99498e5640f180e5262, type: 3}
+  fullBucket: {fileID: 542740951, guid: a4812f57c1f1d99498e5640f180e5262, type: 3}
 --- !u!1 &3289446626551349475
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,11 +673,9 @@ GameObject:
   - component: {fileID: 7376052278504099170}
   - component: {fileID: 1080395315254589030}
   - component: {fileID: 2949299747808286108}
-  - component: {fileID: 6948916862066578620}
-  - component: {fileID: 223716974411330279}
   - component: {fileID: 1510255586961978117}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Winch_Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,49 +784,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6948916862066578620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725311237092559014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 223716974411330279}
-          m_TargetAssemblyTypeName: Winch_BMG, Assembly-CSharp
-          m_MethodName: OnHold
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &223716974411330279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725311237092559014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad39b6b461fcfa04e9fdbd365dd37dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Winch_BMG
-  rotationOffset: -90
-  requiresNegativeRotation: 0
 --- !u!114 &1510255586961978117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +845,7 @@ GameObject:
   - component: {fileID: 7191100550987688329}
   - component: {fileID: 37717448533988799}
   m_Layer: 5
-  m_Name: Fire
+  m_Name: FireImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1070,7 @@ GameObject:
   - component: {fileID: 5120874523415572449}
   - component: {fileID: 8687414980620507238}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,7 +1183,7 @@ GameObject:
   - component: {fileID: 4671483606353482761}
   - component: {fileID: 8958089881147163529}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1323,7 +1258,7 @@ GameObject:
   - component: {fileID: 5160598392074181749}
   - component: {fileID: 4410624312348028743}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
