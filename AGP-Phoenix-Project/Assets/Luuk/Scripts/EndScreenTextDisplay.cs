@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using OpenCover.Framework.Model;
 
 public class EndScreenTextDisplay : MonoBehaviour
 {
