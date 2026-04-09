@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_0
+      name: HennieSprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_1
+      name: HennieSprite_1
       rect:
         serializedVersion: 2
         x: 192
@@ -141,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_2
+      name: HennieSprite_2
       rect:
         serializedVersion: 2
         x: 384
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_3
+      name: HennieSprite_3
       rect:
         serializedVersion: 2
         x: 576
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_4
+      name: HennieSprite_4
       rect:
         serializedVersion: 2
         x: 768
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_5
+      name: HennieSprite_5
       rect:
         serializedVersion: 2
         x: 960
@@ -229,7 +229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_6
+      name: HennieSprite_6
       rect:
         serializedVersion: 2
         x: 1152
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_7
+      name: HennieSprite_7
       rect:
         serializedVersion: 2
         x: 1344
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_8
+      name: HennieSprite_8
       rect:
         serializedVersion: 2
         x: 1536
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_9
+      name: HennieSprite_9
       rect:
         serializedVersion: 2
         x: 1728
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_10
+      name: HennieSprite_10
       rect:
         serializedVersion: 2
         x: 1920
@@ -339,10 +339,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_11
+      name: HennieSprite_11
       rect:
         serializedVersion: 2
-        x: 2112
+        x: 2105
         y: 0
         width: 192
         height: 384
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_12
+      name: HennieSprite_12
       rect:
         serializedVersion: 2
         x: 2304
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_13
+      name: HennieSprite_13
       rect:
         serializedVersion: 2
         x: 2496
@@ -405,7 +405,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_14
+      name: HennieSprite_14
       rect:
         serializedVersion: 2
         x: 2688
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_15
+      name: HennieSprite_15
       rect:
         serializedVersion: 2
         x: 2880
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_16
+      name: HennieSprite_16
       rect:
         serializedVersion: 2
         x: 3072
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_17
+      name: HennieSprite_17
       rect:
         serializedVersion: 2
         x: 3264
@@ -493,7 +493,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_18
+      name: HennieSprite_18
       rect:
         serializedVersion: 2
         x: 3456
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_19
+      name: HennieSprite_19
       rect:
         serializedVersion: 2
         x: 3648
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hennie Huisarts-Sheet(1)_20
+      name: HennieSprite_20
       rect:
         serializedVersion: 2
         x: 3840
@@ -574,27 +574,27 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":21.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":384.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Hennie Huisarts-Sheet(1)_0: 1959345192
-      Hennie Huisarts-Sheet(1)_1: 1982550769
-      Hennie Huisarts-Sheet(1)_10: -1384953792
-      Hennie Huisarts-Sheet(1)_11: -1673836620
-      Hennie Huisarts-Sheet(1)_12: -1898576875
-      Hennie Huisarts-Sheet(1)_13: -2091406658
-      Hennie Huisarts-Sheet(1)_14: -1422327068
-      Hennie Huisarts-Sheet(1)_15: -206968092
-      Hennie Huisarts-Sheet(1)_16: -1163015102
-      Hennie Huisarts-Sheet(1)_17: -927860565
-      Hennie Huisarts-Sheet(1)_18: 1976429763
-      Hennie Huisarts-Sheet(1)_19: 1997269433
-      Hennie Huisarts-Sheet(1)_2: 1816323342
-      Hennie Huisarts-Sheet(1)_20: -661429122
-      Hennie Huisarts-Sheet(1)_3: -2018877505
-      Hennie Huisarts-Sheet(1)_4: -754516181
-      Hennie Huisarts-Sheet(1)_5: 329360993
-      Hennie Huisarts-Sheet(1)_6: 1639831428
-      Hennie Huisarts-Sheet(1)_7: 22287369
-      Hennie Huisarts-Sheet(1)_8: 642612198
-      Hennie Huisarts-Sheet(1)_9: 1409027145
+      HennieSprite_0: 1959345192
+      HennieSprite_1: 1982550769
+      HennieSprite_10: -1384953792
+      HennieSprite_11: -1673836620
+      HennieSprite_12: -1898576875
+      HennieSprite_13: -2091406658
+      HennieSprite_14: -1422327068
+      HennieSprite_15: -206968092
+      HennieSprite_16: -1163015102
+      HennieSprite_17: -927860565
+      HennieSprite_18: 1976429763
+      HennieSprite_19: 1997269433
+      HennieSprite_2: 1816323342
+      HennieSprite_20: -661429122
+      HennieSprite_3: -2018877505
+      HennieSprite_4: -754516181
+      HennieSprite_5: 329360993
+      HennieSprite_6: 1639831428
+      HennieSprite_7: 22287369
+      HennieSprite_8: 642612198
+      HennieSprite_9: 1409027145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

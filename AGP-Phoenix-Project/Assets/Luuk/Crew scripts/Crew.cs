@@ -13,5 +13,7 @@ public class Crew : ScriptableObject
     public float crewHealth;
     public float crewHunger;
     public float crewDamageReceived;
-
+    public Sprite[] animationSprites;
+    public Texture2D spriteSheetTexture;
+    public Material crewMaterial;
 }
