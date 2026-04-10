@@ -1,0 +1,171 @@
+
+/* --- Main Panel Container --- */
+.destination-panel {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    flex-direction: column;
+    padding: 14px 20px 12px 20px;
+    min-width: 360px;
+
+    /* Dark glass background */
+    background-color: rgba(22, 27, 34, 0.88);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+
+    /* Font base */
+    -unity-font: url("project://database/Assets/Scripts/Roni/UI/Fonts/Roboto-Regular.ttf?fileID=12800000&guid=603879639d5909043b52ba451b8059c7&type=3#Roboto-Regular");
+}
+
+/* --- Top Row (two columns) --- */
+.destination-top-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+/* Left column */
+.destination-left {
+    flex-direction: column;
+    flex-shrink: 1;
+    margin-right: 24px;
+}
+
+/* "EINDBESTEMMING" small label */
+.destination-label {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 10px;
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Destination name – gold/amber */
+.destination-name {
+    color: rgb(255, 195, 40);
+    font-size: 22px;
+    -unity-font-style: bold;
+    margin: 4px 0 0 0;
+    padding: 0;
+    white-space: nowrap;
+    -unity-text-outline-width: 0.3px;
+    -unity-text-outline-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Right column */
+.destination-right {
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+/* "AFSTAND" small label */
+.distance-label {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 10px;
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Row for number + unit */
+.distance-value-row {
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 2px;
+}
+
+/* Large distance number */
+.distance-number {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    -unity-font-style: bold;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Small unit text (km / m) */
+.distance-unit {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    -unity-font-style: normal;
+    margin: 0 0 0 4px;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* --- Divider --- */
+.destination-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+/* --- Bottom Row --- */
+.destination-bottom-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Bearing group */
+.bearing-group {
+    flex-direction: row;
+    align-items: center;
+}
+
+.bearing-arrow {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin: 0 5px 0 0;
+    padding: 0;
+}
+
+.bearing-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    -unity-font-style: normal;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Nearby waypoint group */
+.nearby-group {
+    flex-direction: row;
+    align-items: center;
+}
+
+.nearby-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(255, 195, 40);
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.nearby-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    -unity-font-style: normal;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* --- Hidden state (used by controller) --- */
+.destination-panel-hidden {
+    display: none;
+}
+
+.nearby-group-hidden {
+    display: none;
+}

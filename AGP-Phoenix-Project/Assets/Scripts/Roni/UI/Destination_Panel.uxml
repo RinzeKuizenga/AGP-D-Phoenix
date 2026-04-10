@@ -1,0 +1,29 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/Roni/UI/USS/Destination_Panel.uss?fileID=7433441132597879392&amp;guid=eba97032b3daceb4e80ace6b170304ea&amp;type=3#Destination_Panel"/>
+    <ui:VisualElement name="destination-panel" picking-mode="Ignore" class="destination-panel" style="height: 100px; opacity: 0.65;">
+        <ui:VisualElement name="destination-top-row" picking-mode="Ignore" class="destination-top-row">
+            <ui:VisualElement name="destination-left" picking-mode="Ignore" class="destination-left">
+                <ui:Label text="EINDBESTEMMING" name="destination-label" picking-mode="Ignore" class="destination-label"/>
+                <ui:Label text="---" name="destination-name" picking-mode="Ignore" class="destination-name" style="font-size: 18px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="destination-right" picking-mode="Ignore" class="destination-right">
+                <ui:Label text="AFSTAND" name="distance-label" picking-mode="Ignore" class="distance-label"/>
+                <ui:VisualElement name="distance-value-row" picking-mode="Ignore" class="distance-value-row">
+                    <ui:Label text="---" name="distance-number" picking-mode="Ignore" class="distance-number" style="font-size: 22px;"/>
+                    <ui:Label text="" name="distance-unit" picking-mode="Ignore" class="distance-unit"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="destination-divider" picking-mode="Ignore" class="destination-divider"/>
+        <ui:VisualElement name="destination-bottom-row" picking-mode="Ignore" class="destination-bottom-row">
+            <ui:VisualElement name="bearing-group" picking-mode="Ignore" class="bearing-group">
+                <ui:Label text="&#9651;" name="bearing-arrow" picking-mode="Ignore" class="bearing-arrow"/>
+                <ui:Label text="---" name="bearing-text" picking-mode="Ignore" class="bearing-text" style="font-size: 8px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="nearby-group" picking-mode="Ignore" class="nearby-group">
+                <ui:VisualElement name="nearby-dot" picking-mode="Ignore" class="nearby-dot"/>
+                <ui:Label text="" name="nearby-text" picking-mode="Ignore" class="nearby-text"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
