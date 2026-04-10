@@ -458,11 +458,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 20679724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8591e03953b7b6b4c823ce2c2a0ac455, type: 3}
+  m_Script: {fileID: 11500000, guid: 02e1303b89e63a24fbc48efa7a6b4480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Destination_Panel
   compass_controller: {fileID: 1628329557}
-  player_transform: {fileID: 1188718280}
+  player_transform: {fileID: 1201440804}
   ui_document: {fileID: 20679725}
   label_destination: EINDBESTEMMING
   label_distance: AFSTAND
@@ -46663,6 +46663,9 @@ MonoBehaviour:
   waypoints:
   - target: {fileID: 773730083}
     destination_name: Eiland
+    color: {r: 0.90451753, g: 1, b: 0, a: 0}
+  - target: {fileID: 823452545}
+    destination_name: New York1
     color: {r: 0.90451753, g: 1, b: 0, a: 0}
   - target: {fileID: 823452545}
     destination_name: New York
