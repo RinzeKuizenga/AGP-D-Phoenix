@@ -67070,7 +67070,6 @@ GameObject:
   - component: {fileID: 661921904406425156}
   - component: {fileID: 5837484192858236685}
   - component: {fileID: 4726891615904230209}
-  - component: {fileID: 5960967892533880694}
   m_Layer: 5
   m_Name: Poep_Minigame 1 1
   m_TagString: Untagged
@@ -67078,18 +67077,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5960967892533880694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5960967892533880693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d2c70d85b156f34c837a7f67a4909f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!114 &5965072909787883258
 MonoBehaviour:
   m_ObjectHideFlags: 0
